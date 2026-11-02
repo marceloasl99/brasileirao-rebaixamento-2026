@@ -23,32 +23,42 @@ Uma aplicação web interativa que simula as chances de rebaixamento do Brasilei
 
 ### 🏆 Tabela de Posicionamento (Referência 33ª Rodada — 02/11/2026)
 
-| Pos | Time | Pts | J | V | E | D | SG | 📊 Prob. Rebaixamento | Risco |
-|-----|------|-----|---|---|---|---|----| |------|
-| 1 | Flamengo | 73 | 33 | 22 | 7 | 4 | +40 | ~~0.0%~~ | 🟢 Seguro |
-| 2 | Palmeiras | 70 | 33 | 20 | 10 | 3 | +34 | ~~0.1%~~ | 🟢 Seguro |
-| 3 | Cruzeiro | 57 | 33 | 17 | 6 | 10 | +6 | ~~0.3%~~ | 🟢 Seguro |
-| 4 | Fluminense | 54 | 33 | 15 | 9 | 9 | +10 | 0.5% | 🟡 Atenção |
-| 5 | Athletico-PR | 54 | 33 | 15 | 9 | 9 | +10 | 0.5% | 🟡 Atenção |
-| 6 | Bahia | 53 | 33 | 14 | 11 | 8 | +6 | 0.7% | 🟡 Atenção |
-| 7 | Atlético-MG | 50 | 33 | 14 | 8 | 11 | +5 | 1.2% | 🟠 Alto |
-| 8 | Santos | 47 | 33 | 12 | 11 | 10 | +2 | 2.1% | 🟠 Alto |
-| 9 | Bragantino | 44 | 33 | 12 | 8 | 13 | +4 | 3.5% | 🟠 Alto |
-| 10 | São Paulo | 43 | 33 | 12 | 7 | 14 | 0 | 5.8% | 🔴 Crítico |
-| 11 | Coritiba | 42 | 33 | 11 | 9 | 13 | -10 | 8.7% | 🔴 Crítico |
-| 12 | Botafogo | 39 | 33 | 10 | 9 | 14 | -8 | 12.3% | 🔴 Crítico |
-| 13 | Vasco | 38 | 32 | 10 | 8 | 14 | -9 | 15.4% | 🔴 Crítico |
-| 14 | Vitória | 38 | 33 | 10 | 8 | 15 | -13 | 18.9% | 🔴 Crítico |
-| 15 | Grêmio | 37 | 33 | 9 | 10 | 14 | -7 | 22.1% | 🔴 Crítico |
-| 16 | Mirassol | 37 | 33 | 9 | 10 | 14 | -10 | 25.3% | 🔴 Crítico |
-| 17 | Corinthians | 36 | 33 | 9 | 9 | 15 | -6 | 30.1% | 🔴 Crítico |
-| 18 | Internacional | 35 | 33 | 8 | 11 | 14 | -5 | 35.7% | 🔴 Crítico |
-| 19 | Remo | 29 | 33 | 6 | 11 | 16 | -15 | 52.3% | 🔴 Crítico |
-| 20 | Chapecoense | 21 | 32 | 4 | 9 | 19 | -34 | 89.6% | 🔴 Crítico |
+<small>📊 Dados baseados em 20.000 simulações Monte Carlo · Modelo UFMG/CNN Brasil · Atualizado em 02/11/2026</small>
+
+| # | Time | 📍 | Pts | J | V | E | D | SG | 📉 Z4 | 🏷️ Classificação |
+|---|------|-----|-----|---|---|---|---|----|-------|------------------|
+| 1 | 🏆 **Flamengo** | 1st | 73 | 33 | 22 | 7 | 4 | +40 | 0.0% | 🟢 G4 |
+| 2 | 🥈 **Palmeiras** | 2nd | 70 | 33 | 20 | 10 | 3 | +34 | 0.1% | 🟢 G4 |
+| 3 | 🥉 **Cruzeiro** | 3rd | 57 | 33 | 17 | 6 | 10 | +6 | 0.3% | 🟢 G4 |
+| 4 | 🅿️ **Fluminense** | 4th | 54 | 33 | 15 | 9 | 9 | +10 | 0.5% | 🟢 G4 |
+| 5 | ⭐ **Athletico-PR** | 5th | 54 | 33 | 15 | 9 | 9 | +10 | 0.5% | 🟢 G4 |
+| 6 | 🅱️ **Bahia** | 6th | 53 | 33 | 14 | 11 | 8 | +6 | 0.7% | 🟢 G4 |
+| 7 | ⚪ **Atlético-MG** | 7th | 50 | 33 | 14 | 8 | 11 | +5 | 1.2% | 🟡 Z4 |
+| 8 | 🅾️ **Santos** | 8th | 47 | 33 | 12 | 11 | 10 | +2 | 2.1% | 🟡 Z4 |
+| 9 | 🅿️ **Bragantino** | 9th | 44 | 33 | 12 | 8 | 13 | +4 | 3.5% | 🟡 Z4 |
+| 10 | 🆚 **São Paulo** | 10th | 43 | 33 | 12 | 7 | 14 | 0 | 5.8% | 🟠 Z4 |
+| 11 | 🆘 **Coritiba** | 11th | 42 | 33 | 11 | 9 | 13 | -10 | 8.7% | 🟠 Z4 |
+| 12 | 🆘 **Botafogo** | 12th | 39 | 33 | 10 | 9 | 14 | -8 | 12.3% | 🟠 Z4 |
+| 13 | 🆘 **Vasco** | 13th | 38 | 32 | 10 | 8 | 14 | -9 | 15.4% | 🟠 Z4 |
+| 14 | 🆘 **Vitória** | 14th | 38 | 33 | 10 | 8 | 15 | -13 | 18.9% | 🟠 Z4 |
+| 15 | 🆘 **Grêmio** | 15th | 37 | 33 | 9 | 10 | 14 | -7 | 22.1% | 🟠 Z4 |
+| 16 | 🆘 **Mirassol** | 16th | 37 | 33 | 9 | 10 | 14 | -10 | 25.3% | 🟥 ↓ Z4 |
+| 17 | 🆘 **Corinthians** | 17th | 36 | 33 | 9 | 9 | 15 | -6 | 30.1% | 🟥 ↓ Z4 |
+| 18 | 🆘 **Internacional** | 18th | 35 | 33 | 8 | 11 | 14 | -5 | 35.7% | 🟥 ↓ Z4 |
+| 19 | 🆘 **Remo** | 19th | 29 | 33 | 6 | 11 | 16 | -15 | 52.3% | 🟥 ↓ Z4 |
+| 20 | 🆘 **Chapecoense** | 20th | 21 | 32 | 4 | 9 | 19 | -34 | 89.6% | 🟥 ↓ Z4 |
+
+**Legenda de Risco**:
+- 🟢 **G4** = Classificação para Libertadores (Posições 1-4)
+- 🟡 **Z4** = Zona de rebaixamento (Posições 16-20)
+- 🟠 **Atenção** = Próximo do Z4 (Posições 7-15)
+- 🟥 **↓ Z4** = Z4 consolidado (Posições 16-20)
 
 **Fonte**: Modelo Estocástico Calibrado (UFMG / CNN Brasil) · 20.000 simulações Monte Carlo · Dados: 02/11/2026 (Pós-33ª Rodada)
 
-> ⚠️ **Observação importante**: As probabilidades de rebaixamento são geradas por simulação estatística Monte Carlo com 20.000 cenários, baseadas nos palpites atuais e nos parâmetros de ataque/defesa de cada time. A "Linha de corte projetada" de **43 pontos** indica a quantidade de pontos que, em média, manteria o time fora do Z4 nesta reta final com 51 jogos restantes.
+> ⚠️ **Observação importante**: As probabilidades de rebaixamento (📉 Z4) são geradas por simulação estatística Monte Carlo com 20.000 cenários, baseadas nos parâmetros de ataque/defesa de cada time e nos palpites do usuário. A "Linha de corte projetada" de **43 pontos** indica a quantidade de pontos que, em média, manteria o time fora do Z4 nesta reta final com 51 jogos restantes.
+
+> 💡 **Dica**: Times com **menos de 43 pontos** estão matematicamente na zona de rebaixamento (Z4). A probabilidade mostra a chance estatística de rebaixamento baseado no desempenho restante de temporada.
 
 ### 💡 Como Utilizar
 
