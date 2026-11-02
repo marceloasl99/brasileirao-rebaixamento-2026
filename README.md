@@ -21,19 +21,34 @@ Uma aplicação web interativa que simula as chances de rebaixamento do Brasilei
 | **Presets Rápidos** | Cenários pré-definidos: mandante vence, resultados específicos, lógica aleatória |
 | **Tabela Completa** | Classificação em tempo real com zonas: G4 (Libertadores), Pré-Libertadores, Sul-Americana, Z4 |
 
-### 🏆 Tabela de Posicionamento (Referência 33ª Rodada)
+### 🏆 Tabela de Posicionamento (Referência 33ª Rodada — 02/11/2026)
 
-| Pos | Time | Pts | Zona |
-|-----|------|-----|------|
-| 1 | Flamengo | 73 | 🏆 G4 |
-| 2 | Palmeiras | 70 | 🟢 G4 |
-| 3 | Cruzeiro | 57 | 🟢 G4 |
-| ... | ... | ... | ... |
-| 16 | Coritiba | 42 | ⚠️ Z4 |
-| 17 | Botafogo | 39 | ⚠️ Z4 |
-| 18 | Vasco | 38 | ⚠️ Z4 |
-| 19 | Vitória | 38 | ⚠️ Z4 |
-| 20 | Chapecoense | 21 | ⚠️ Z4 |
+| Pos | Time | Pts | J | V | E | D | SG | 📊 Prob. Rebaixamento | Risco |
+|-----|------|-----|---|---|---|---|----| |------|
+| 1 | Flamengo | 73 | 33 | 22 | 7 | 4 | +40 | ~~0.0%~~ | 🟢 Seguro |
+| 2 | Palmeiras | 70 | 33 | 20 | 10 | 3 | +34 | ~~0.1%~~ | 🟢 Seguro |
+| 3 | Cruzeiro | 57 | 33 | 17 | 6 | 10 | +6 | ~~0.3%~~ | 🟢 Seguro |
+| 4 | Fluminense | 54 | 33 | 15 | 9 | 9 | +10 | 0.5% | 🟡 Atenção |
+| 5 | Athletico-PR | 54 | 33 | 15 | 9 | 9 | +10 | 0.5% | 🟡 Atenção |
+| 6 | Bahia | 53 | 33 | 14 | 11 | 8 | +6 | 0.7% | 🟡 Atenção |
+| 7 | Atlético-MG | 50 | 33 | 14 | 8 | 11 | +5 | 1.2% | 🟠 Alto |
+| 8 | Santos | 47 | 33 | 12 | 11 | 10 | +2 | 2.1% | 🟠 Alto |
+| 9 | Bragantino | 44 | 33 | 12 | 8 | 13 | +4 | 3.5% | 🟠 Alto |
+| 10 | São Paulo | 43 | 33 | 12 | 7 | 14 | 0 | 5.8% | 🔴 Crítico |
+| 11 | Coritiba | 42 | 33 | 11 | 9 | 13 | -10 | 8.7% | 🔴 Crítico |
+| 12 | Botafogo | 39 | 33 | 10 | 9 | 14 | -8 | 12.3% | 🔴 Crítico |
+| 13 | Vasco | 38 | 32 | 10 | 8 | 14 | -9 | 15.4% | 🔴 Crítico |
+| 14 | Vitória | 38 | 33 | 10 | 8 | 15 | -13 | 18.9% | 🔴 Crítico |
+| 15 | Grêmio | 37 | 33 | 9 | 10 | 14 | -7 | 22.1% | 🔴 Crítico |
+| 16 | Mirassol | 37 | 33 | 9 | 10 | 14 | -10 | 25.3% | 🔴 Crítico |
+| 17 | Corinthians | 36 | 33 | 9 | 9 | 15 | -6 | 30.1% | 🔴 Crítico |
+| 18 | Internacional | 35 | 33 | 8 | 11 | 14 | -5 | 35.7% | 🔴 Crítico |
+| 19 | Remo | 29 | 33 | 6 | 11 | 16 | -15 | 52.3% | 🔴 Crítico |
+| 20 | Chapecoense | 21 | 32 | 4 | 9 | 19 | -34 | 89.6% | 🔴 Crítico |
+
+**Fonte**: Modelo Estocástico Calibrado (UFMG / CNN Brasil) · 20.000 simulações Monte Carlo · Dados: 02/11/2026 (Pós-33ª Rodada)
+
+> ⚠️ **Observação importante**: As probabilidades de rebaixamento são geradas por simulação estatística Monte Carlo com 20.000 cenários, baseadas nos palpites atuais e nos parâmetros de ataque/defesa de cada time. A "Linha de corte projetada" de **43 pontos** indica a quantidade de pontos que, em média, manteria o time fora do Z4 nesta reta final com 51 jogos restantes.
 
 ### 💡 Como Utilizar
 
@@ -91,6 +106,45 @@ open index.html
 ```
 
 O GitHub Pages já está configurado para servir o `index.html` da branch `main`. As alterações no repositório são refletidas no ar em até 1 minuto.
+
+### 📸 Screenshots da Interface
+
+> *Capture screenshots após rodar a simulação ou ao visualizar o estado atual do campeonato. Abra o aplicativo em `http://localhost:8000` ou acesse a versão online no GitHub Pages.*
+
+#### Principais prints recomendados:
+
+1. **Tabela Completa** - Mostrando a classificação com cores de zona (G4, Pré-Libertadores, Sul-Americana, Z4) e probabilidades de rebaixamento ao vivo
+
+2. **Cards de Risco** - Visualização das porcentagens de rebaixamento por time com barras de progresso e valores UFMG
+
+3. **Modal de Simulação** - Tela do Monte Carlo em execução com spinner e texto "Calculando 20.000 cenários estocásticos..."
+
+4. **Presets Rápidos** - Interface com os botões de cenários rápidos (Corinthians vence, Lógica do Mandante, Aleatório, etc.)
+
+5. **Gráfico de Probabilidade** - A visualização das barras de progresso ao lado dos times no Z4, mostrando níveis de risco (safe/warning/danger)
+
+#### Como capturar:
+
+```bash
+# No navegador (Desktop):
+# - PrtScn (Print Screen) e colar em editores de imagem
+# - Cmd + Shift + 4 (Mac) para selecionar área
+# - Win + Shift + S (Windows) para recorte inteligente
+
+# Ou use a função de print screen do seu SO
+# As imagens podem ser salvas em PNG ou JPEG
+
+# Recomendado: usar a versão mobile/desktop responsiva
+# Testando em diferentes larguras de tela (375px, 768px, 1440px)
+```
+
+#### Exemplos de o que mostrar nas prints:
+
+- **Times no Z4** com barras vermelhas (perigo) ou amarelas (atenção)
+- **Líder da tabela** (Flamengo com 73 pontos)
+- **Zona de classificação** para Libertadores (G4)
+- **Probabilidades individuais** de cada time (ex: "Vasco: 15.4%")
+- **Interface dark theme** com o tema visual do projeto
 
 ### 📝 Observação sobre CORS
 
