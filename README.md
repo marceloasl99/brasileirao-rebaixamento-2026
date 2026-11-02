@@ -69,7 +69,11 @@ Este projeto incorpora melhores práticas de desenvolvimento frontend:
 - `accessibility` - ARIA, focus states, semantic HTML
 - `sports-statistics` - Modelos estatísticos para esportes
 
-### 🚀 Deploy Rápido
+### 🚀 Deploy Rápido e GitHub Pages
+
+A aplicação pode ser visualizada diretamente pelo GitHub Pages:
+
+🌐 **URL ao vivo**: https://marceloasl99.github.io/brasileirao-rebaixamento-2026/
 
 ```bash
 # Clone o repositório
@@ -81,6 +85,12 @@ cd brasileirao-rebaixamento-2026
 # Ou abra diretamente o index.html em qualquer navegador
 open index.html
 ```
+
+O GitHub Pages já está configurado para servir o `index.html` da branch `main`. As alterações no repositório são refletidas no ar em até 1 minuto.
+
+### 📝 Observação sobre CORS
+
+Como o `index.html` carrega dados e scripts localmente, não há necessidade de configuração adicional para o GitHub Pages. Basta garantir que o `index.html` permanece na raiz do repositório.
 
 ### 📄 Licença
 
