@@ -60,62 +60,12 @@ Uma aplicação web interativa que simula as chances de rebaixamento do Brasilei
 
 > 💡 **Dica**: Times com **menos de 43 pontos** estão matematicamente na zona de rebaixamento (Z4). A probabilidade mostra a chance estatística de rebaixamento baseado no desempenho restante de temporada.
 
-### 💡 Como Utilizar
-
-1. **Seleção de palpites**: Clique nos botões 1 (mandante), X (empate) ou 2 (visitante) para cada jogo
-2. **Rodar simulação**: Clique em "Simular Monte Carlo (20.000x)" para rodar o cálculo estatístico
-3. **Analisar resultados**: Veja as probabilidades de rebaixamento atualizadas por time
-4. **Testar cenários**: Use os presets rápidos para simular diferentes situações de campeonato
-
 ### 🛠️ Tecnologias Utilizadas
 
 - **HTML5** com semantic markup e ARIA labels para acessibilidade
 - **CSS3** com variáveis customizadas, tema dark e focus-visible states
 - **JavaScript Puro** — simulação Monte Carlo com amostragem Poisson
 - **Responsive Design** — grid adaptativa para mobile e desktop
-
-### 📝 Melhorias Aplicadas (UI/UX)
-
-Este projeto incorpora melhores práticas de desenvolvimento frontend:
-
-- ✅ **Acessibilidade**: Skip-link para navegação keyboard, focus-visible states em todos os elementos interativos, ARIA labels completos em tabela, partidas e botões de palpite
-- ✅ **Tipografia**: Variáveis `--font-display` e `--font-body` evitando fonts sistêmicas sobreusedas (Arial/Roboto)
-- ✅ **Polish UI**: Transições suaves (150ms), cursor:pointer em elementos clicáveis, Estados de foco consistentes
-- ✅ **HTML Semântico**: `scope` attributes, estrutura landmarks, labels descritivas
-- ✅ **Contraste de Cor**: Focus states com `--accent` sobre fundo `--bg` para visibilidade
-- ✅ **Dinâmica**: Atualização ARIA labels após interações do usuário
-
-### 🏷️ Tags do Repositório
-
-- `ui-ux-improvements` - Melhorias de acessibilidade e typography
-- `monte-carlo` - Simulação estatística probabilística
-- `brasileirao` - Dados do Campeonato Brasileiro
-- `z4-rebaixamento` - Contexto de luta contra descenso
-- `accessibility` - ARIA, focus states, semantic HTML
-- `sports-statistics` - Modelos estatísticos para esportes
-- `web-design` - Design web responsivo com tema dark
-- `javascript` - Lógica pura (sem bibliotecas externas)
-- `data-visualization` - Cards de risco e tabela interativa
-- `frontend` - Aplicação client-side pura
-
-### 🚀 Deploy Rápido e GitHub Pages
-
-A aplicação pode ser visualizada diretamente pelo GitHub Pages:
-
-🌐 **URL ao vivo**: https://marceloasl99.github.io/brasileirao-rebaixamento-2026/
-
-```bash
-# Clone o repositório
-git clone https://github.com/marceloasl99/brasileirao-rebaixamento-2026.git
-
-# Acesse a pasta
-cd brasileirao-rebaixamento-2026
-
-# Ou abra diretamente o index.html em qualquer navegador
-open index.html
-```
-
-O GitHub Pages já está configurado para servir o `index.html` da branch `main`. As alterações no repositório são refletidas no ar em até 1 minuto.
 
 ### 📸 Screenshots da Interface
 
@@ -156,14 +106,29 @@ O GitHub Pages já está configurado para servir o `index.html` da branch `main`
 - **Probabilidades individuais** de cada time (ex: "Vasco: 15.4%")
 - **Interface dark theme** com o tema visual do projeto
 
-### 📝 Observação sobre CORS
+### 🚀 Deploy Rápido e GitHub Pages
 
-Como o `index.html` carrega dados e scripts localmente, não há necessidade de configuração adicional para o GitHub Pages. Basta garantir que o `index.html` permanece na raiz do repositório.
+A aplicação pode ser visualizada diretamente pelo GitHub Pages:
+
+🌐 **URL ao vivo**: https://marceloasl99.github.io/brasileirao-rebaixamento-2026/
+
+```bash
+# Clone o repositório
+git clone https://github.com/marceloasl99/brasileirao-rebaixamento-2026.git
+
+# Acesse a pasta
+cd brasileirao-rebaixamento-2026
+
+# Ou abra diretamente o index.html em qualquer navegador
+open index.html
+```
+
+O GitHub Pages já está configurado para servir o `index.html` da branch `main`. As alterações no repositório são refletidas no ar em até 1 minuto.
 
 ### 📄 Licença
 
-Este projeto está licenciado sob os termos da MIT License — veja o arquivo LICENSE para mais detalhes.
+Este projeto está licenciado sob os termos da MIT License.
 
 ---
 
-**Desenvolvido com Claude Code** — Melhorias de UI/UX baseadas no artigo "top-claude-skills-ui-ux-engineers" da Snyk.
+**Projeto de simulação estatística para o Brasileirão 2026**
