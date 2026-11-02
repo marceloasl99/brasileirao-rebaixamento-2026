@@ -1,0 +1,1411 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simulador de Rebaixamento — Brasileirão 2026 (Pós-33ª Rodada)</title>
+  <style>
+    :root {
+      --bg: #0b0e14;
+      --card-bg: #131823;
+      --card-border: #20283a;
+      --card-hover: #192131;
+      --text-main: #f1f5f9;
+      --text-muted: #94a3b8;
+      --text-dim: #64748b;
+      --accent: #38bdf8;
+      --accent-glow: rgba(56, 189, 248, 0.15);
+      --danger: #ef4444;
+      --danger-bg: rgba(239, 68, 68, 0.15);
+      --warning: #f59e0b;
+      --warning-bg: rgba(245, 158, 11, 0.15);
+      --success: #10b981;
+      --success-bg: rgba(16, 185, 129, 0.15);
+      --libertadores: #0284c7;
+      --pre-libertadores: #0d9488;
+      --sulamericana: #d97706;
+      --z4: #dc2626;
+      --direct-clash: #8b5cf6;
+      --font-display: "SF Pro Display", "Segoe UI", system-ui, -apple-system, sans-serif;
+      --font-body: "SF Pro Text", "Segoe UI", system-ui, -apple-system, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-body);
+      font-feature-settings: "ss01", "ss02", "rlig";
+      background: var(--bg);
+      color: var(--text-main);
+      line-height: 1.5;
+      padding-bottom: 40px;
+    }
+
+    /* Avoid overused system fonts - use display font for headers */
+    h1,
+    h2,
+    h3,
+    .header-content h1 {
+      font-family: var(--font-display);
+    }
+
+    header {
+      background: linear-gradient(180deg, #161e2e 0%, var(--bg) 100%);
+      border-bottom: 1px solid var(--card-border);
+      padding: 24px 20px 20px;
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(8px);
+    }
+
+    .header-content {
+      max-width: 1440px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .title-area h1 {
+      font-size: 1.45rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .badge-live {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 999px;
+      background: var(--danger-bg);
+      color: var(--danger);
+      border: 1px solid var(--danger);
+    }
+
+    .header-desc {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+
+    /* Focus states for accessibility */
+    a:focus-visible,
+    button:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+    }
+
+    /* Skip link for keyboard navigation */
+    .skip-link {
+      position: absolute;
+      top: -100px;
+      left: 0;
+      background: var(--accent);
+      color: var(--bg);
+      padding: 8px;
+      z-index: 100;
+      transition: top 0.2s;
+    }
+    .skip-link:focus {
+      top: 0;
+    }
+
+    .header-actions {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+
+    button.btn-primary {
+      background: linear-gradient(135deg, #0284c7, #2563eb);
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      font-weight: 700;
+      font-size: 0.85rem;
+      border-radius: 8px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.2s ease;
+      box-shadow: 0 4px 14px rgba(37, 99, 235, 0.3);
+    }
+
+    button.btn-primary:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+    }
+
+    button.btn-primary:hover {
+      filter: brightness(1.15);
+      transform: translateY(-1px);
+    }
+
+    button.btn-secondary {
+      background: var(--card-bg);
+      color: var(--text-main);
+      border: 1px solid var(--card-border);
+      padding: 9px 16px;
+      font-weight: 600;
+      font-size: 0.82rem;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+
+    button.btn-secondary:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+    }
+
+    button.btn-secondary:hover {
+      background: var(--card-hover);
+      border-color: var(--accent);
+    }
+
+    .container {
+      max-width: 1440px;
+      margin: 20px auto 0;
+      padding: 0 16px;
+      display: grid;
+      grid-template-columns: minmax(0, 1.35fr) minmax(360px, 0.85fr);
+      gap: 22px;
+    }
+
+    @media (max-width: 1080px) {
+      .container {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Cards e Risco */
+    .section-title {
+      font-size: 0.95rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .risk-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+
+    /* Improve clickable elements with accessible cursor */
+    .risk-card {
+      cursor: pointer;
+      transition: transform 0.15s ease;
+    }
+
+    .risk-card:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+      transform: scale(1.02);
+    }
+
+    .risk-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      padding: 14px;
+      position: relative;
+      overflow: hidden;
+      transition: border-color 0.2s;
+    }
+
+    .risk-card:hover {
+      border-color: var(--card-border);
+    }
+
+    .risk-card.danger { border-left: 4px solid var(--danger); }
+    .risk-card.warning { border-left: 4px solid var(--warning); }
+    .risk-card.safe { border-left: 4px solid var(--success); }
+
+    .risk-card-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+    }
+
+    .team-badge {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 700;
+      font-size: 0.9rem;
+    }
+
+    .team-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+    }
+
+    .current-pts {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      font-variant-numeric: tabular-nums;
+    }
+
+    .prob-val {
+      font-size: 1.6rem;
+      font-weight: 800;
+      font-variant-numeric: tabular-nums;
+      line-height: 1.1;
+      margin-bottom: 4px;
+    }
+
+    .prob-val.danger { color: var(--danger); }
+    .prob-val.warning { color: var(--warning); }
+    .prob-val.safe { color: var(--success); }
+
+    .prob-sub {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .progress-bar-bg {
+      height: 5px;
+      background: #1e2638;
+      border-radius: 99px;
+      overflow: hidden;
+      margin-top: 8px;
+    }
+
+    .progress-bar-fill {
+      height: 100%;
+      border-radius: 99px;
+      transition: width 0.3s ease;
+    }
+
+    /* Presets Rápidos */
+    .presets-bar {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      padding: 12px 16px;
+      margin-bottom: 24px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .presets-label {
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-right: 4px;
+    }
+
+    .chip-btn {
+      background: #182030;
+      border: 1px solid #27344e;
+      color: #cbd5e1;
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .chip-btn:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+    }
+
+    .chip-btn:hover {
+      background: #222f47;
+      color: #fff;
+      border-color: var(--accent);
+    }
+
+    /* Rodadas e Jogos */
+    .round-container {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      margin-bottom: 16px;
+      overflow: hidden;
+    }
+
+    .round-header {
+      background: #171d2b;
+      padding: 10px 16px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--card-border);
+    }
+
+    .round-matches {
+      display: grid;
+      grid-template-columns: 1fr;
+      divide-y: 1px solid var(--card-border);
+    }
+
+    .match-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 16px;
+      gap: 12px;
+      border-bottom: 1px solid #1a2233;
+      transition: background 0.15s;
+    }
+
+    .match-row:last-child {
+      border-bottom: none;
+    }
+
+    .match-row:hover {
+      background: var(--card-hover);
+    }
+
+    .match-teams {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+
+    .team-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      min-width: 140px;
+    }
+
+    .team-item.away {
+      justify-content: flex-end;
+    }
+
+    /* Accessible label for team badges */
+    .team-item .team-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .team-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      min-width: 140px;
+    }
+
+    .team-item.away {
+      justify-content: flex-end;
+    }
+
+    .vs-label {
+      font-size: 0.7rem;
+      color: var(--text-dim);
+      font-weight: 700;
+      padding: 0 4px;
+    }
+
+    .badge-tag {
+      font-size: 0.65rem;
+      font-weight: 700;
+      padding: 2px 6px;
+      border-radius: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+    }
+
+    .tag-direct {
+      background: rgba(139, 92, 246, 0.2);
+      color: #a78bfa;
+      border: 1px solid rgba(139, 92, 246, 0.4);
+    }
+
+    .tag-decisive {
+      background: rgba(239, 68, 68, 0.2);
+      color: #f87171;
+      border: 1px solid rgba(239, 68, 68, 0.4);
+    }
+
+    .match-buttons {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .pred-btn {
+      background: #171f2e;
+      border: 1px solid #29364e;
+      color: var(--text-muted);
+      min-width: 54px;
+      height: 32px;
+      border-radius: 6px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2px 4px;
+      transition: all 0.15s;
+    }
+
+    .pred-btn span.odds {
+      font-size: 0.62rem;
+      font-weight: 500;
+      opacity: 0.7;
+    }
+
+    .pred-btn:hover {
+      background: #222d42;
+      border-color: #475569;
+      color: #fff;
+    }
+
+    .pred-btn.active-1 {
+      background: #0284c7;
+      border-color: #38bdf8;
+      color: #fff;
+      box-shadow: 0 0 10px rgba(56, 189, 248, 0.4);
+    }
+
+    .pred-btn.active-x {
+      background: #475569;
+      border-color: #94a3b8;
+      color: #fff;
+      box-shadow: 0 0 10px rgba(148, 163, 184, 0.3);
+    }
+
+    .pred-btn.active-2 {
+      background: #0d9488;
+      border-color: #2dd4bf;
+      color: #fff;
+      box-shadow: 0 0 10px rgba(45, 212, 191, 0.4);
+    }
+
+    .btn-clear-match {
+      background: transparent;
+      border: none;
+      color: var(--text-dim);
+      font-size: 0.8rem;
+      cursor: pointer;
+      padding: 4px 6px;
+      border-radius: 4px;
+      margin-left: 2px;
+    }
+
+    .btn-clear-match:hover {
+      color: var(--danger);
+      background: rgba(239, 68, 68, 0.1);
+    }
+
+    /* Coluna Direita: Tabela */
+    .standings-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      overflow: hidden;
+      position: sticky;
+      top: 96px;
+    }
+
+    .table-head {
+      background: #171d2b;
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--card-border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    /* Improve focus for table headers */
+    .table-head th:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+    }
+
+    .table-head h2 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .table-cutoff-badge {
+      font-size: 0.75rem;
+      background: #1f2739;
+      padding: 4px 10px;
+      border-radius: 6px;
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    table.league-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.8rem;
+      text-align: right;
+    }
+
+    table.league-table th {
+      color: var(--text-dim);
+      font-weight: 700;
+      padding: 8px 10px;
+      border-bottom: 1px solid var(--card-border);
+      font-size: 0.68rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    table.league-table th:nth-child(1),
+    table.league-table th:nth-child(2) {
+      text-align: left;
+    }
+
+    table.league-table td {
+      padding: 7px 10px;
+      border-bottom: 1px solid #1a2233;
+      font-variant-numeric: tabular-nums;
+    }
+
+    table.league-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    table.league-table tr:hover td {
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    /* Faixas da tabela */
+    tr.zone-g4 td:first-child { border-left: 3px solid var(--libertadores); }
+    tr.zone-pre td:first-child { border-left: 3px solid var(--pre-libertadores); }
+    tr.zone-sula td:first-child { border-left: 3px solid var(--sulamericana); }
+    tr.zone-z4 td:first-child { border-left: 3px solid var(--z4); background: rgba(220, 38, 38, 0.05); }
+
+    .team-cell {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      text-align: left;
+      font-weight: 600;
+    }
+
+    .pts-col {
+      font-weight: 800;
+      color: #fff;
+    }
+
+    .prob-badge-mini {
+      font-size: 0.68rem;
+      font-weight: 700;
+      padding: 2px 5px;
+      border-radius: 4px;
+    }
+
+    .prob-badge-mini.danger {
+      background: var(--danger-bg);
+      color: var(--danger);
+    }
+
+    .prob-badge-mini.warning {
+      background: var(--warning-bg);
+      color: var(--warning);
+    }
+
+    .prob-badge-mini.safe {
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--text-dim);
+    }
+
+    /* Modal / Indicador de Simulação */
+    .sim-status {
+      display: none;
+      background: rgba(19, 24, 35, 0.95);
+      border: 1px solid var(--accent);
+      border-radius: 8px;
+      padding: 10px 14px;
+      margin-bottom: 16px;
+      align-items: center;
+      gap: 12px;
+      font-size: 0.8rem;
+    }
+
+    .spinner {
+      width: 18px;
+      height: 18px;
+      border: 2px solid rgba(56, 189, 248, 0.3);
+      border-top-color: var(--accent);
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    .legend-box {
+      padding: 10px 16px;
+      background: #111622;
+      border-top: 1px solid var(--card-border);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      font-size: 0.68rem;
+      color: var(--text-muted);
+    }
+
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .legend-bar {
+      width: 8px;
+      height: 8px;
+      border-radius: 2px;
+    }
+
+    .modal-backdrop {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.7);
+      z-index: 100;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .modal-box {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      max-width: 650px;
+      width: 100%;
+      padding: 24px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+      max-height: 85vh;
+      overflow-y: auto;
+    }
+  </style>
+</head>
+<body>
+  <!-- Skip navigation link -->
+  <a class="skip-link" href="#main-content">Pular para o conteúdo principal</a>
+
+  <header>
+    <div class="header-content">
+      <div class="title-area">
+        <h1>
+          <span>Brasileirão 2026 — Simulador de Reta Final</span>
+          <span class="badge-live">Pós-Rodada 33</span>
+        </h1>
+        <p class="header-desc">
+          Modelo Estocástico Calibrado (UFMG / CNN Brasil) · 51 jogos restantes · Luta contra o Z4 e Simulação Monte Carlo
+        </p>
+      </div>
+      <div class="header-actions">
+        <button class="btn-secondary" id="btnResetAll" title="Restaurar classificação original da 33ª rodada">
+          ↺ Zerar Palpites
+        </button>
+        <button class="btn-primary" id="btnRunSim">
+          <span class="btn-icon">⚡</span>
+          <span>Simular Monte Carlo (20.000x)</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container" id="main-content">
+    <!-- Coluna Esquerda: Risco e Jogos -->
+    <div class="left-col">
+
+      <!-- Notificação de Simulação em Andamento -->
+      <div class="sim-status" id="simStatus">
+        <div class="spinner"></div>
+        <div id="simStatusText">Calculando 20.000 cenários estocásticos com base nos seus palpites...</div>
+      </div>
+
+      <!-- Resumo do Z4 e Grupo de Risco -->
+      <div class="section-title">
+        <span>Probabilidade de Rebaixamento (Z4)</span>
+        <span style="font-size:0.75rem; text-transform:none; color:var(--text-dim);">
+          Linha de corte projetada: <strong style="color:var(--accent);">43 pontos</strong>
+        </span>
+      </div>
+
+      <div class="risk-grid" id="riskGrid"></div>
+
+      <!-- Presets de Cenários -->
+      <div class="presets-bar">
+        <span class="presets-label">⚡ Cenários Rápidos:</span>
+        <button class="chip-btn" id="presetCorinthians">Corinthians vence Botafogo e Grêmio</button>
+        <button class="chip-btn" id="presetInter">Inter vence Coritiba e Vitória</button>
+        <button class="chip-btn" id="presetGremio">Grêmio vence Mirassol e Bahia</button>
+        <button class="chip-btn" id="presetHomeWins">Lógica do Mandante (Todos vencem em casa)</button>
+        <button class="chip-btn" id="presetRandomRound">Gerar 1 Cenário Estatístico</button>
+      </div>
+
+      <!-- Grade de Jogos por Rodada -->
+      <div class="section-title">
+        <span>Confrontos Restantes (Rodadas 34 a 38 + Atrasado)</span>
+        <span style="font-size:0.75rem; text-transform:none; color:var(--text-dim);" id="matchesCount">51 jogos</span>
+      </div>
+
+      <div id="roundsList"></div>
+    </div>
+
+    <!-- Coluna Direita: Tabela de Classificação -->
+    <div class="right-col">
+      <div class="standings-card">
+        <div class="table-head">
+          <h2>Tabela em Tempo Real</h2>
+          <div class="table-cutoff-badge" id="simModeBadge">Classificação 33ªR</div>
+        </div>
+        <table class="league-table" aria-label="Tabela de classificação do Brasileirão 2026 - Pós 33ª rodada">
+          <thead>
+            <tr>
+              <th scope="row">#</th>
+              <th>Clube</th>
+              <th>Pts</th>
+              <th>J</th>
+              <th>V</th>
+              <th>SG</th>
+              <th>Risco Z4</th>
+            </tr>
+          </thead>
+          <tbody id="tableBody"></tbody>
+        </table>
+
+        <div class="legend-box">
+          <div class="legend-item"><div class="legend-bar" style="background:var(--libertadores);"></div> G4 (Libertadores)</div>
+          <div class="legend-item"><div class="legend-bar" style="background:var(--pre-libertadores);"></div> Pré-Libertadores</div>
+          <div class="legend-item"><div class="legend-bar" style="background:var(--sulamericana);"></div> Sul-Americana</div>
+          <div class="legend-item"><div class="legend-bar" style="background:var(--z4);"></div> Z4 (Rebaixamento)</div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    // --- 1. Dados Oficiais e Parâmetros Calibrados ---
+    const RAW_TEAMS = [
+      { name: "Flamengo", short: "FLA", color: "#cc0000", pts: 73, g: 33, w: 22, d: 7, l: 4, gf: 68, gc: 28, ufmg: 0.0, att: 0.307, def: 0.292 },
+      { name: "Palmeiras", short: "PAL", color: "#006437", pts: 70, g: 33, w: 20, d: 10, l: 3, gf: 56, gc: 22, ufmg: 0.0, att: 0.184, def: 0.409 },
+      { name: "Cruzeiro", short: "CRU", color: "#003b8e", pts: 57, g: 33, w: 17, d: 6, l: 10, gf: 52, gc: 46, ufmg: 0.0, att: 0.158, def: -0.065 },
+      { name: "Fluminense", short: "FLU", color: "#831d1d", pts: 54, g: 33, w: 15, d: 9, l: 9, gf: 52, gc: 42, ufmg: 0.0, att: 0.144, def: 0.012 },
+      { name: "Athletico-PR", short: "CAP", color: "#c8102e", pts: 54, g: 33, w: 15, d: 9, l: 9, gf: 50, gc: 40, ufmg: 0.0, att: 0.117, def: 0.056 },
+      { name: "Bahia", short: "BAH", color: "#0072ce", pts: 53, g: 33, w: 14, d: 11, l: 8, gf: 48, gc: 42, ufmg: 0.0, att: 0.082, def: 0.007 },
+      { name: "Atlético-MG", short: "CAM", color: "#222222", pts: 50, g: 33, w: 14, d: 8, l: 11, gf: 44, gc: 39, ufmg: 0.0, att: 0.023, def: 0.066 },
+      { name: "Santos", short: "SAN", color: "#444444", pts: 47, g: 33, w: 12, d: 11, l: 10, gf: 49, gc: 47, ufmg: 0.0, att: 0.082, def: -0.083 },
+      { name: "Bragantino", short: "BGT", color: "#d91f26", pts: 44, g: 33, w: 12, d: 8, l: 13, gf: 42, gc: 38, ufmg: 0.005, att: -0.034, def: 0.076 },
+      { name: "São Paulo", short: "SAO", color: "#b91c1c", pts: 43, g: 33, w: 12, d: 7, l: 14, gf: 39, gc: 39, ufmg: 0.024, att: -0.082, def: 0.052 },
+      { name: "Coritiba", short: "CFC", color: "#00552b", pts: 42, g: 33, w: 11, d: 9, l: 13, gf: 40, gc: 50, ufmg: 0.79, att: -0.076, def: -0.155 },
+      { name: "Botafogo", short: "BOT", color: "#111111", pts: 39, g: 33, w: 10, d: 9, l: 14, gf: 45, gc: 53, ufmg: 7.8, att: -0.016, def: -0.224 },
+      { name: "Vasco", short: "VAS", color: "#1f1f1f", pts: 38, g: 32, w: 10, d: 8, l: 14, gf: 40, gc: 49, ufmg: 8.2, att: -0.076, def: -0.150 },
+      { name: "Vitória", short: "VIT", color: "#dc2626", pts: 38, g: 33, w: 10, d: 8, l: 15, gf: 35, gc: 48, ufmg: 14.7, att: -0.158, def: -0.123 },
+      { name: "Grêmio", short: "GRE", color: "#0d80bf", pts: 37, g: 33, w: 9, d: 10, l: 14, gf: 37, gc: 44, ufmg: 36.5, att: -0.134, def: -0.046 },
+      { name: "Mirassol", short: "MIR", color: "#eab308", pts: 37, g: 33, w: 9, d: 10, l: 14, gf: 37, gc: 47, ufmg: 32.9, att: -0.134, def: -0.106 },
+      { name: "Corinthians", short: "COR", color: "#ffffff", pts: 36, g: 33, w: 9, d: 9, l: 15, gf: 36, gc: 42, ufmg: 42.7, att: -0.159, def: -0.009 },
+      { name: "Internacional", short: "INT", color: "#ef4444", pts: 35, g: 33, w: 8, d: 11, l: 14, gf: 37, gc: 42, ufmg: 57.2, att: -0.157, def: -0.014 },
+      { name: "Remo", short: "REM", color: "#1e3a8a", pts: 29, g: 33, w: 6, d: 11, l: 16, gf: 36, gc: 51, ufmg: 99.2, att: -0.219, def: -0.198 },
+      { name: "Chapecoense", short: "CHA", color: "#16a34a", pts: 21, g: 32, w: 4, d: 9, l: 19, gf: 32, gc: 66, ufmg: 99.99, att: -0.320, def: -0.457 }
+    ];
+
+    const FIXTURES_LIST = [
+      // Atrasado R21
+      { id: "R21_1", round: "21ª Rodada (Atrasado)", home: "Chapecoense", away: "Vasco", date: "14/11", direct: false },
+      // R34
+      { id: "R34_1", round: "34ª Rodada", home: "Athletico-PR", away: "Vasco", date: "04/11", direct: false },
+      { id: "R34_2", round: "34ª Rodada", home: "Botafogo", away: "Atlético-MG", date: "04/11", direct: false },
+      { id: "R34_3", round: "34ª Rodada", home: "Chapecoense", away: "Mirassol", date: "04/11", direct: false },
+      { id: "R34_4", round: "34ª Rodada", home: "Cruzeiro", away: "Bahia", date: "04/11", direct: false },
+      { id: "R34_5", round: "34ª Rodada", home: "Flamengo", away: "Grêmio", date: "04/11", direct: false },
+      { id: "R34_6", round: "34ª Rodada", home: "Internacional", away: "Coritiba", date: "04/11", direct: true, label: "Confronto Direto" },
+      { id: "R34_7", round: "34ª Rodada", home: "Palmeiras", away: "Remo", date: "04/11", direct: false },
+      { id: "R34_8", round: "34ª Rodada", home: "Bragantino", away: "Santos", date: "04/11", direct: false },
+      { id: "R34_9", round: "34ª Rodada", home: "São Paulo", away: "Corinthians", date: "04/11", direct: false, label: "Majestoso" },
+      { id: "R34_10", round: "34ª Rodada", home: "Vitória", away: "Fluminense", date: "04/11", direct: false },
+      // R35
+      { id: "R35_1", round: "35ª Rodada", home: "Corinthians", away: "Botafogo", date: "18/11", direct: true, label: "Decisivo" },
+      { id: "R35_2", round: "35ª Rodada", home: "Coritiba", away: "Santos", date: "18/11", direct: false },
+      { id: "R35_3", round: "35ª Rodada", home: "Cruzeiro", away: "Palmeiras", date: "18/11", direct: false },
+      { id: "R35_4", round: "35ª Rodada", home: "Flamengo", away: "Athletico-PR", date: "18/11", direct: false },
+      { id: "R35_5", round: "35ª Rodada", home: "Grêmio", away: "Bahia", date: "18/11", direct: false },
+      { id: "R35_6", round: "35ª Rodada", home: "Mirassol", away: "Atlético-MG", date: "18/11", direct: false },
+      { id: "R35_7", round: "35ª Rodada", home: "Remo", away: "Chapecoense", date: "18/11", direct: false },
+      { id: "R35_8", round: "35ª Rodada", home: "São Paulo", away: "Fluminense", date: "18/11", direct: false },
+      { id: "R35_9", round: "35ª Rodada", home: "Vasco", away: "Internacional", date: "18/11", direct: true, label: "Confronto Direto" },
+      { id: "R35_10", round: "35ª Rodada", home: "Vitória", away: "Bragantino", date: "18/11", direct: false },
+      // R36
+      { id: "R36_1", round: "36ª Rodada", home: "Atlético-MG", away: "Corinthians", date: "25/11", direct: false },
+      { id: "R36_2", round: "36ª Rodada", home: "Athletico-PR", away: "Remo", date: "25/11", direct: false },
+      { id: "R36_3", round: "36ª Rodada", home: "Bahia", away: "Coritiba", date: "25/11", direct: false },
+      { id: "R36_4", round: "36ª Rodada", home: "Botafogo", away: "São Paulo", date: "25/11", direct: false },
+      { id: "R36_5", round: "36ª Rodada", home: "Chapecoense", away: "Cruzeiro", date: "25/11", direct: false },
+      { id: "R36_6", round: "36ª Rodada", home: "Fluminense", away: "Mirassol", date: "25/11", direct: false },
+      { id: "R36_7", round: "36ª Rodada", home: "Internacional", away: "Vitória", date: "25/11", direct: true, label: "Confronto Direto" },
+      { id: "R36_8", round: "36ª Rodada", home: "Palmeiras", away: "Flamengo", date: "25/11", direct: false },
+      { id: "R36_9", round: "36ª Rodada", home: "Bragantino", away: "Vasco", date: "25/11", direct: false },
+      { id: "R36_10", round: "36ª Rodada", home: "Santos", away: "Grêmio", date: "25/11", direct: false },
+      // R37
+      { id: "R37_1", round: "37ª Rodada", home: "Atlético-MG", away: "Vasco", date: "29/11", direct: false },
+      { id: "R37_2", round: "37ª Rodada", home: "Botafogo", away: "Bahia", date: "29/11", direct: false },
+      { id: "R37_3", round: "37ª Rodada", home: "Chapecoense", away: "Palmeiras", date: "29/11", direct: false },
+      { id: "R37_4", round: "37ª Rodada", home: "Corinthians", away: "Grêmio", date: "29/11", direct: true, label: "Super Decisão" },
+      { id: "R37_5", round: "37ª Rodada", home: "Coritiba", away: "Flamengo", date: "29/11", direct: false },
+      { id: "R37_6", round: "37ª Rodada", home: "Fluminense", away: "Cruzeiro", date: "29/11", direct: false },
+      { id: "R37_7", round: "37ª Rodada", home: "Internacional", away: "Bragantino", date: "29/11", direct: false },
+      { id: "R37_8", round: "37ª Rodada", home: "Mirassol", away: "Athletico-PR", date: "29/11", direct: false },
+      { id: "R37_9", round: "37ª Rodada", home: "São Paulo", away: "Remo", date: "29/11", direct: false },
+      { id: "R37_10", round: "37ª Rodada", home: "Vitória", away: "Santos", date: "29/11", direct: false },
+      // R38
+      { id: "R38_1", round: "38ª Rodada", home: "Athletico-PR", away: "São Paulo", date: "02/12", direct: false },
+      { id: "R38_2", round: "38ª Rodada", home: "Cruzeiro", away: "Internacional", date: "02/12", direct: false },
+      { id: "R38_3", round: "38ª Rodada", home: "Flamengo", away: "Chapecoense", date: "02/12", direct: false },
+      { id: "R38_4", round: "38ª Rodada", home: "Grêmio", away: "Mirassol", date: "02/12", direct: true, label: "Confronto Direto" },
+      { id: "R38_5", round: "38ª Rodada", home: "Palmeiras", away: "Coritiba", date: "02/12", direct: false },
+      { id: "R38_6", round: "38ª Rodada", home: "Bragantino", away: "Fluminense", date: "02/12", direct: false },
+      { id: "R38_7", round: "38ª Rodada", home: "Remo", away: "Corinthians", date: "02/12", direct: false, label: "Decisivo" },
+      { id: "R38_8", round: "38ª Rodada", home: "Santos", away: "Botafogo", date: "02/12", direct: false },
+      { id: "R38_9", round: "38ª Rodada", home: "Vasco", away: "Vitória", date: "02/12", direct: true, label: "Confronto Direto" },
+      { id: "R38_10", round: "38ª Rodada", home: "Bahia", away: "Atlético-MG", date: "02/12", direct: false }
+    ];
+
+    // Mapeamento e Estado
+    const teamsMap = {};
+    RAW_TEAMS.forEach(t => { teamsMap[t.name] = t; });
+
+    // Estado dos palpites: matchId -> '1' | 'X' | '2' | null
+    const userPicks = {};
+
+    // Estado da simulação Monte Carlo por time
+    const simulatedProbs = {};
+    RAW_TEAMS.forEach(t => {
+      simulatedProbs[t.name] = t.ufmg; // Inicia com o valor de referência oficial
+    });
+
+    const LEAGUE_AVG = 1.33;
+    const HOME_ADV = 0.18;
+
+    // Calcula probabilidades exatas por Poisson para cada confronto
+    function calcOdds(homeName, awayName) {
+      const h = teamsMap[homeName];
+      const a = teamsMap[awayName];
+      const lh = LEAGUE_AVG * Math.exp(h.att + a.def + HOME_ADV / 2);
+      const la = LEAGUE_AVG * Math.exp(a.att + h.def - HOME_ADV / 2);
+
+      let ph = 0, px = 0, pa = 0;
+      for (let gh = 0; gh <= 8; gh++) {
+        const probGh = Math.exp(-lh) * Math.pow(lh, gh) / factorial(gh);
+        for (let ga = 0; ga <= 8; ga++) {
+          const probGa = Math.exp(-la) * Math.pow(la, ga) / factorial(ga);
+          const p = probGh * probGa;
+          if (gh > ga) ph += p;
+          else if (gh === ga) px += p;
+          else pa += p;
+        }
+      }
+      const sum = ph + px + pa;
+      return {
+        h: Math.round((ph / sum) * 100),
+        x: Math.round((px / sum) * 100),
+        a: Math.round((pa / sum) * 100),
+        lh: lh,
+        la: la
+      };
+    }
+
+    function factorial(n) {
+      let r = 1;
+      for (let i = 2; i <= n; i++) r *= i;
+      return r;
+    }
+
+    // Pré-computa odds
+    FIXTURES_LIST.forEach(f => {
+      f.odds = calcOdds(f.home, f.away);
+    });
+
+    // --- 2. Renderização da Tabela de Classificação ---
+    function computeCurrentStandings() {
+      // Clona estado base
+      const standings = RAW_TEAMS.map(t => ({
+        name: t.name,
+        short: t.short,
+        color: t.color,
+        pts: t.pts,
+        g: t.g,
+        w: t.w,
+        d: t.d,
+        l: t.l,
+        gf: t.gf,
+        gc: t.gc,
+        gd: t.gf - t.gc
+      }));
+
+      const stdMap = {};
+      standings.forEach(s => { stdMap[s.name] = s; });
+
+      // Aplica palpites definidos
+      FIXTURES_LIST.forEach(f => {
+        const pick = userPicks[f.id];
+        if (!pick) return;
+
+        const h = stdMap[f.home];
+        const a = stdMap[f.away];
+
+        h.g += 1;
+        a.g += 1;
+
+        if (pick === '1') {
+          h.pts += 3;
+          h.w += 1;
+          a.l += 1;
+          h.gf += 1; // Incremento representativo de saldo
+          a.gc += 1;
+        } else if (pick === 'X') {
+          h.pts += 1;
+          a.pts += 1;
+          h.d += 1;
+          a.d += 1;
+          h.gf += 1;
+          h.gc += 1;
+          a.gf += 1;
+          a.gc += 1;
+        } else if (pick === '2') {
+          a.pts += 3;
+          a.w += 1;
+          h.l += 1;
+          a.gf += 1;
+          h.gc += 1;
+        }
+        h.gd = h.gf - h.gc;
+        a.gd = a.gf - a.gc;
+      });
+
+      // Ordenação estrita: Pontos > Vitórias > Saldo > Gols Pró
+      standings.sort((a, b) => {
+        if (b.pts !== a.pts) return b.pts - a.pts;
+        if (b.w !== a.w) return b.w - a.w;
+        if (b.gd !== a.gd) return b.gd - a.gd;
+        return b.gf - a.gf;
+      });
+
+      return standings;
+    }
+
+    function renderStandings() {
+      const standings = computeCurrentStandings();
+      const tbody = document.getElementById("tableBody");
+      tbody.innerHTML = "";
+
+      standings.forEach((t, i) => {
+        const pos = i + 1;
+        let zoneClass = "";
+        if (pos <= 4) zoneClass = "zone-g4";
+        else if (pos <= 6) zoneClass = "zone-pre";
+        else if (pos <= 12) zoneClass = "zone-sula";
+        else if (pos >= 17) zoneClass = "zone-z4";
+
+        const prob = simulatedProbs[t.name] ?? 0;
+        let probClass = "safe";
+        if (prob >= 50) probClass = "danger";
+        else if (prob >= 15) probClass = "warning";
+
+        const tr = document.createElement("tr");
+        tr.className = zoneClass;
+        tr.innerHTML = `
+          <td><strong>${pos}</strong></td>
+          <td>
+            <div class="team-cell">
+              <span class="team-dot" style="background:${t.color};"></span>
+              <span>${t.name}</span>
+            </div>
+          </td>
+          <td class="pts-col">${t.pts}</td>
+          <td>${t.g}</td>
+          <td>${t.w}</td>
+          <td>${t.gd > 0 ? "+" + t.gd : t.gd}</td>
+          <td>
+            <span class="prob-badge-mini ${probClass}">${prob.toFixed(1)}%</span>
+          </td>
+        `;
+        tbody.appendChild(tr);
+      });
+
+      // Atualiza badge de palpites
+      const totalPicks = Object.values(userPicks).filter(Boolean).length;
+      const badge = document.getElementById("simModeBadge");
+      if (totalPicks === 0) {
+        badge.textContent = "Classificação 33ªR";
+        badge.style.color = "var(--accent)";
+      } else {
+        badge.textContent = `${totalPicks} palpite(s) fixado(s)`;
+        badge.style.color = "var(--warning)";
+      }
+    }
+
+    // --- 3. Renderização dos Cards do Grupo de Risco ---
+    function renderRiskCards() {
+      const grid = document.getElementById("riskGrid");
+      grid.innerHTML = "";
+
+      // Times do grupo de risco ordenados por ameaça
+      const riskTeams = ["Chapecoense", "Remo", "Internacional", "Corinthians", "Grêmio", "Mirassol", "Vitória", "Vasco", "Botafogo", "Coritiba"];
+
+      riskTeams.forEach(name => {
+        const t = teamsMap[name];
+        const prob = simulatedProbs[name] ?? t.ufmg;
+
+        let riskLevel = "safe";
+        if (prob >= 50) riskLevel = "danger";
+        else if (prob >= 20) riskLevel = "warning";
+
+        const card = document.createElement("div");
+        card.className = `risk-card ${riskLevel}`;
+        card.innerHTML = `
+          <div class="risk-card-head">
+            <div class="team-badge">
+              <span class="team-dot" style="background:${t.color};"></span>
+              <span>${name}</span>
+            </div>
+            <span class="current-pts">${t.pts} pts</span>
+          </div>
+          <div class="prob-val ${riskLevel}">${prob.toFixed(1)}%</div>
+          <div class="prob-sub">
+            <span>Risco Rebaixamento</span>
+            <span>UFMG: ${t.ufmg.toFixed(1)}%</span>
+          </div>
+          <div class="progress-bar-bg">
+            <div class="progress-bar-fill" style="width: ${Math.min(100, Math.max(0, prob))}%; background: ${riskLevel === 'danger' ? 'var(--danger)' : riskLevel === 'warning' ? 'var(--warning)' : 'var(--success)'};"></div>
+          </div>
+        `;
+        grid.appendChild(card);
+      });
+    }
+
+    // --- 4. Renderização das Rodadas e Jogos ---
+    function renderFixtures() {
+      const container = document.getElementById("roundsList");
+      container.innerHTML = "";
+
+      // Agrupa por rodada
+      const roundsMap = {};
+      FIXTURES_LIST.forEach(f => {
+        if (!roundsMap[f.round]) roundsMap[f.round] = [];
+        roundsMap[f.round].push(f);
+      });
+
+      for (const [roundName, matches] of Object.entries(roundsMap)) {
+        const roundCard = document.createElement("div");
+        roundCard.className = "round-container";
+
+        const head = document.createElement("div");
+        head.className = "round-header";
+        head.innerHTML = `
+          <span>${roundName}</span>
+          <span style="font-size:0.72rem; color:var(--text-dim);">${matches[0].date}</span>
+        `;
+        roundCard.appendChild(head);
+
+        const list = document.createElement("div");
+        list.className = "round-matches";
+
+        matches.forEach(m => {
+          const row = document.createElement("div");
+          row.className = "match-row";
+          row.id = `match-${m.id}`;
+
+          const currentPick = userPicks[m.id];
+
+          let tagHtml = "";
+          if (m.label) {
+            const tagClass = m.label.includes("Direto") || m.label.includes("Decisão") ? "tag-direct" : "tag-decisive";
+            tagHtml = `<span class="badge-tag ${tagClass}">${m.label}</span>`;
+          }
+
+          row.innerHTML = `
+            <div class="match-teams" aria-label="${m.home} contra ${m.away}">
+              <div class="team-item home">
+                <span class="team-dot" style="background:${teamsMap[m.home].color};"></span>
+                <span>${m.home}</span>
+              </div>
+              <span class="vs-label">x</span>
+              <div class="team-item away">
+                <span>${m.away}</span>
+                <span class="team-dot" style="background:${teamsMap[m.away].color};"></span>
+              </div>
+              ${tagHtml}
+            </div>
+            <div class="match-buttons">
+              <button class="pred-btn ${currentPick === '1' ? 'active-1' : ''}" data-id="${m.id}" data-pick="1" title="Vitória do ${m.home}" aria-label="Palpite: Vitória do ${m.home}">
+                1
+                <span class="odds">${m.odds.h}%</span>
+              </button>
+              <button class="pred-btn ${currentPick === 'X' ? 'active-x' : ''}" data-id="${m.id}" data-pick="X" title="Empate" aria-label="Palpite: Empate">
+                X
+                <span class="odds">${m.odds.x}%</span>
+              </button>
+              <button class="pred-btn ${currentPick === '2' ? 'active-2' : ''}" data-id="${m.id}" data-pick="2" title="Vitória do ${m.away}" aria-label="Palpite: Vitória do ${m.away}">
+                2
+                <span class="odds">${m.odds.a}%</span>
+              </button>
+              ${currentPick ? `<button class="btn-clear-match" data-clear="${m.id}" title="Limpar palpite" aria-label="Limpar palpite">✕</button>` : ''}
+            </div>
+          `;
+          list.appendChild(row);
+        });
+
+        roundCard.appendChild(list);
+        container.appendChild(roundCard);
+      }
+
+      // Event Listeners nos botões de aposta/palpite
+      container.querySelectorAll(".pred-btn").forEach(btn => {
+        btn.addEventListener("click", (e) => {
+          const id = btn.getAttribute("data-id");
+          const pick = btn.getAttribute("data-pick");
+          if (userPicks[id] === pick) {
+            delete userPicks[id];
+          } else {
+            userPicks[id] = pick;
+          }
+          // Update ARIA labels after state change
+          const row = btn.closest(".match-row");
+          const homeTeam = row.querySelector(".team-item.home span:last-child").textContent;
+          const awayTeam = row.querySelector(".team-item.away span").textContent;
+          btn.setAttribute("aria-label", pick === "1" ? `Palpite: Vitória do ${homeTeam}` : pick === "X" ? "Palpite: Empate" : `Palpite: Vitória do ${awayTeam}`);
+          refreshUI();
+        });
+      });
+
+      container.querySelectorAll(".btn-clear-match").forEach(btn => {
+        btn.addEventListener("click", () => {
+          const id = btn.getAttribute("data-clear");
+          delete userPicks[id];
+          refreshUI();
+        });
+      });
+    }
+
+    function refreshUI() {
+      renderStandings();
+      renderRiskCards();
+      renderFixtures();
+    }
+
+    // --- 5. Motor Monte Carlo no Navegador ---
+    function runClientMonteCarlo(nSims = 20000) {
+      const statusBox = document.getElementById("simStatus");
+      const statusText = document.getElementById("simStatusText");
+      const btnRun = document.getElementById("btnRunSim");
+
+      statusBox.style.display = "flex";
+      btnRun.disabled = true;
+      statusText.textContent = `Rodando ${nSims.toLocaleString()} simulações estocásticas com base nos seus palpites...`;
+
+      setTimeout(() => {
+        const teamNames = RAW_TEAMS.map(t => t.name);
+        const nTeams = teamNames.length;
+        const nameToIdx = {};
+        teamNames.forEach((n, i) => { nameToIdx[n] = i; });
+
+        // Contagem de rebaixamentos
+        const relCounts = new Uint32Array(nTeams);
+
+        // Pontos iniciais
+        const basePts = new Int16Array(nTeams);
+        const baseW = new Int16Array(nTeams);
+        const baseGf = new Int16Array(nTeams);
+        const baseGc = new Int16Array(nTeams);
+
+        RAW_TEAMS.forEach((t, i) => {
+          basePts[i] = t.pts;
+          baseW[i] = t.w;
+          baseGf[i] = t.gf;
+          baseGc[i] = t.gc;
+        });
+
+        // Prepara jogos
+        const matchesData = FIXTURES_LIST.map(f => {
+          return {
+            hIdx: nameToIdx[f.home],
+            aIdx: nameToIdx[f.away],
+            lh: f.odds.lh,
+            la: f.odds.la,
+            fixed: userPicks[f.id] || null
+          };
+        });
+
+        function samplePoisson(lambda) {
+          const L = Math.exp(-lambda);
+          let k = 0;
+          let p = 1.0;
+          do {
+            k++;
+            p *= Math.random();
+          } while (p > L);
+          return k - 1;
+        }
+
+        // Loop Monte Carlo
+        const P = new Int16Array(nTeams);
+        const W = new Int16Array(nTeams);
+        const GF = new Int16Array(nTeams);
+        const GC = new Int16Array(nTeams);
+        const order = new Int8Array(nTeams);
+
+        for (let sim = 0; sim < nSims; sim++) {
+          P.set(basePts);
+          W.set(baseW);
+          GF.set(baseGf);
+          GC.set(baseGc);
+
+          for (let m = 0; m < matchesData.length; m++) {
+            const match = matchesData[m];
+            const hi = match.hIdx;
+            const ai = match.aIdx;
+
+            let gh, ga;
+            if (match.fixed === '1') {
+              gh = 1; ga = 0;
+            } else if (match.fixed === 'X') {
+              gh = 1; ga = 1;
+            } else if (match.fixed === '2') {
+              gh = 0; ga = 1;
+            } else {
+              gh = samplePoisson(match.lh);
+              ga = samplePoisson(match.la);
+            }
+
+            GF[hi] += gh; GC[hi] += ga;
+            GF[ai] += ga; GC[ai] += gh;
+
+            if (gh > ga) {
+              P[hi] += 3; W[hi] += 1;
+            } else if (ga > gh) {
+              P[ai] += 3; W[ai] += 1;
+            } else {
+              P[hi] += 1; P[ai] += 1;
+            }
+          }
+
+          // Ordena times
+          for (let i = 0; i < nTeams; i++) order[i] = i;
+
+          order.sort((a, b) => {
+            if (P[b] !== P[a]) return P[b] - P[a];
+            if (W[b] !== W[a]) return W[b] - W[a];
+            const gda = GF[a] - GC[a];
+            const gdb = GF[b] - GC[b];
+            if (gdb !== gda) return gdb - gda;
+            return GF[b] - GF[a];
+          });
+
+          // Posições 16, 17, 18, 19 são o Z4
+          for (let r = 16; r < 20; r++) {
+            relCounts[order[r]]++;
+          }
+        }
+
+        // Atualiza probabilidades
+        RAW_TEAMS.forEach((t, i) => {
+          simulatedProbs[t.name] = (relCounts[i] / nSims) * 100;
+        });
+
+        statusBox.style.display = "none";
+        btnRun.disabled = false;
+        refreshUI();
+      }, 50);
+    }
+
+    // --- 6. Presets e Ações Rápidas ---
+    document.getElementById("btnResetAll").addEventListener("click", () => {
+      for (const k in userPicks) delete userPicks[k];
+      RAW_TEAMS.forEach(t => { simulatedProbs[t.name] = t.ufmg; });
+      refreshUI();
+    });
+
+    document.getElementById("btnRunSim").addEventListener("click", () => {
+      runClientMonteCarlo(20000);
+    });
+
+    document.getElementById("presetCorinthians").addEventListener("click", () => {
+      // Corinthians vence Botafogo (R35) e Grêmio (R37)
+      userPicks["R35_1"] = "1";
+      userPicks["R37_4"] = "1";
+      runClientMonteCarlo(15000);
+    });
+
+    document.getElementById("presetInter").addEventListener("click", () => {
+      // Inter vence Coritiba (R34) e Vitória (R36)
+      userPicks["R34_6"] = "1";
+      userPicks["R36_7"] = "1";
+      runClientMonteCarlo(15000);
+    });
+
+    document.getElementById("presetGremio").addEventListener("click", () => {
+      // Grêmio vence Bahia (R35) e Mirassol (R38)
+      userPicks["R35_5"] = "1";
+      userPicks["R38_4"] = "1";
+      runClientMonteCarlo(15000);
+    });
+
+    document.getElementById("presetHomeWins").addEventListener("click", () => {
+      FIXTURES_LIST.forEach(f => {
+        userPicks[f.id] = "1";
+      });
+      refreshUI();
+    });
+
+    document.getElementById("presetRandomRound").addEventListener("click", () => {
+      // Sorteia com base nas odds de cada jogo
+      FIXTURES_LIST.forEach(f => {
+        const rand = Math.random() * 100;
+        if (rand < f.odds.h) {
+          userPicks[f.id] = "1";
+        } else if (rand < f.odds.h + f.odds.x) {
+          userPicks[f.id] = "X";
+        } else {
+          userPicks[f.id] = "2";
+        }
+      });
+      refreshUI();
+    });
+
+    // Inicia UI
+    refreshUI();
+  </script>
+</body>
+</html>
