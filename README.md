@@ -38,4 +38,4 @@ Jogos das rodadas 34 a 38 mais o jogo atrasado da rodada 21:
 - Acessibilidade: skip-link, focus-visible states, ARIA labels completos
 - Tipografia: variáveis --font-display e --font-body
 - UI Polish: transições suaves, cursor:pointer em elementos clicáveis
-- Código limpo com comentários explicativos
+- Código limpo com comentários explicativos# brasileirao-rebaixamento-2026
