@@ -68,6 +68,10 @@ Este projeto incorpora melhores práticas de desenvolvimento frontend:
 - `z4-rebaixamento` - Contexto de luta contra descenso
 - `accessibility` - ARIA, focus states, semantic HTML
 - `sports-statistics` - Modelos estatísticos para esportes
+- `web-design` - Design web responsivo com tema dark
+- `javascript` - Lógica pura (sem bibliotecas externas)
+- `data-visualization` - Cards de risco e tabela interativa
+- `frontend` - Aplicação client-side pura
 
 ### 🚀 Deploy Rápido e GitHub Pages
 
