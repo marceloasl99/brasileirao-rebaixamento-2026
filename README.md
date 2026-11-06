@@ -1,134 +1,172 @@
-# brasileirao-rebaixamento-2026
+# ⚽ Simulador de Rebaixamento — Brasileirão 2026
 
-## 📊 Simulador de Rebaixamento Brasileirão 2026 — Pós 33ª Rodada
+![Brasileirão 2026](https://img.shields.io/badge/Brasileir%C3%A3o-2026-green?style=for-the-badge)
+![34ª Rodada](https://img.shields.io/badge/34ª%20Rodada-05%2F11%2F2026-blue?style=for-the-badge)
+![Monte Carlo](https://img.shields.io/badge/Monte%20Carlo-20.000x-orange?style=for-the-badge)
+![Modelo UFMG](https://img.shields.io/badge/Estat%C3%ADstica-UFMG%20%2F%20Poisson-purple?style=for-the-badge)
+![GitHub Pages](https://img.shields.io/badge/Deploy-GitHub%20Pages-brightgreen?style=for-the-badge&logo=github)
+![Licença MIT](https://img.shields.io/badge/Licen%C3%A7a-MIT-yellow?style=for-the-badge)
 
-Uma aplicação web interativa que simula as chances de rebaixamento do Brasileirão 2026 após a 33ª rodada, utilizando um modelo estocástico calibrado por UFMG/CNN Brasil com **20.000 simulações Monte Carlo**.
-
-### 📅 Dados Atuais (02/11/2026)
-
-- **Rodada referência**: 33ª — 43 pontos como linha de corte projetada para o Z4
-- **Jogos restantes**: 51 confrontos (Rodadas 34 a 38 + jogo atrasado R21)
-- **Status**: Interface otimizada com melhorias de acessibilidade e UI/UX
-
-### 🎯 Principais Recursos
-
-| Recurso | Descrição |
-|---------|-----------|
-| **Probabilidade Z4** | Linha de corte projetada: 43 pontos — times abaixo têm risco de rebaixamento |
-| **Cards de Risco** | Visualização por time com barras de progresso e porcentagens UFMG calibradas |
-| **Simulação Monte Carlo** | 20.000 cenários estatísticos para cálculo de chances reais de rebaixamento |
-| **Palpites Interativos** | Selecione vencedores (1, X, 2) para cada um dos 51 jogos restantes |
-| **Presets Rápidos** | Cenários pré-definidos: mandante vence, resultados específicos, lógica aleatória |
-| **Tabela Completa** | Classificação em tempo real com zonas: G4 (Libertadores), Pré-Libertadores, Sul-Americana, Z4 |
-
-### 🏆 Tabela de Posicionamento (Referência 33ª Rodada — 02/11/2026)
-
-<small>📊 Dados baseados em 20.000 simulações Monte Carlo · Modelo UFMG/CNN Brasil · Atualizado em 02/11/2026</small>
-
-| # | Time | 📍 | Pts | J | V | E | D | SG | 📉 Z4 | 🏷️ Classificação |
-|---|------|-----|-----|---|---|---|---|----|-------|------------------|
-| 1 | 🏆 **Flamengo** | 1st | 73 | 33 | 22 | 7 | 4 | +40 | 0.0% | 🟢 G4 |
-| 2 | 🥈 **Palmeiras** | 2nd | 70 | 33 | 20 | 10 | 3 | +34 | 0.1% | 🟢 G4 |
-| 3 | 🥉 **Cruzeiro** | 3rd | 57 | 33 | 17 | 6 | 10 | +6 | 0.3% | 🟢 G4 |
-| 4 | 🅿️ **Fluminense** | 4th | 54 | 33 | 15 | 9 | 9 | +10 | 0.5% | 🟢 G4 |
-| 5 | ⭐ **Athletico-PR** | 5th | 54 | 33 | 15 | 9 | 9 | +10 | 0.5% | 🟢 G4 |
-| 6 | 🅱️ **Bahia** | 6th | 53 | 33 | 14 | 11 | 8 | +6 | 0.7% | 🟢 G4 |
-| 7 | ⚪ **Atlético-MG** | 7th | 50 | 33 | 14 | 8 | 11 | +5 | 1.2% | 🟡 Z4 |
-| 8 | 🅾️ **Santos** | 8th | 47 | 33 | 12 | 11 | 10 | +2 | 2.1% | 🟡 Z4 |
-| 9 | 🅿️ **Bragantino** | 9th | 44 | 33 | 12 | 8 | 13 | +4 | 3.5% | 🟡 Z4 |
-| 10 | 🆚 **São Paulo** | 10th | 43 | 33 | 12 | 7 | 14 | 0 | 5.8% | 🟠 Z4 |
-| 11 | 🆘 **Coritiba** | 11th | 42 | 33 | 11 | 9 | 13 | -10 | 8.7% | 🟠 Z4 |
-| 12 | 🆘 **Botafogo** | 12th | 39 | 33 | 10 | 9 | 14 | -8 | 12.3% | 🟠 Z4 |
-| 13 | 🆘 **Vasco** | 13th | 38 | 32 | 10 | 8 | 14 | -9 | 15.4% | 🟠 Z4 |
-| 14 | 🆘 **Vitória** | 14th | 38 | 33 | 10 | 8 | 15 | -13 | 18.9% | 🟠 Z4 |
-| 15 | 🆘 **Grêmio** | 15th | 37 | 33 | 9 | 10 | 14 | -7 | 22.1% | 🟠 Z4 |
-| 16 | 🆘 **Mirassol** | 16th | 37 | 33 | 9 | 10 | 14 | -10 | 25.3% | 🟥 ↓ Z4 |
-| 17 | 🆘 **Corinthians** | 17th | 36 | 33 | 9 | 9 | 15 | -6 | 30.1% | 🟥 ↓ Z4 |
-| 18 | 🆘 **Internacional** | 18th | 35 | 33 | 8 | 11 | 14 | -5 | 35.7% | 🟥 ↓ Z4 |
-| 19 | 🆘 **Remo** | 19th | 29 | 33 | 6 | 11 | 16 | -15 | 52.3% | 🟥 ↓ Z4 |
-| 20 | 🆘 **Chapecoense** | 20th | 21 | 32 | 4 | 9 | 19 | -34 | 89.6% | 🟥 ↓ Z4 |
-
-**Legenda de Risco**:
-- 🟢 **G4** = Classificação para Libertadores (Posições 1-4)
-- 🟡 **Z4** = Zona de rebaixamento (Posições 16-20)
-- 🟠 **Atenção** = Próximo do Z4 (Posições 7-15)
-- 🟥 **↓ Z4** = Z4 consolidado (Posições 16-20)
-
-**Fonte**: Modelo Estocástico Calibrado (UFMG / CNN Brasil) · 20.000 simulações Monte Carlo · Dados: 02/11/2026 (Pós-33ª Rodada)
-
-> ⚠️ **Observação importante**: As probabilidades de rebaixamento (📉 Z4) são geradas por simulação estatística Monte Carlo com 20.000 cenários, baseadas nos parâmetros de ataque/defesa de cada time e nos palpites do usuário. A "Linha de corte projetada" de **43 pontos** indica a quantidade de pontos que, em média, manteria o time fora do Z4 nesta reta final com 51 jogos restantes.
-
-> 💡 **Dica**: Times com **menos de 43 pontos** estão matematicamente na zona de rebaixamento (Z4). A probabilidade mostra a chance estatística de rebaixamento baseado no desempenho restante de temporada.
-
-### 🛠️ Tecnologias Utilizadas
-
-- **HTML5** com semantic markup e ARIA labels para acessibilidade
-- **CSS3** com variáveis customizadas, tema dark e focus-visible states
-- **JavaScript Puro** — simulação Monte Carlo com amostragem Poisson
-- **Responsive Design** — grid adaptativa para mobile e desktop
-
-### 📸 Screenshots da Interface
-
-> *Capture screenshots após rodar a simulação ou ao visualizar o estado atual do campeonato. Abra o aplicativo em `http://localhost:8000` ou acesse a versão online no GitHub Pages.*
-
-#### Principais prints recomendados:
-
-1. **Tabela Completa** - Mostrando a classificação com cores de zona (G4, Pré-Libertadores, Sul-Americana, Z4) e probabilidades de rebaixamento ao vivo
-
-2. **Cards de Risco** - Visualização das porcentagens de rebaixamento por time com barras de progresso e valores UFMG
-
-3. **Modal de Simulação** - Tela do Monte Carlo em execução com spinner e texto "Calculando 20.000 cenários estocásticos..."
-
-4. **Presets Rápidos** - Interface com os botões de cenários rápidos (Corinthians vence, Lógica do Mandante, Aleatório, etc.)
-
-5. **Gráfico de Probabilidade** - A visualização das barras de progresso ao lado dos times no Z4, mostrando níveis de risco (safe/warning/danger)
-
-#### Como capturar:
-
-```bash
-# No navegador (Desktop):
-# - PrtScn (Print Screen) e colar em editores de imagem
-# - Cmd + Shift + 4 (Mac) para selecionar área
-# - Win + Shift + S (Windows) para recorte inteligente
-
-# Ou use a função de print screen do seu SO
-# As imagens podem ser salvas em PNG ou JPEG
-
-# Recomendado: usar a versão mobile/desktop responsiva
-# Testando em diferentes larguras de tela (375px, 768px, 1440px)
-```
-
-#### Exemplos de o que mostrar nas prints:
-
-- **Times no Z4** com barras vermelhas (perigo) ou amarelas (atenção)
-- **Líder da tabela** (Flamengo com 73 pontos)
-- **Zona de classificação** para Libertadores (G4)
-- **Probabilidades individuais** de cada time (ex: "Vasco: 15.4%")
-- **Interface dark theme** com o tema visual do projeto
-
-### 🚀 Deploy Rápido e GitHub Pages
-
-A aplicação pode ser visualizada diretamente pelo GitHub Pages:
-
-🌐 **URL ao vivo**: https://marceloasl99.github.io/brasileirao-rebaixamento-2026/
-
-```bash
-# Clone o repositório
-git clone https://github.com/marceloasl99/brasileirao-rebaixamento-2026.git
-
-# Acesse a pasta
-cd brasileirao-rebaixamento-2026
-
-# Ou abra diretamente o index.html em qualquer navegador
-open index.html
-```
-
-O GitHub Pages já está configurado para servir o `index.html` da branch `main`. As alterações no repositório são refletidas no ar em até 1 minuto.
-
-### 📄 Licença
-
-Este projeto está licenciado sob os termos da MIT License.
+> 🌐 **Acesse a aplicação ao vivo no GitHub Pages:**  
+> **[https://marceloasl99.github.io/brasileirao-rebaixamento-2026/](https://marceloasl99.github.io/brasileirao-rebaixamento-2026/)**
 
 ---
 
-**Projeto de simulação estatística para o Brasileirão 2026**
+## 📌 Sobre o Projeto
+
+Uma aplicação web interativa em página única (*Single-Page Application*), desenvolvida em **HTML5, CSS3 e Vanilla JavaScript puro** (sem dependências ou frameworks externos), que simula todas as probabilidades e cenários da reta final do **Campeonato Brasileiro de 2026**.
+
+O simulador combina um **modelo estocástico de gols via Distribuição de Poisson** calibrado com dados oficiais da **UFMG / CNN Brasil** e um motor de **20.000 simulações de Monte Carlo** executadas diretamente no navegador em alta performance com *TypedArrays*.
+
+---
+
+## 🚨 Panorama Atual do Campeonato (Atualizado em 05/11/2026)
+
+Com a realização de **8 das 10 partidas da 34ª rodada**, a disputa contra o rebaixamento atingiu seu momento mais dramático:
+
+* 🟥 **Chapecoense matematicamente rebaixada**: Ao perder em casa por 2 a 1 para o Mirassol na Arena Condá, a Chapecoense permaneceu com 21 pontos e confirmou seu descenso à **Série B de 2027**, tornando-se o primeiro rebaixado confirmado da temporada.
+* 🟥 **Remo à beira do abismo (99,56% de risco)**: A goleada sofrida por 5 a 1 diante do Palmeiras deixou a equipe paraense estacionada nos 29 pontos, necessitando de uma combinação estatística quase impossível para escapar.
+* 🔥 **Z4 em chamas com gigantes**:
+  * **Grêmio (60,4% de risco)**: A derrota por 3 a 1 para o líder Flamengo no Maracanã empurrou o Tricolor gaúcho para a 18ª posição com 37 pontos.
+  * **Corinthians (55,0% de risco)**: O empate em 0 a 0 no clássico Majestoso contra o São Paulo manteve o Timão na 17ª posição com 37 pontos (à frente do Grêmio no saldo de gols: -6 vs -9).
+  * **Internacional (40,8% de risco)**: Vitória vital por 1 a 0 sobre o Coritiba no Beira-Rio fez o Colorado saltar para 38 pontos na 16ª posição, deixando o Z4 mas ainda sob forte pressão.
+* 🛡️ **Alívio para Vasco e Botafogo**: As vitórias do Vasco sobre o Athletico-PR (3 a 1) e do Botafogo sobre o Atlético-MG (1 a 0) derrubaram o risco de rebaixamento de ambos para menos de 2%.
+* 🎯 **Linha de Corte Projetada**: **42 a 43 pontos** para a permanência na Série A.
+
+---
+
+## 📅 Placares da 34ª Rodada (Jogos Realizados até Hoje — 05/11/2026)
+
+| Data | Mandante | Placar | Visitante | Local | Impacto Principal |
+| :---: | :--- | :---: | :--- | :--- | :--- |
+| **02/11** | **Red Bull Bragantino** | **2 x 1** | Santos | Nabi Abi Chedid | Bragantino sobe para 47 pts; Santos fica em alerta |
+| **03/11** | Chapecoense | **1 x 2** | **Mirassol** | Arena Condá | **Chapecoense rebaixada à Série B**; Mirassol respira (40 pts) |
+| **03/11** | **Internacional** | **1 x 0** | Coritiba | Beira-Rio | Inter pula para 38 pts e sai do Z4; Coxa estaciona nos 42 pts |
+| **04/11** | Athletico-PR | **1 x 3** | **Vasco da Gama** | Ligga Arena | Vasco chega a 41 pts e reduz risco de queda para 1,8% |
+| **04/11** | **Flamengo** | **3 x 1** | Grêmio | Maracanã | Mengão consolida liderança (76 pts); Grêmio entra no Z4 |
+| **04/11** | **Botafogo** | **1 x 0** | Atlético-MG | Nilton Santos | Glorioso vai a 42 pts e praticamente zera risco de Z4 (1,5%) |
+| **04/11** | São Paulo | **0 x 0** | Corinthians | MorumBIS | Timão soma 1 pt no Majestoso e segue no Z4 com 55% de risco |
+| **05/11** | **Palmeiras** | **5 x 1** | Remo | Nubank Parque | Verdão vai a 73 pts; Remo fica com 99,56% de risco |
+
+### ⏳ Jogos Restantes da 34ª Rodada e Pendências:
+* **Cruzeiro x Bahia** — Quinta-feira, 05/11, às 21h30 (Mineirão)
+* **Vitória x Fluminense** — Sexta-feira, 06/11, às 20h00 (Barradão)
+* **Chapecoense x Vasco** — Sábado, 14/11 (Jogo atrasado da 21ª Rodada)
+
+---
+
+## 🏆 Tabela Oficial de Classificação (Referência 05/11/2026)
+
+<small>📊 Dados estatísticos calibrados com o modelo UFMG / CNN Brasil · 20.000 simulações Monte Carlo</small>
+
+| # | Time | Pts | J | V | E | D | GP | GC | SG | 📉 Risco Z4 | 🏷️ Zona / Situação |
+| :-: | :--- | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :---: | :--- |
+| **1** | 🏆 **Flamengo** | **76** | 34 | 23 | 7 | 4 | 71 | 29 | +42 | 0.0% | 🟢 G4 (Libertadores) |
+| **2** | 🥈 **Palmeiras** | **73** | 34 | 21 | 10 | 3 | 61 | 23 | +38 | 0.0% | 🟢 G4 (Libertadores) |
+| **3** | 🥉 **Cruzeiro** | **57** | 33 | 17 | 6 | 10 | 52 | 46 | +6 | 0.0% | 🟢 G4 (Libertadores) |
+| **4** | 🅿️ **Fluminense** | **54** | 33 | 15 | 9 | 9 | 52 | 42 | +10 | 0.0% | 🟢 G4 (Libertadores) |
+| **5** | ⭐ **Athletico-PR** | **54** | 34 | 15 | 9 | 10 | 51 | 43 | +8 | 0.0% | 🔵 Pré-Libertadores |
+| **6** | 🅱️ **Bahia** | **53** | 33 | 14 | 11 | 8 | 48 | 42 | +6 | 0.0% | 🔵 Pré-Libertadores |
+| **7** | ⚪ **Atlético-MG** | **50** | 34 | 14 | 8 | 12 | 44 | 40 | +4 | 0.0% | 🟡 Sul-Americana |
+| **8** | 🅿️ **Red Bull Bragantino** | **47** | 34 | 13 | 8 | 13 | 44 | 39 | +5 | 0.0% | 🟡 Sul-Americana |
+| **9** | 🅾️ **Santos** | **47** | 34 | 12 | 11 | 11 | 50 | 49 | +1 | 0.5% | 🟡 Sul-Americana |
+| **10** | 🆚 **São Paulo** | **44** | 34 | 12 | 8 | 14 | 39 | 39 | 0 | 0.01% | 🟡 Sul-Americana |
+| **11** | ⭐ **Botafogo** | **42** | 34 | 11 | 9 | 14 | 46 | 53 | -7 | 1.5% | 🟡 Sul-Americana |
+| **12** | 🟢 **Coritiba** | **42** | 34 | 11 | 9 | 14 | 40 | 51 | -11 | 4.8% | 🟡 Sul-Americana |
+| **13** | 💢 **Vasco da Gama** | **41** | 33 | 11 | 8 | 14 | 43 | 50 | -7 | 1.8% | ⚪ Permanência (1 jogo a menos) |
+| **14** | 🟡 **Mirassol** | **40** | 34 | 10 | 10 | 14 | 39 | 48 | -9 | 16.1% | 🟠 Risco Moderado |
+| **15** | 🔴 **Vitória** | **38** | 33 | 10 | 8 | 15 | 35 | 48 | -13 | 21.4% | 🟠 Risco Elevado (1 jogo a menos) |
+| **16** | 🇦🇹 **Internacional** | **38** | 34 | 9 | 11 | 14 | 38 | 42 | -4 | 40.8% | 🟠 Limite do Z4 |
+| **17** | 🦅 **Corinthians** | **37** | 34 | 9 | 10 | 15 | 36 | 42 | -6 | **55.0%** | 🟥 **Zona de Rebaixamento (Z4)** |
+| **18** | 🇪🇪 **Grêmio** | **37** | 34 | 9 | 10 | 15 | 38 | 47 | -9 | **60.4%** | 🟥 **Zona de Rebaixamento (Z4)** |
+| **19** | 🦁 **Remo** | **29** | 34 | 6 | 11 | 17 | 37 | 56 | -19 | **99.56%** | 🟥 **Zona de Rebaixamento (Z4)** |
+| **20** | 🏹 **Chapecoense** | **21** | 33 | 4 | 9 | 20 | 33 | 68 | -35 | **100.0%** | 🪦 **REBAIXADA À SÉRIE B 2027** |
+
+---
+
+## 🧮 Motor Matemático e Algoritmo de Simulação
+
+### 1. Modelo de Gols por Distribuição de Poisson Bivariada
+O cálculo das probabilidades de cada confronto baseia-se na força ofensiva (`att`) e defensiva (`def`) de cada equipe, ponderadas pela média histórica da liga e vantagem do mando de campo:
+
+$$\lambda_h = \text{LEAGUE\_AVG} \times \exp(\text{att}_h + \text{def}_a + \text{HOME\_ADV}/2)$$
+$$\lambda_a = \text{LEAGUE\_AVG} \times \exp(\text{att}_a + \text{def}_h - \text{HOME\_ADV}/2)$$
+
+A probabilidade de ocorrência de cada resultado exato (de 0x0 até 8x8) é calculada pela função de probabilidade de Poisson:
+$$P(k; \lambda) = \frac{\lambda^k e^{-\lambda}}{k!}$$
+
+Com base nisso, os botões de aposta (**1**, **X**, **2**) exibem as chances reais em tempo real.
+
+### 2. Simulação Estocástica de Monte Carlo (20.000 iterações)
+* **Jogos Fixados**: Qualquer palpite escolhido pelo usuário é respeitado como resultado certo na simulação.
+* **Jogos Abertos**: Os gols de cada equipe são sorteados via gerador estocástico de Poisson (algoritmo de Knuth).
+* **Desempate Oficial da CBF**: A cada rodada simulada, a tabela final é recalculada estritamente por:
+  1. Pontos ganhos
+  2. Número de vitórias
+  3. Saldo de gols
+  4. Gols pró
+* As posições 17 a 20 (Z4) são computadas e as porcentagens de rebaixamento são atualizadas instantaneamente.
+
+---
+
+## 🎮 Funcionalidades da Aplicação
+
+* 🕹️ **Palpites Interativos nos 43 Jogos Restantes**: Selecione Mandante (1), Empate (X) ou Visitante (2) para projetar os cenários que salvam ou rebaixam seu time.
+* ⚡ **Presets de Cenários Rápidos**:
+  * *Corinthians vence Botafogo e Grêmio*
+  * *Inter vence Vitória e Bragantino*
+  * *Grêmio vence Mirassol e Bahia*
+  * *Lógica do Mandante (todos os donos da casa vencem)*
+  * *Gerar 1 Cenário Estatístico (sorteio aleatório ponderado pelas odds)*
+* 📊 **Cards de Risco no Z4**: Acompanhamento visual dos 10 times mais ameaçados com barras de progresso dinâmicas coloridas (seguro, atenção, perigo).
+* 📋 **Placares dos Jogos Encerrados**: Visualização clara de todos os confrontos já disputados na rodada.
+* ♿ **Acessibilidade e Design Responsivo**:
+  * Total conformidade com WCAG 2.1 (skip link, `:focus-visible`, labels ARIA dinâmicos).
+  * Design otimizado com tema dark moderno e legibilidade garantida em qualquer celular, tablet ou desktop.
+  * Zero dependências externas (sem frameworks pesados ou CDNs lentos).
+
+---
+
+## 🚀 Como Executar Localmente
+
+Como a aplicação é 100% autocontida em um único arquivo HTML, executá-la é simples e instantâneo:
+
+```bash
+# 1. Clone o repositório
+git clone https://github.com/marceloasl99/brasileirao-rebaixamento-2026.git
+
+# 2. Acesse o diretório
+cd brasileirao-rebaixamento-2026
+
+# 3. Abra o arquivo index.html no navegador diretamente:
+# No Windows:
+start index.html
+
+# No macOS:
+open index.html
+
+# No Linux:
+xdg-open index.html
+
+# Ou suba um servidor HTTP local simples:
+python -m http.server 8000
+# Acesse no navegador: http://localhost:8000
+```
+
+---
+
+## 🌐 Publicação no GitHub Pages
+
+O projeto já está configurado para publicação automática no **GitHub Pages** a partir do branch `main`. Qualquer atualização enviada ao repositório é refletida no ar em instantes.
+
+🔗 **Link de Produção**: [https://marceloasl99.github.io/brasileirao-rebaixamento-2026/](https://marceloasl99.github.io/brasileirao-rebaixamento-2026/)
+
+---
+
+## 📄 Licença
+
+Este projeto é disponibilizado sob os termos da licença **MIT**. Consulte o repositório para mais detalhes.
+
+---
+
+*Desenvolvido com foco em ciência de dados esportiva, probabilidades estocásticas e interfaces de alto desempenho.*

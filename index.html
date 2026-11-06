@@ -646,6 +646,66 @@
       color: var(--text-dim);
     }
 
+    /* Placares Encerrados */
+    .completed-matches-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 10px;
+      margin-bottom: 24px;
+    }
+
+    .completed-match-card {
+      background: #141a27;
+      border: 1px solid var(--card-border);
+      border-radius: 8px;
+      padding: 10px 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      transition: border-color 0.2s ease;
+    }
+
+    .completed-match-card:hover {
+      border-color: #2e3b52;
+    }
+
+    .completed-match-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.72rem;
+      color: var(--text-dim);
+    }
+
+    .completed-badge-done {
+      background: var(--success-bg);
+      color: var(--success);
+      font-weight: 700;
+      padding: 2px 7px;
+      border-radius: 999px;
+      font-size: 0.65rem;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+    }
+
+    .completed-match-teams {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .completed-score {
+      background: #1e2638;
+      border: 1px solid var(--card-border);
+      border-radius: 6px;
+      padding: 3px 10px;
+      font-weight: 800;
+      font-size: 0.95rem;
+      letter-spacing: 0.06em;
+      color: #fff;
+    }
+
     /* Modal / Indicador de Simulação */
     .sim-status {
       display: none;
@@ -728,14 +788,14 @@
       <div class="title-area">
         <h1>
           <span>Brasileirão 2026 — Simulador de Reta Final</span>
-          <span class="badge-live">Pós-Rodada 33</span>
+          <span class="badge-live">34ªR Parcial · 05/11/2026</span>
         </h1>
         <p class="header-desc">
-          Modelo Estocástico Calibrado (UFMG / CNN Brasil) · 51 jogos restantes · Luta contra o Z4 e Simulação Monte Carlo
+          Modelo Estocástico Calibrado (UFMG / CNN Brasil) · 43 jogos restantes · Chapecoense matematicamente rebaixada e Z4 em ebulição
         </p>
       </div>
       <div class="header-actions">
-        <button class="btn-secondary" id="btnResetAll" title="Restaurar classificação original da 33ª rodada">
+        <button class="btn-secondary" id="btnResetAll" title="Restaurar classificação atual da 34ª rodada (05/11/2026)">
           ↺ Zerar Palpites
         </button>
         <button class="btn-primary" id="btnRunSim">
@@ -760,17 +820,24 @@
       <div class="section-title">
         <span>Probabilidade de Rebaixamento (Z4)</span>
         <span style="font-size:0.75rem; text-transform:none; color:var(--text-dim);">
-          Linha de corte projetada: <strong style="color:var(--accent);">43 pontos</strong>
+          Linha de corte projetada: <strong style="color:var(--accent);">42-43 pontos</strong>
         </span>
       </div>
 
       <div class="risk-grid" id="riskGrid"></div>
 
+      <!-- Placares Encerrados da 34ª Rodada -->
+      <div class="section-title">
+        <span>Placares Encerrados — 34ª Rodada (Até Hoje, 05/11/2026)</span>
+        <span style="font-size:0.75rem; text-transform:none; color:var(--success);">8 jogos finalizados</span>
+      </div>
+      <div class="completed-matches-grid" id="completedGrid"></div>
+
       <!-- Presets de Cenários -->
       <div class="presets-bar">
         <span class="presets-label">⚡ Cenários Rápidos:</span>
         <button class="chip-btn" id="presetCorinthians">Corinthians vence Botafogo e Grêmio</button>
-        <button class="chip-btn" id="presetInter">Inter vence Coritiba e Vitória</button>
+        <button class="chip-btn" id="presetInter">Inter vence Vitória e Bragantino</button>
         <button class="chip-btn" id="presetGremio">Grêmio vence Mirassol e Bahia</button>
         <button class="chip-btn" id="presetHomeWins">Lógica do Mandante (Todos vencem em casa)</button>
         <button class="chip-btn" id="presetRandomRound">Gerar 1 Cenário Estatístico</button>
@@ -778,8 +845,8 @@
 
       <!-- Grade de Jogos por Rodada -->
       <div class="section-title">
-        <span>Confrontos Restantes (Rodadas 34 a 38 + Atrasado)</span>
-        <span style="font-size:0.75rem; text-transform:none; color:var(--text-dim);" id="matchesCount">51 jogos</span>
+        <span>Confrontos Restantes (43 Jogos — R34 Pendentes, R21 Atrasado e R35 a R38)</span>
+        <span style="font-size:0.75rem; text-transform:none; color:var(--accent);" id="matchesCount">43 jogos</span>
       </div>
 
       <div id="roundsList"></div>
@@ -790,9 +857,9 @@
       <div class="standings-card">
         <div class="table-head">
           <h2>Tabela em Tempo Real</h2>
-          <div class="table-cutoff-badge" id="simModeBadge">Classificação 33ªR</div>
+          <div class="table-cutoff-badge" id="simModeBadge">Classificação 34ªR (05/11)</div>
         </div>
-        <table class="league-table" aria-label="Tabela de classificação do Brasileirão 2026 - Pós 33ª rodada">
+        <table class="league-table" aria-label="Tabela de classificação do Brasileirão 2026 - Pós jogos da 34ª rodada em 05/11/2026">
           <thead>
             <tr>
               <th scope="row">#</th>
@@ -818,44 +885,48 @@
   </main>
 
   <script>
-    // --- 1. Dados Oficiais e Parâmetros Calibrados ---
+    // --- 1. Dados Oficiais e Parâmetros Calibrados (Atualizado em 05/11/2026) ---
     const RAW_TEAMS = [
-      { name: "Flamengo", short: "FLA", color: "#cc0000", pts: 73, g: 33, w: 22, d: 7, l: 4, gf: 68, gc: 28, ufmg: 0.0, att: 0.307, def: 0.292 },
-      { name: "Palmeiras", short: "PAL", color: "#006437", pts: 70, g: 33, w: 20, d: 10, l: 3, gf: 56, gc: 22, ufmg: 0.0, att: 0.184, def: 0.409 },
+      { name: "Flamengo", short: "FLA", color: "#cc0000", pts: 76, g: 34, w: 23, d: 7, l: 4, gf: 71, gc: 29, ufmg: 0.0, att: 0.315, def: 0.295 },
+      { name: "Palmeiras", short: "PAL", color: "#006437", pts: 73, g: 34, w: 21, d: 10, l: 3, gf: 61, gc: 23, ufmg: 0.0, att: 0.210, def: 0.405 },
       { name: "Cruzeiro", short: "CRU", color: "#003b8e", pts: 57, g: 33, w: 17, d: 6, l: 10, gf: 52, gc: 46, ufmg: 0.0, att: 0.158, def: -0.065 },
       { name: "Fluminense", short: "FLU", color: "#831d1d", pts: 54, g: 33, w: 15, d: 9, l: 9, gf: 52, gc: 42, ufmg: 0.0, att: 0.144, def: 0.012 },
-      { name: "Athletico-PR", short: "CAP", color: "#c8102e", pts: 54, g: 33, w: 15, d: 9, l: 9, gf: 50, gc: 40, ufmg: 0.0, att: 0.117, def: 0.056 },
+      { name: "Athletico-PR", short: "CAP", color: "#c8102e", pts: 54, g: 34, w: 15, d: 9, l: 10, gf: 51, gc: 43, ufmg: 0.0, att: 0.105, def: 0.040 },
       { name: "Bahia", short: "BAH", color: "#0072ce", pts: 53, g: 33, w: 14, d: 11, l: 8, gf: 48, gc: 42, ufmg: 0.0, att: 0.082, def: 0.007 },
-      { name: "Atlético-MG", short: "CAM", color: "#222222", pts: 50, g: 33, w: 14, d: 8, l: 11, gf: 44, gc: 39, ufmg: 0.0, att: 0.023, def: 0.066 },
-      { name: "Santos", short: "SAN", color: "#444444", pts: 47, g: 33, w: 12, d: 11, l: 10, gf: 49, gc: 47, ufmg: 0.0, att: 0.082, def: -0.083 },
-      { name: "Bragantino", short: "BGT", color: "#d91f26", pts: 44, g: 33, w: 12, d: 8, l: 13, gf: 42, gc: 38, ufmg: 0.005, att: -0.034, def: 0.076 },
-      { name: "São Paulo", short: "SAO", color: "#b91c1c", pts: 43, g: 33, w: 12, d: 7, l: 14, gf: 39, gc: 39, ufmg: 0.024, att: -0.082, def: 0.052 },
-      { name: "Coritiba", short: "CFC", color: "#00552b", pts: 42, g: 33, w: 11, d: 9, l: 13, gf: 40, gc: 50, ufmg: 0.79, att: -0.076, def: -0.155 },
-      { name: "Botafogo", short: "BOT", color: "#111111", pts: 39, g: 33, w: 10, d: 9, l: 14, gf: 45, gc: 53, ufmg: 7.8, att: -0.016, def: -0.224 },
-      { name: "Vasco", short: "VAS", color: "#1f1f1f", pts: 38, g: 32, w: 10, d: 8, l: 14, gf: 40, gc: 49, ufmg: 8.2, att: -0.076, def: -0.150 },
-      { name: "Vitória", short: "VIT", color: "#dc2626", pts: 38, g: 33, w: 10, d: 8, l: 15, gf: 35, gc: 48, ufmg: 14.7, att: -0.158, def: -0.123 },
-      { name: "Grêmio", short: "GRE", color: "#0d80bf", pts: 37, g: 33, w: 9, d: 10, l: 14, gf: 37, gc: 44, ufmg: 36.5, att: -0.134, def: -0.046 },
-      { name: "Mirassol", short: "MIR", color: "#eab308", pts: 37, g: 33, w: 9, d: 10, l: 14, gf: 37, gc: 47, ufmg: 32.9, att: -0.134, def: -0.106 },
-      { name: "Corinthians", short: "COR", color: "#ffffff", pts: 36, g: 33, w: 9, d: 9, l: 15, gf: 36, gc: 42, ufmg: 42.7, att: -0.159, def: -0.009 },
-      { name: "Internacional", short: "INT", color: "#ef4444", pts: 35, g: 33, w: 8, d: 11, l: 14, gf: 37, gc: 42, ufmg: 57.2, att: -0.157, def: -0.014 },
-      { name: "Remo", short: "REM", color: "#1e3a8a", pts: 29, g: 33, w: 6, d: 11, l: 16, gf: 36, gc: 51, ufmg: 99.2, att: -0.219, def: -0.198 },
-      { name: "Chapecoense", short: "CHA", color: "#16a34a", pts: 21, g: 32, w: 4, d: 9, l: 19, gf: 32, gc: 66, ufmg: 99.99, att: -0.320, def: -0.457 }
+      { name: "Atlético-MG", short: "CAM", color: "#222222", pts: 50, g: 34, w: 14, d: 8, l: 12, gf: 44, gc: 40, ufmg: 0.0, att: 0.015, def: 0.060 },
+      { name: "Bragantino", short: "BGT", color: "#d91f26", pts: 47, g: 34, w: 13, d: 8, l: 13, gf: 44, gc: 39, ufmg: 0.0, att: -0.025, def: 0.075 },
+      { name: "Santos", short: "SAN", color: "#444444", pts: 47, g: 34, w: 12, d: 11, l: 11, gf: 50, gc: 49, ufmg: 0.5, att: 0.075, def: -0.090 },
+      { name: "São Paulo", short: "SAO", color: "#b91c1c", pts: 44, g: 34, w: 12, d: 8, l: 14, gf: 39, gc: 39, ufmg: 0.01, att: -0.085, def: 0.055 },
+      { name: "Botafogo", short: "BOT", color: "#111111", pts: 42, g: 34, w: 11, d: 9, l: 14, gf: 46, gc: 53, ufmg: 1.5, att: -0.010, def: -0.210 },
+      { name: "Coritiba", short: "CFC", color: "#00552b", pts: 42, g: 34, w: 11, d: 9, l: 14, gf: 40, gc: 51, ufmg: 4.8, att: -0.080, def: -0.160 },
+      { name: "Vasco", short: "VAS", color: "#1f1f1f", pts: 41, g: 33, w: 11, d: 8, l: 14, gf: 43, gc: 50, ufmg: 1.8, att: -0.065, def: -0.140 },
+      { name: "Mirassol", short: "MIR", color: "#eab308", pts: 40, g: 34, w: 10, d: 10, l: 14, gf: 39, gc: 48, ufmg: 16.1, att: -0.125, def: -0.100 },
+      { name: "Vitória", short: "VIT", color: "#dc2626", pts: 38, g: 33, w: 10, d: 8, l: 15, gf: 35, gc: 48, ufmg: 21.4, att: -0.158, def: -0.123 },
+      { name: "Internacional", short: "INT", color: "#ef4444", pts: 38, g: 34, w: 9, d: 11, l: 14, gf: 38, gc: 42, ufmg: 40.8, att: -0.145, def: -0.010 },
+      { name: "Corinthians", short: "COR", color: "#ffffff", pts: 37, g: 34, w: 9, d: 10, l: 15, gf: 36, gc: 42, ufmg: 55.0, att: -0.160, def: -0.010 },
+      { name: "Grêmio", short: "GRE", color: "#0d80bf", pts: 37, g: 34, w: 9, d: 10, l: 15, gf: 38, gc: 47, ufmg: 60.4, att: -0.130, def: -0.050 },
+      { name: "Remo", short: "REM", color: "#1e3a8a", pts: 29, g: 34, w: 6, d: 11, l: 17, gf: 37, gc: 56, ufmg: 99.56, att: -0.220, def: -0.210 },
+      { name: "Chapecoense", short: "CHA", color: "#16a34a", pts: 21, g: 33, w: 4, d: 9, l: 20, gf: 33, gc: 68, ufmg: 100.0, att: -0.320, def: -0.460 }
+    ];
+
+    // Placares Encerrados até hoje (05/11/2026)
+    const COMPLETED_MATCHES = [
+      { round: "34ª Rodada", home: "Bragantino", away: "Santos", scoreHome: 2, scoreAway: 1, date: "02/11", status: "Encerrado" },
+      { round: "34ª Rodada", home: "Chapecoense", away: "Mirassol", scoreHome: 1, scoreAway: 2, date: "03/11", status: "Encerrado", note: "Chapecoense rebaixada" },
+      { round: "34ª Rodada", home: "Internacional", away: "Coritiba", scoreHome: 1, scoreAway: 0, date: "03/11", status: "Encerrado" },
+      { round: "34ª Rodada", home: "Athletico-PR", away: "Vasco", scoreHome: 1, scoreAway: 3, date: "04/11", status: "Encerrado" },
+      { round: "34ª Rodada", home: "Flamengo", away: "Grêmio", scoreHome: 3, scoreAway: 1, date: "04/11", status: "Encerrado" },
+      { round: "34ª Rodada", home: "Botafogo", away: "Atlético-MG", scoreHome: 1, scoreAway: 0, date: "04/11", status: "Encerrado" },
+      { round: "34ª Rodada", home: "São Paulo", away: "Corinthians", scoreHome: 0, scoreAway: 0, date: "04/11", status: "Encerrado" },
+      { round: "34ª Rodada", home: "Palmeiras", away: "Remo", scoreHome: 5, scoreAway: 1, date: "05/11", status: "Encerrado" }
     ];
 
     const FIXTURES_LIST = [
+      // 34ª Rodada (Jogos a Realizar / Pendentes)
+      { id: "R34_4", round: "34ª Rodada (Pendente)", home: "Cruzeiro", away: "Bahia", date: "05/11 - 21h30", direct: false, label: "Hoje 21h30" },
+      { id: "R34_10", round: "34ª Rodada (Pendente)", home: "Vitória", away: "Fluminense", date: "06/11 - 20h00", direct: false, label: "Sexta 20h" },
       // Atrasado R21
       { id: "R21_1", round: "21ª Rodada (Atrasado)", home: "Chapecoense", away: "Vasco", date: "14/11", direct: false },
-      // R34
-      { id: "R34_1", round: "34ª Rodada", home: "Athletico-PR", away: "Vasco", date: "04/11", direct: false },
-      { id: "R34_2", round: "34ª Rodada", home: "Botafogo", away: "Atlético-MG", date: "04/11", direct: false },
-      { id: "R34_3", round: "34ª Rodada", home: "Chapecoense", away: "Mirassol", date: "04/11", direct: false },
-      { id: "R34_4", round: "34ª Rodada", home: "Cruzeiro", away: "Bahia", date: "04/11", direct: false },
-      { id: "R34_5", round: "34ª Rodada", home: "Flamengo", away: "Grêmio", date: "04/11", direct: false },
-      { id: "R34_6", round: "34ª Rodada", home: "Internacional", away: "Coritiba", date: "04/11", direct: true, label: "Confronto Direto" },
-      { id: "R34_7", round: "34ª Rodada", home: "Palmeiras", away: "Remo", date: "04/11", direct: false },
-      { id: "R34_8", round: "34ª Rodada", home: "Bragantino", away: "Santos", date: "04/11", direct: false },
-      { id: "R34_9", round: "34ª Rodada", home: "São Paulo", away: "Corinthians", date: "04/11", direct: false, label: "Majestoso" },
-      { id: "R34_10", round: "34ª Rodada", home: "Vitória", away: "Fluminense", date: "04/11", direct: false },
       // R35
       { id: "R35_1", round: "35ª Rodada", home: "Corinthians", away: "Botafogo", date: "18/11", direct: true, label: "Decisivo" },
       { id: "R35_2", round: "35ª Rodada", home: "Coritiba", away: "Santos", date: "18/11", direct: false },
@@ -1068,7 +1139,7 @@
       const totalPicks = Object.values(userPicks).filter(Boolean).length;
       const badge = document.getElementById("simModeBadge");
       if (totalPicks === 0) {
-        badge.textContent = "Classificação 33ªR";
+        badge.textContent = "Classificação 34ªR (05/11)";
         badge.style.color = "var(--accent)";
       } else {
         badge.textContent = `${totalPicks} palpite(s) fixado(s)`;
@@ -1081,12 +1152,13 @@
       const grid = document.getElementById("riskGrid");
       grid.innerHTML = "";
 
-      // Times do grupo de risco ordenados por ameaça
-      const riskTeams = ["Chapecoense", "Remo", "Internacional", "Corinthians", "Grêmio", "Mirassol", "Vitória", "Vasco", "Botafogo", "Coritiba"];
+      // Times do grupo de risco ordenados por ameaça atualizada
+      const riskTeams = ["Chapecoense", "Remo", "Grêmio", "Corinthians", "Internacional", "Vitória", "Mirassol", "Coritiba", "Vasco", "Botafogo"];
 
       riskTeams.forEach(name => {
         const t = teamsMap[name];
-        const prob = simulatedProbs[name] ?? t.ufmg;
+        let prob = simulatedProbs[name] ?? t.ufmg;
+        if (name === "Chapecoense") prob = 100.0;
 
         let riskLevel = "safe";
         if (prob >= 50) riskLevel = "danger";
@@ -1104,11 +1176,48 @@
           </div>
           <div class="prob-val ${riskLevel}">${prob.toFixed(1)}%</div>
           <div class="prob-sub">
-            <span>Risco Rebaixamento</span>
+            <span>${name === 'Chapecoense' ? 'Queda Confirmada' : 'Risco Rebaixamento'}</span>
             <span>UFMG: ${t.ufmg.toFixed(1)}%</span>
           </div>
           <div class="progress-bar-bg">
             <div class="progress-bar-fill" style="width: ${Math.min(100, Math.max(0, prob))}%; background: ${riskLevel === 'danger' ? 'var(--danger)' : riskLevel === 'warning' ? 'var(--warning)' : 'var(--success)'};"></div>
+          </div>
+        `;
+        grid.appendChild(card);
+      });
+    }
+
+    // --- 3.5. Renderização dos Placares Encerrados ---
+    function renderCompletedMatches() {
+      const grid = document.getElementById("completedGrid");
+      if (!grid) return;
+      grid.innerHTML = "";
+      COMPLETED_MATCHES.forEach(m => {
+        const card = document.createElement("div");
+        card.className = "completed-match-card";
+        const homeTeam = teamsMap[m.home];
+        const awayTeam = teamsMap[m.away];
+
+        let noteHtml = m.note ? `<span class="badge-tag tag-direct" style="font-size:0.62rem;">${m.note}</span>` : "";
+
+        card.innerHTML = `
+          <div class="completed-match-header">
+            <span>${m.round} · ${m.date}</span>
+            <div style="display:flex; align-items:center; gap:6px;">
+              ${noteHtml}
+              <span class="completed-badge-done">${m.status}</span>
+            </div>
+          </div>
+          <div class="completed-match-teams">
+            <div class="team-item home" style="font-size:0.82rem;">
+              <span class="team-dot" style="background:${homeTeam ? homeTeam.color : '#666'};"></span>
+              <span>${m.home}</span>
+            </div>
+            <div class="completed-score">${m.scoreHome} - ${m.scoreAway}</div>
+            <div class="team-item away" style="font-size:0.82rem;">
+              <span>${m.away}</span>
+              <span class="team-dot" style="background:${awayTeam ? awayTeam.color : '#666'};"></span>
+            </div>
           </div>
         `;
         grid.appendChild(card);
@@ -1222,6 +1331,7 @@
     function refreshUI() {
       renderStandings();
       renderRiskCards();
+      renderCompletedMatches();
       renderFixtures();
     }
 
@@ -1369,9 +1479,9 @@
     });
 
     document.getElementById("presetInter").addEventListener("click", () => {
-      // Inter vence Coritiba (R34) e Vitória (R36)
-      userPicks["R34_6"] = "1";
+      // Inter vence Vitória (R36) e Bragantino (R37)
       userPicks["R36_7"] = "1";
+      userPicks["R37_7"] = "1";
       runClientMonteCarlo(15000);
     });
 
