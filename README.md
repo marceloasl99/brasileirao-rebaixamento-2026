@@ -20,23 +20,23 @@ O simulador combina um **modelo estocástico de gols via Distribuição de Poiss
 
 ---
 
-## 🚨 Panorama Atual do Campeonato (Atualizado em 05/11/2026)
+## 🚨 Panorama Atual do Campeonato (Atualizado em 06/11/2026)
 
 Com a realização de **9 das 10 partidas da 34ª rodada**, a disputa contra o rebaixamento atingiu seu momento mais dramático:
 
 * 🟥 **Chapecoense matematicamente rebaixada**: Ao perder em casa por 2 a 1 para o Mirassol na Arena Condá, a Chapecoense permaneceu com 21 pontos e confirmou seu descenso à **Série B de 2027**, tornando-se o primeiro rebaixado confirmado da temporada.
-* 🟥 **Remo à beira do abismo (99,56% de risco)**: A goleada sofrida por 5 a 1 diante do Palmeiras deixou a equipe paraense estacionada nos 29 pontos, necessitando de uma combinação estatística quase impossível para escapar.
+* 🟥 **Remo à beira do abismo (99,56% de risco)**: A goleada sofrida por 6 a 1 diante do Palmeiras no Nubank Parque deixou a equipe paraense estacionada nos 29 pontos, necessitando de uma combinação estatística quase impossível para escapar.
 * 🔥 **Z4 em chamas com gigantes**:
   * **Grêmio (60,4% de risco)**: A derrota por 3 a 1 para o líder Flamengo no Maracanã empurrou o Tricolor gaúcho para a 18ª posição com 37 pontos.
   * **Corinthians (55,0% de risco)**: O empate em 0 a 0 no clássico Majestoso contra o São Paulo manteve o Timão na 17ª posição com 37 pontos (à frente do Grêmio no saldo de gols: -6 vs -9).
   * **Internacional (40,8% de risco)**: Vitória vital por 1 a 0 sobre o Coritiba no Beira-Rio fez o Colorado saltar para 38 pontos na 16ª posição, deixando o Z4 mas ainda sob forte pressão.
 * 🛡️ **Alívio para Vasco e Botafogo**: As vitórias do Vasco sobre o Athletico-PR (3 a 1) e do Botafogo sobre o Atlético-MG (1 a 0) derrubaram o risco de rebaixamento de ambos para menos de 2%.
-* 🛡️ **Empate no Mineirão**: Cruzeiro 0 x 0 Bahia manteve a Raposa no G4 (58 pts) e o Tricolor de Aço no G6 (54 pts).
+* ⚡ **Virada Épica no Mineirão**: O Cruzeiro superou o Bahia por 3 a 2 em duelo eletrizante com dois gols de Kaio Jorge (o segundo aos 86'), consolidando a Raposa isolada no 3º lugar com 60 pontos e mantendo o Bahia no G6 com 53 pontos.
 * 🎯 **Linha de Corte Projetada**: **42 a 43 pontos** para a permanência na Série A.
 
 ---
 
-## 📅 Placares da 34ª Rodada (9 Jogos Realizados até Hoje — 05/11/2026)
+## 📅 Placares da 34ª Rodada (9 Jogos Realizados até Hoje — 06/11/2026)
 
 | Data | Mandante | Placar | Visitante | Local | Impacto Principal |
 | :---: | :--- | :---: | :--- | :--- | :--- |
@@ -47,16 +47,16 @@ Com a realização de **9 das 10 partidas da 34ª rodada**, a disputa contra o r
 | **04/11** | **Flamengo** | **3 x 1** | Grêmio | Maracanã | Mengão consolida liderança (76 pts); Grêmio entra no Z4 |
 | **04/11** | **Botafogo** | **1 x 0** | Atlético-MG | Nilton Santos | Glorioso vai a 42 pts e praticamente zera risco de Z4 (1,5%) |
 | **04/11** | São Paulo | **0 x 0** | Corinthians | MorumBIS | Timão soma 1 pt no Majestoso e segue no Z4 com 55% de risco |
-| **05/11** | **Palmeiras** | **5 x 1** | Remo | Nubank Parque | Verdão vai a 73 pts; Remo fica com 99,56% de risco |
-| **05/11** | Cruzeiro | **0 x 0** | Bahia | Mineirão | Raposa garante 58 pts no G4; Bahia soma 54 pts no G6 |
+| **05/11** | **Palmeiras** | **6 x 1** | Remo | Nubank Parque | Maior goleada do torneio; Verdão vai a 73 pts; Remo com 99,56% de risco |
+| **05/11** | **Cruzeiro** | **3 x 2** | Bahia | Mineirão | Raposa vira aos 86' com dois de Kaio Jorge e vai a 60 pts (3º); Bahia segue no G6 (53 pts) |
 
 ### ⏳ Jogo Restante da 34ª Rodada e Pendência:
-* **Vitória x Fluminense** — Sexta-feira, 06/11, às 20h00 (Barradão)
+* **Vitória x Fluminense** — Sexta-feira, 06/11, às 20h00 (Barradão — Hoje à noite!)
 * **Chapecoense x Vasco** — Sábado, 14/11 (Jogo atrasado da 21ª Rodada)
 
 ---
 
-## 🏆 Tabela Oficial de Classificação (Referência 05/11/2026)
+## 🏆 Tabela Oficial de Classificação (Referência 06/11/2026)
 
 <small>📊 Dados estatísticos calibrados com o modelo UFMG / CNN Brasil · 20.000 simulações Monte Carlo</small>
 
@@ -64,10 +64,10 @@ Com a realização de **9 das 10 partidas da 34ª rodada**, a disputa contra o r
 | :-: | :--- | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :---: | :--- |
 | **1** | 🏆 **Flamengo** | **76** | 34 | 23 | 7 | 4 | 71 | 29 | +42 | 0.0% | 🟢 G4 (Libertadores) |
 | **2** | 🥈 **Palmeiras** | **73** | 34 | 21 | 10 | 3 | 61 | 23 | +38 | 0.0% | 🟢 G4 (Libertadores) |
-| **3** | 🥉 **Cruzeiro** | **58** | 34 | 17 | 7 | 10 | 52 | 46 | +6 | 0.0% | 🟢 G4 (Libertadores) |
-| **4** | 🅿️ **Fluminense** | **54** | 33 | 15 | 9 | 9 | 52 | 42 | +10 | 0.0% | 🟢 G4 (Libertadores) |
+| **3** | 🥉 **Cruzeiro** | **60** | 34 | 18 | 6 | 10 | 55 | 48 | +7 | 0.0% | 🟢 G4 (Libertadores) |
+| **4** | 🅿️ **Fluminense** | **54** | 33 | 15 | 9 | 9 | 52 | 42 | +10 | 0.0% | 🟢 G4 (Libertadores — Joga hoje) |
 | **5** | ⭐ **Athletico-PR** | **54** | 34 | 15 | 9 | 10 | 51 | 43 | +8 | 0.0% | 🔵 Pré-Libertadores |
-| **6** | 🅱️ **Bahia** | **54** | 34 | 14 | 12 | 8 | 48 | 42 | +6 | 0.0% | 🔵 Pré-Libertadores |
+| **6** | 🅱️ **Bahia** | **53** | 34 | 14 | 11 | 9 | 50 | 45 | +5 | 0.0% | 🔵 Pré-Libertadores |
 | **7** | ⚪ **Atlético-MG** | **50** | 34 | 14 | 8 | 12 | 44 | 40 | +4 | 0.0% | 🟡 Sul-Americana |
 | **8** | 🅿️ **Red Bull Bragantino** | **47** | 34 | 13 | 8 | 13 | 44 | 39 | +5 | 0.0% | 🟡 Sul-Americana |
 | **9** | 🅾️ **Santos** | **47** | 34 | 12 | 11 | 11 | 50 | 49 | +1 | 0.5% | 🟡 Sul-Americana |
@@ -76,11 +76,11 @@ Com a realização de **9 das 10 partidas da 34ª rodada**, a disputa contra o r
 | **12** | 🟢 **Coritiba** | **42** | 34 | 11 | 9 | 14 | 40 | 51 | -11 | 4.8% | 🟡 Sul-Americana |
 | **13** | 💢 **Vasco da Gama** | **41** | 33 | 11 | 8 | 14 | 43 | 50 | -7 | 1.8% | ⚪ Permanência (1 jogo a menos) |
 | **14** | 🟡 **Mirassol** | **40** | 34 | 10 | 10 | 14 | 39 | 48 | -9 | 16.1% | 🟠 Risco Moderado |
-| **15** | 🔴 **Vitória** | **38** | 33 | 10 | 8 | 15 | 35 | 48 | -13 | 21.4% | 🟠 Risco Elevado (1 jogo a menos) |
+| **15** | 🔴 **Vitória** | **38** | 33 | 10 | 8 | 15 | 35 | 48 | -13 | 21.4% | 🟠 Risco Elevado (Joga hoje) |
 | **16** | 🇦🇹 **Internacional** | **38** | 34 | 9 | 11 | 14 | 38 | 42 | -4 | 40.8% | 🟠 Limite do Z4 |
 | **17** | 🦅 **Corinthians** | **37** | 34 | 9 | 10 | 15 | 36 | 42 | -6 | **55.0%** | 🟥 **Zona de Rebaixamento (Z4)** |
 | **18** | 🇪🇪 **Grêmio** | **37** | 34 | 9 | 10 | 15 | 38 | 47 | -9 | **60.4%** | 🟥 **Zona de Rebaixamento (Z4)** |
-| **19** | 🦁 **Remo** | **29** | 34 | 6 | 11 | 17 | 37 | 56 | -19 | **99.56%** | 🟥 **Zona de Rebaixamento (Z4)** |
+| **19** | 🦁 **Remo** | **29** | 34 | 6 | 11 | 17 | 37 | 57 | -20 | **99.56%** | 🟥 **Zona de Rebaixamento (Z4)** |
 | **20** | 🏹 **Chapecoense** | **21** | 33 | 4 | 9 | 20 | 33 | 68 | -35 | **100.0%** | 🪦 **REBAIXADA À SÉRIE B 2027** |
 
 ---

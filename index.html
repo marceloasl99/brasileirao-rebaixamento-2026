@@ -1363,14 +1363,14 @@
       <div class="title-area">
         <h1 itemprop="name">
           <span>Brasileirão 2026 — Simulador de Reta Final</span>
-          <span class="badge-live">34ªR Parcial · 05/11/2026</span>
+          <span class="badge-live">34ªR Parcial · 06/11/2026</span>
         </h1>
         <p class="header-desc" itemprop="description">
           Modelo Estocástico Calibrado (UFMG / CNN Brasil) · 42 jogos restantes · Chapecoense matematicamente rebaixada e Z4 em ebulição
         </p>
       </div>
       <div class="header-actions">
-        <button class="btn-secondary" id="btnResetAll" title="Restaurar classificação atual da 34ª rodada (05/11/2026)">
+        <button class="btn-secondary" id="btnResetAll" title="Restaurar classificação atual da 34ª rodada (06/11/2026)">
           ↺ Zerar Palpites
         </button>
         <button class="btn-primary" id="btnRunSim">
@@ -1426,7 +1426,7 @@
           </button>
           <button class="filter-chip" role="tab" aria-selected="false" data-filter="epic">
             <span class="chip-label">⚡ Goleadas & Viradas</span>
-            <span class="chip-badge">2</span>
+            <span class="chip-badge">3</span>
           </button>
         </div>
         <div class="filter-summary">
@@ -1523,9 +1523,9 @@
       <div class="standings-card">
         <div class="table-head">
           <h2>Tabela em Tempo Real</h2>
-          <div class="table-cutoff-badge" id="simModeBadge">Classificação 34ªR (05/11)</div>
+          <div class="table-cutoff-badge" id="simModeBadge">Classificação 34ªR (06/11)</div>
         </div>
-        <table class="league-table" aria-label="Tabela de classificação do Brasileirão 2026 - Pós jogos da 34ª rodada em 05/11/2026">
+        <table class="league-table" aria-label="Tabela de classificação do Brasileirão 2026 - Pós jogos da 34ª rodada em 06/11/2026">
           <thead>
             <tr>
               <th scope="row">#</th>
@@ -1555,19 +1555,19 @@
       <strong>Simulador de Rebaixamento Brasileirão 2026</strong> · Modelo Estocástico de Probabilidades Monte Carlo
     </div>
     <div>
-      Atualizado em 05/11/2026 · Dados de referência: UFMG / CNN Brasil · <a href="https://github.com/marceloasl99/brasileirao-rebaixamento-2026" target="_blank" rel="noopener noreferrer">Repositório no GitHub</a>
+      Atualizado em 06/11/2026 · Dados de referência: UFMG / CNN Brasil · <a href="https://github.com/marceloasl99/brasileirao-rebaixamento-2026" target="_blank" rel="noopener noreferrer">Repositório no GitHub</a>
     </div>
   </footer>
 
   <script>
-    // --- 1. Dados Oficiais e Parâmetros Calibrados (Atualizado em 05/11/2026) ---
+    // --- 1. Dados Oficiais e Parâmetros Calibrados (Atualizado em 06/11/2026) ---
     const RAW_TEAMS = [
       { name: "Flamengo", short: "FLA", color: "#cc0000", pts: 76, g: 34, w: 23, d: 7, l: 4, gf: 71, gc: 29, ufmg: 0.0, att: 0.315, def: 0.295 },
       { name: "Palmeiras", short: "PAL", color: "#006437", pts: 73, g: 34, w: 21, d: 10, l: 3, gf: 61, gc: 23, ufmg: 0.0, att: 0.210, def: 0.405 },
-      { name: "Cruzeiro", short: "CRU", color: "#003b8e", pts: 58, g: 34, w: 17, d: 7, l: 10, gf: 52, gc: 46, ufmg: 0.0, att: 0.158, def: -0.065 },
+      { name: "Cruzeiro", short: "CRU", color: "#003b8e", pts: 60, g: 34, w: 18, d: 6, l: 10, gf: 55, gc: 48, ufmg: 0.0, att: 0.158, def: -0.065 },
       { name: "Fluminense", short: "FLU", color: "#831d1d", pts: 54, g: 33, w: 15, d: 9, l: 9, gf: 52, gc: 42, ufmg: 0.0, att: 0.144, def: 0.012 },
       { name: "Athletico-PR", short: "CAP", color: "#c8102e", pts: 54, g: 34, w: 15, d: 9, l: 10, gf: 51, gc: 43, ufmg: 0.0, att: 0.105, def: 0.040 },
-      { name: "Bahia", short: "BAH", color: "#0072ce", pts: 54, g: 34, w: 14, d: 12, l: 8, gf: 48, gc: 42, ufmg: 0.0, att: 0.082, def: 0.007 },
+      { name: "Bahia", short: "BAH", color: "#0072ce", pts: 53, g: 34, w: 14, d: 11, l: 9, gf: 50, gc: 45, ufmg: 0.0, att: 0.082, def: 0.007 },
       { name: "Atlético-MG", short: "CAM", color: "#222222", pts: 50, g: 34, w: 14, d: 8, l: 12, gf: 44, gc: 40, ufmg: 0.0, att: 0.015, def: 0.060 },
       { name: "Bragantino", short: "BGT", color: "#d91f26", pts: 47, g: 34, w: 13, d: 8, l: 13, gf: 44, gc: 39, ufmg: 0.0, att: -0.025, def: 0.075 },
       { name: "Santos", short: "SAN", color: "#444444", pts: 47, g: 34, w: 12, d: 11, l: 11, gf: 50, gc: 49, ufmg: 0.5, att: 0.075, def: -0.090 },
@@ -1580,7 +1580,7 @@
       { name: "Internacional", short: "INT", color: "#ef4444", pts: 38, g: 34, w: 9, d: 11, l: 14, gf: 38, gc: 42, ufmg: 40.8, att: -0.145, def: -0.010 },
       { name: "Corinthians", short: "COR", color: "#ffffff", pts: 37, g: 34, w: 9, d: 10, l: 15, gf: 36, gc: 42, ufmg: 55.0, att: -0.160, def: -0.010 },
       { name: "Grêmio", short: "GRE", color: "#0d80bf", pts: 37, g: 34, w: 9, d: 10, l: 15, gf: 38, gc: 47, ufmg: 60.4, att: -0.130, def: -0.050 },
-      { name: "Remo", short: "REM", color: "#1e3a8a", pts: 29, g: 34, w: 6, d: 11, l: 17, gf: 37, gc: 56, ufmg: 99.56, att: -0.220, def: -0.210 },
+      { name: "Remo", short: "REM", color: "#1e3a8a", pts: 29, g: 34, w: 6, d: 11, l: 17, gf: 37, gc: 57, ufmg: 99.56, att: -0.220, def: -0.210 },
       { name: "Chapecoense", short: "CHA", color: "#16a34a", pts: 21, g: 33, w: 4, d: 9, l: 20, gf: 33, gc: 68, ufmg: 100.0, att: -0.320, def: -0.460 }
     ];
 
@@ -1590,23 +1590,24 @@
         id: "M34_1",
         round: "34ª Rodada",
         date: "05/11",
-        stadium: "Allianz Parque · São Paulo (SP)",
+        stadium: "Nubank Parque · São Paulo (SP)",
         home: "Palmeiras",
         away: "Remo",
-        scoreHome: 5,
+        scoreHome: 6,
         scoreAway: 1,
         category: "epic z4 g4",
         impactClass: "impact-top",
-        impactBadge: { type: "triumph", icon: "🔥", text: "Goleada 5x1 · Pressão no Remo" },
+        impactBadge: { type: "triumph", icon: "🔥", text: "Goleada Histórica 6x1 · Vice-Líder (73 pts)" },
         scorersHome: [
-          { name: "Arias", time: "14'" },
-          { name: "Arias", time: "38'" },
-          { name: "Maurício", time: "52'" },
+          { name: "J. Arias", time: "3'" },
+          { name: "J. Arias", time: "13'" },
+          { name: "Maurício", time: "20'" },
+          { name: "Marcelinho (c)", time: "35'" },
           { name: "Flaco López", time: "71'" },
-          { name: "Marcelinho (c)", time: "84'" }
+          { name: "F. Anderson", time: "81'" }
         ],
         scorersAway: [
-          { name: "José Welison", time: "63'" }
+          { name: "Zé Welison", time: "63'" }
         ]
       },
       {
@@ -1616,13 +1617,20 @@
         stadium: "Mineirão · Belo Horizonte (MG)",
         home: "Cruzeiro",
         away: "Bahia",
-        scoreHome: 0,
-        scoreAway: 0,
-        category: "all g4",
-        impactClass: "",
-        impactBadge: { type: "climax", icon: "🛡️", text: "Ponto Disputado no Mineirão" },
-        scorersHome: [],
-        scorersAway: []
+        scoreHome: 3,
+        scoreAway: 2,
+        category: "epic g4",
+        impactClass: "impact-top",
+        impactBadge: { type: "triumph", icon: "⚡", text: "Virada Épica aos 86' · Raposa no G4 (60 pts)" },
+        scorersHome: [
+          { name: "Kaio Jorge", time: "47'" },
+          { name: "Bruno Rodrigues", time: "69'" },
+          { name: "Kaio Jorge", time: "86'" }
+        ],
+        scorersAway: [
+          { name: "C. Olivera", time: "32'" },
+          { name: "Alejo Véliz", time: "90+5'" }
+        ]
       },
       {
         id: "M34_3",
@@ -1759,7 +1767,7 @@
 
     const FIXTURES_LIST = [
       // 34ª Rodada (Jogos a Realizar / Pendentes)
-      { id: "R34_10", round: "34ª Rodada (Pendente)", home: "Vitória", away: "Fluminense", date: "06/11 - 20h00", direct: false, label: "Sexta 20h" },
+      { id: "R34_10", round: "34ª Rodada (Pendente)", home: "Vitória", away: "Fluminense", date: "06/11 - 20h00", direct: false, label: "Hoje 20h" },
       // Atrasado R21
       { id: "R21_1", round: "21ª Rodada (Atrasado)", home: "Chapecoense", away: "Vasco", date: "14/11", direct: false },
       // R35
@@ -1974,7 +1982,7 @@
       const totalPicks = Object.values(userPicks).filter(Boolean).length;
       const badge = document.getElementById("simModeBadge");
       if (totalPicks === 0) {
-        badge.textContent = "Classificação 34ªR (05/11)";
+        badge.textContent = "Classificação 34ªR (06/11)";
         badge.style.color = "var(--accent)";
       } else {
         badge.textContent = `${totalPicks} palpite(s) fixado(s)`;
