@@ -22,7 +22,7 @@ O simulador combina um **modelo estocástico de gols via Distribuição de Poiss
 
 ## 🚨 Panorama Atual do Campeonato (Atualizado em 05/11/2026)
 
-Com a realização de **8 das 10 partidas da 34ª rodada**, a disputa contra o rebaixamento atingiu seu momento mais dramático:
+Com a realização de **9 das 10 partidas da 34ª rodada**, a disputa contra o rebaixamento atingiu seu momento mais dramático:
 
 * 🟥 **Chapecoense matematicamente rebaixada**: Ao perder em casa por 2 a 1 para o Mirassol na Arena Condá, a Chapecoense permaneceu com 21 pontos e confirmou seu descenso à **Série B de 2027**, tornando-se o primeiro rebaixado confirmado da temporada.
 * 🟥 **Remo à beira do abismo (99,56% de risco)**: A goleada sofrida por 5 a 1 diante do Palmeiras deixou a equipe paraense estacionada nos 29 pontos, necessitando de uma combinação estatística quase impossível para escapar.
@@ -31,11 +31,12 @@ Com a realização de **8 das 10 partidas da 34ª rodada**, a disputa contra o r
   * **Corinthians (55,0% de risco)**: O empate em 0 a 0 no clássico Majestoso contra o São Paulo manteve o Timão na 17ª posição com 37 pontos (à frente do Grêmio no saldo de gols: -6 vs -9).
   * **Internacional (40,8% de risco)**: Vitória vital por 1 a 0 sobre o Coritiba no Beira-Rio fez o Colorado saltar para 38 pontos na 16ª posição, deixando o Z4 mas ainda sob forte pressão.
 * 🛡️ **Alívio para Vasco e Botafogo**: As vitórias do Vasco sobre o Athletico-PR (3 a 1) e do Botafogo sobre o Atlético-MG (1 a 0) derrubaram o risco de rebaixamento de ambos para menos de 2%.
+* 🛡️ **Empate no Mineirão**: Cruzeiro 0 x 0 Bahia manteve a Raposa no G4 (58 pts) e o Tricolor de Aço no G6 (54 pts).
 * 🎯 **Linha de Corte Projetada**: **42 a 43 pontos** para a permanência na Série A.
 
 ---
 
-## 📅 Placares da 34ª Rodada (Jogos Realizados até Hoje — 05/11/2026)
+## 📅 Placares da 34ª Rodada (9 Jogos Realizados até Hoje — 05/11/2026)
 
 | Data | Mandante | Placar | Visitante | Local | Impacto Principal |
 | :---: | :--- | :---: | :--- | :--- | :--- |
@@ -47,9 +48,9 @@ Com a realização de **8 das 10 partidas da 34ª rodada**, a disputa contra o r
 | **04/11** | **Botafogo** | **1 x 0** | Atlético-MG | Nilton Santos | Glorioso vai a 42 pts e praticamente zera risco de Z4 (1,5%) |
 | **04/11** | São Paulo | **0 x 0** | Corinthians | MorumBIS | Timão soma 1 pt no Majestoso e segue no Z4 com 55% de risco |
 | **05/11** | **Palmeiras** | **5 x 1** | Remo | Nubank Parque | Verdão vai a 73 pts; Remo fica com 99,56% de risco |
+| **05/11** | Cruzeiro | **0 x 0** | Bahia | Mineirão | Raposa garante 58 pts no G4; Bahia soma 54 pts no G6 |
 
-### ⏳ Jogos Restantes da 34ª Rodada e Pendências:
-* **Cruzeiro x Bahia** — Quinta-feira, 05/11, às 21h30 (Mineirão)
+### ⏳ Jogo Restante da 34ª Rodada e Pendência:
 * **Vitória x Fluminense** — Sexta-feira, 06/11, às 20h00 (Barradão)
 * **Chapecoense x Vasco** — Sábado, 14/11 (Jogo atrasado da 21ª Rodada)
 
@@ -63,10 +64,10 @@ Com a realização de **8 das 10 partidas da 34ª rodada**, a disputa contra o r
 | :-: | :--- | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :---: | :--- |
 | **1** | 🏆 **Flamengo** | **76** | 34 | 23 | 7 | 4 | 71 | 29 | +42 | 0.0% | 🟢 G4 (Libertadores) |
 | **2** | 🥈 **Palmeiras** | **73** | 34 | 21 | 10 | 3 | 61 | 23 | +38 | 0.0% | 🟢 G4 (Libertadores) |
-| **3** | 🥉 **Cruzeiro** | **57** | 33 | 17 | 6 | 10 | 52 | 46 | +6 | 0.0% | 🟢 G4 (Libertadores) |
+| **3** | 🥉 **Cruzeiro** | **58** | 34 | 17 | 7 | 10 | 52 | 46 | +6 | 0.0% | 🟢 G4 (Libertadores) |
 | **4** | 🅿️ **Fluminense** | **54** | 33 | 15 | 9 | 9 | 52 | 42 | +10 | 0.0% | 🟢 G4 (Libertadores) |
 | **5** | ⭐ **Athletico-PR** | **54** | 34 | 15 | 9 | 10 | 51 | 43 | +8 | 0.0% | 🔵 Pré-Libertadores |
-| **6** | 🅱️ **Bahia** | **53** | 33 | 14 | 11 | 8 | 48 | 42 | +6 | 0.0% | 🔵 Pré-Libertadores |
+| **6** | 🅱️ **Bahia** | **54** | 34 | 14 | 12 | 8 | 48 | 42 | +6 | 0.0% | 🔵 Pré-Libertadores |
 | **7** | ⚪ **Atlético-MG** | **50** | 34 | 14 | 8 | 12 | 44 | 40 | +4 | 0.0% | 🟡 Sul-Americana |
 | **8** | 🅿️ **Red Bull Bragantino** | **47** | 34 | 13 | 8 | 13 | 44 | 39 | +5 | 0.0% | 🟡 Sul-Americana |
 | **9** | 🅾️ **Santos** | **47** | 34 | 12 | 11 | 11 | 50 | 49 | +1 | 0.5% | 🟡 Sul-Americana |
@@ -111,7 +112,7 @@ Com base nisso, os botões de aposta (**1**, **X**, **2**) exibem as chances rea
 
 ## 🎮 Funcionalidades da Aplicação
 
-* 🕹️ **Palpites Interativos nos 43 Jogos Restantes**: Selecione Mandante (1), Empate (X) ou Visitante (2) para projetar os cenários que salvam ou rebaixam seu time.
+* 🕹️ **Palpites Interativos nos 42 Jogos Restantes**: Selecione Mandante (1), Empate (X) ou Visitante (2) para projetar os cenários que salvam ou rebaixam seu time.
 * ⚡ **Presets de Cenários Rápidos**:
   * *Corinthians vence Botafogo e Grêmio*
   * *Inter vence Vitória e Bragantino*
@@ -119,7 +120,11 @@ Com base nisso, os botões de aposta (**1**, **X**, **2**) exibem as chances rea
   * *Lógica do Mandante (todos os donos da casa vencem)*
   * *Gerar 1 Cenário Estatístico (sorteio aleatório ponderado pelas odds)*
 * 📊 **Cards de Risco no Z4**: Acompanhamento visual dos 10 times mais ameaçados com barras de progresso dinâmicas coloridas (seguro, atenção, perigo).
-* 📋 **Placares dos Jogos Encerrados**: Visualização clara de todos os confrontos já disputados na rodada.
+* 🏟️ **Broadcast Stadium HUD (Placares Encerrados)**: Visualização de alta fidelidade televisiva dos 9 jogos encerrados da 34ª rodada, com:
+  * **Barra de Filtros Segmentada**: Abas para isolar jogos por *Todos (9)*, *Luta no Z4 (7)*, *G4 / Título (4)* e *⚡ Goleadas & Viradas (2)*.
+  * **Linha do Tempo dos Gols**: Autores e minutagem exata de cada gol com badges visuais.
+  * **Badges de Impacto Narrativo**: Destaques contextuais imediatos (*Queda Matemática Confirmada*, *Grêmio Afunda no Z4*, *Goleada 5x1*).
+  * **Tipografia Numérica Atlética**: Dígitos em visor digital escuro com numerais tabulares alinhados.
 * ♿ **Acessibilidade e Design Responsivo**:
   * Total conformidade com WCAG 2.1 (skip link, `:focus-visible`, labels ARIA dinâmicos).
   * Design otimizado com tema dark moderno e legibilidade garantida em qualquer celular, tablet ou desktop.

@@ -4,8 +4,8 @@
 
 ## Dados e Referência
 - **URL ao vivo**: https://marceloasl99.github.io/brasileirao-rebaixamento-2026/
-- **Data de referência dos dados**: 05/11/2026 (Pós-jogos da 34ª rodada)
-- **Confrontos restantes**: 43 partidas (2 pendentes da 34ª rodada, 1 atrasado da 21ª rodada e 40 jogos das rodadas 35 a 38)
+- **Data de referência dos dados**: 05/11/2026 (Pós-jogos da 34ª rodada — 9 jogos concluídos)
+- **Confrontos restantes**: 42 partidas (1 pendente da 34ª rodada [Vitória x Fluminense], 1 atrasado da 21ª rodada [Chapecoense x Vasco] e 40 jogos das rodadas 35 a 38)
 - **Linha de corte projetada para o Z4**: 42 a 43 pontos
 - **Modelo Estatístico**: Modelo Estocástico de Gols por Distribuição de Poisson calibrado com 20.000 iterações Monte Carlo e referências UFMG / CNN Brasil
 
@@ -23,6 +23,7 @@
 
 ## Recursos
 - Simulação Monte Carlo em tempo real com 20.000 cenários no navegador.
-- Palpites interativos (1, X, 2) nos 43 jogos restantes com recalculo instantâneo da tabela e das probabilidades.
+- HUD esportivo premium (Broadcast Stadium HUD) com placares enriquecidos, minutagem de gols e filtros segmentados por foco (Todos, Z4, G4, Goleadas/Viradas).
+- Palpites interativos (1, X, 2) nos 42 jogos restantes com recalculo instantâneo da tabela e das probabilidades.
 - Critérios de desempate oficiais da CBF: Pontos > Vitórias > Saldo de Gols > Gols Pró.
 - Presets rápidos para cenários do Corinthians, Internacional, Grêmio e lógica de mandantes.

@@ -6,7 +6,7 @@
   <title>Simulador de Rebaixamento Brasileirão 2026 | Probabilidades Z4 e Monte Carlo</title>
   
   <!-- SEO Essencial -->
-  <meta name="description" content="Simulador interativo de rebaixamento do Brasileirão 2026 pós-34ª rodada. 20.000 simulações Monte Carlo, probabilidades UFMG, palpites nos 43 jogos restantes e tabela ao vivo.">
+  <meta name="description" content="Simulador interativo de rebaixamento do Brasileirão 2026 pós-34ª rodada. 20.000 simulações Monte Carlo, probabilidades UFMG, palpites nos 42 jogos restantes e tabela ao vivo.">
   <meta name="keywords" content="simulador brasileirao 2026, rebaixamento brasileirao 2026, z4 brasileirao 2026, probabilidades rebaixamento ufmg, chances de rebaixamento, monte carlo brasileirao, corinthians rebaixamento, gremio rebaixamento, inter rebaixamento, serie a 2026">
   <meta name="author" content="Marcelo Leite">
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
@@ -23,7 +23,7 @@
   <meta property="og:url" content="https://marceloasl99.github.io/brasileirao-rebaixamento-2026/">
   <meta property="og:site_name" content="Simulador Brasileirão 2026">
   <meta property="og:title" content="Simulador de Rebaixamento Brasileirão 2026 | Probabilidades Z4">
-  <meta property="og:description" content="Simule a reta final do Brasileirão 2026 com 20.000 cenários estocásticos Monte Carlo. Acompanhe a luta contra o Z4, palpites nos 43 jogos restantes e tabela em tempo real.">
+  <meta property="og:description" content="Simule a reta final do Brasileirão 2026 com 20.000 cenários estocásticos Monte Carlo. Acompanhe a luta contra o Z4, palpites nos 42 jogos restantes e tabela em tempo real.">
   <meta property="og:image" content="https://marceloasl99.github.io/brasileirao-rebaixamento-2026/og-image.svg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -775,64 +775,392 @@
       color: var(--text-dim);
     }
 
-    /* Placares Encerrados */
+    /* ==========================================================================
+       Placares Encerrados - Broadcast Stadium HUD (34ª Rodada Brasileirão 2026)
+       ========================================================================== */
+
+    /* 1. Barra de Filtros Segmentada */
+    .scoreboard-filter-bar {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      background: #0f1523;
+      border: 1px solid #1e2842;
+      border-radius: 10px;
+      padding: 8px 14px;
+      margin-bottom: 16px;
+      box-shadow: 0 4px 14px -3px rgba(0, 0, 0, 0.4);
+    }
+
+    .filter-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .filter-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255, 255, 255, 0.04);
+      color: var(--text-muted);
+      border: 1px solid #1e2842;
+      border-radius: 6px;
+      padding: 6px 12px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+      user-select: none;
+    }
+
+    .filter-chip:hover {
+      background: rgba(255, 255, 255, 0.08);
+      color: #fff;
+      border-color: rgba(255, 255, 255, 0.15);
+    }
+
+    .filter-chip.active {
+      background: rgba(56, 189, 248, 0.15);
+      color: var(--accent);
+      border-color: var(--accent);
+      box-shadow: 0 0 12px rgba(56, 189, 248, 0.25);
+    }
+
+    .filter-chip:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+    }
+
+    .chip-badge {
+      background: rgba(0, 0, 0, 0.35);
+      padding: 1px 6px;
+      border-radius: 4px;
+      font-size: 0.7rem;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .chip-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      display: inline-block;
+    }
+
+    .chip-dot.dot-danger { background: #ef4444; box-shadow: 0 0 6px #ef4444; }
+    .chip-dot.dot-gold { background: #f59e0b; box-shadow: 0 0 6px #f59e0b; }
+
+    .filter-summary {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.75rem;
+      color: var(--text-dim);
+      font-weight: 500;
+    }
+
+    .status-indicator-live {
+      width: 6px;
+      height: 6px;
+      background: #10b981;
+      border-radius: 50%;
+      box-shadow: 0 0 8px #10b981;
+    }
+
+    /* 2. Grade Responsiva dos Cards HUD */
     .completed-matches-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-      gap: 10px;
-      margin-bottom: 24px;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 14px;
+      margin-bottom: 28px;
     }
 
-    .completed-match-card {
-      background: #141a27;
-      border: 1px solid var(--card-border);
-      border-radius: 8px;
-      padding: 10px 14px;
+    /* 3. Card do Placar Esportivo */
+    .match-hud-card {
+      background: #0f1523;
+      border: 1px solid #1e2842;
+      border-radius: 10px;
+      padding: 12px 14px;
       display: flex;
       flex-direction: column;
-      gap: 8px;
-      transition: border-color 0.2s ease;
+      gap: 10px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 4px 16px -2px rgba(0, 0, 0, 0.35);
+      transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1),
+                  border-color 0.2s ease,
+                  box-shadow 0.2s ease;
     }
 
-    .completed-match-card:hover {
-      border-color: #2e3b52;
+    .match-hud-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 3px;
+      height: 100%;
+      background: transparent;
+      transition: background 0.2s ease;
     }
 
-    .completed-match-header {
+    .match-hud-card:hover {
+      transform: translateY(-2px);
+      background: #141c30;
+      border-color: rgba(255, 255, 255, 0.16);
+      box-shadow: 0 8px 24px -4px rgba(0, 0, 0, 0.55);
+    }
+
+    .match-hud-card.impact-relegation::before {
+      background: #ef4444;
+    }
+
+    .match-hud-card.impact-top::before {
+      background: #f59e0b;
+    }
+
+    /* 4. Header do Card */
+    .hud-card-header {
       display: flex;
       justify-content: space-between;
       align-items: center;
       font-size: 0.72rem;
       color: var(--text-dim);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+      padding-bottom: 6px;
     }
 
-    .completed-badge-done {
-      background: var(--success-bg);
-      color: var(--success);
+    .hud-venue {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 72%;
+    }
+
+    .hud-status-badge {
+      font-size: 0.63rem;
       font-weight: 700;
-      padding: 2px 7px;
-      border-radius: 999px;
-      font-size: 0.65rem;
-      text-transform: uppercase;
-      letter-spacing: 0.03em;
+      letter-spacing: 0.05em;
+      color: #10b981;
+      background: rgba(16, 185, 129, 0.12);
+      border: 1px solid rgba(16, 185, 129, 0.2);
+      padding: 1px 6px;
+      border-radius: 4px;
     }
 
-    .completed-match-teams {
+    /* 5. Placar Central HUD */
+    .hud-scoreboard {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+      gap: 8px;
+      padding: 4px 0;
+    }
+
+    .hud-team {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: #f1f5f9;
+    }
+
+    .hud-team.home {
+      justify-content: flex-start;
+    }
+
+    .hud-team.away {
+      justify-content: flex-end;
+    }
+
+    .team-badge-shield {
+      width: 10px;
+      height: 10px;
+      border-radius: 2px;
+      background: var(--team-color, #64748b);
+      box-shadow: 0 0 6px var(--team-color, #64748b);
+      flex-shrink: 0;
+    }
+
+    .team-name {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    /* Visor Numérico Central */
+    .hud-score-display {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+      background: #090d16;
+      border: 1px solid #1e2842;
+      padding: 4px 12px;
+      border-radius: 6px;
+      box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.6);
+    }
+
+    .hud-score-digit {
+      font-family: var(--font-display);
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: #ffffff;
+      font-variant-numeric: tabular-nums;
+      line-height: 1;
+    }
+
+    .hud-score-divider {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--text-dim);
+      margin-top: -2px;
+    }
+
+    /* 6. Linha do Tempo de Gols */
+    .hud-scorers-timeline {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      background: rgba(0, 0, 0, 0.2);
+      border-radius: 6px;
+      padding: 6px 10px;
+      font-size: 0.72rem;
+    }
+
+    .scorers-col {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+
+    .scorers-col.home {
+      align-items: flex-start;
+      border-right: 1px dashed rgba(255, 255, 255, 0.06);
+      padding-right: 6px;
+    }
+
+    .scorers-col.away {
+      align-items: flex-end;
+      padding-left: 6px;
+    }
+
+    .scorer-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      color: var(--text-muted);
+      line-height: 1.2;
+    }
+
+    .goal-time {
+      font-family: monospace;
+      font-weight: 700;
+      color: var(--accent);
+      font-size: 0.68rem;
+      background: rgba(56, 189, 248, 0.1);
+      padding: 1px 3px;
+      border-radius: 3px;
+    }
+
+    .goal-icon {
+      font-size: 0.65rem;
+    }
+
+    .scorer-empty {
+      color: var(--text-dim);
+      font-style: italic;
+      font-size: 0.68rem;
+    }
+
+    /* 7. Footer e Badges de Impacto Narrativo */
+    .hud-card-footer {
       display: flex;
       justify-content: space-between;
       align-items: center;
       gap: 8px;
+      padding-top: 4px;
     }
 
-    .completed-score {
-      background: #1e2638;
-      border: 1px solid var(--card-border);
-      border-radius: 6px;
-      padding: 3px 10px;
-      font-weight: 800;
-      font-size: 0.95rem;
-      letter-spacing: 0.06em;
-      color: #fff;
+    .impact-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 0.67rem;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 4px;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+    }
+
+    .impact-badge.badge-relegated {
+      background: var(--danger-bg);
+      color: var(--danger);
+      border: 1px solid rgba(239, 68, 68, 0.35);
+      box-shadow: 0 0 10px rgba(239, 68, 68, 0.15);
+    }
+
+    .impact-badge.badge-z4-threat {
+      background: rgba(239, 68, 68, 0.12);
+      color: #f87171;
+      border: 1px solid rgba(239, 68, 68, 0.25);
+    }
+
+    .impact-badge.badge-climax {
+      background: rgba(245, 158, 11, 0.12);
+      color: #fbbf24;
+      border: 1px solid rgba(245, 158, 11, 0.25);
+    }
+
+    .impact-badge.badge-triumph {
+      background: rgba(56, 189, 248, 0.1);
+      color: var(--accent);
+      border: 1px solid rgba(56, 189, 248, 0.25);
+    }
+
+    .match-date-tag {
+      font-size: 0.68rem;
+      color: var(--text-dim);
+      font-variant-numeric: tabular-nums;
+    }
+
+    /* 8. Responsividade Sem Quebras */
+    @media (max-width: 640px) {
+      .completed-matches-grid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+      }
+      .scoreboard-filter-bar {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .filter-group {
+        width: 100%;
+      }
+      .filter-chip {
+        flex: 1 1 auto;
+        justify-content: center;
+        padding: 6px 8px;
+      }
+      .hud-team {
+        font-size: 0.8rem;
+      }
+      .hud-score-digit {
+        font-size: 1.15rem;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .match-hud-card, .filter-chip {
+        transition: none;
+        transform: none !important;
+      }
     }
 
     /* Modal / Indicador de Simulação */
@@ -1038,7 +1366,7 @@
           <span class="badge-live">34ªR Parcial · 05/11/2026</span>
         </h1>
         <p class="header-desc" itemprop="description">
-          Modelo Estocástico Calibrado (UFMG / CNN Brasil) · 43 jogos restantes · Chapecoense matematicamente rebaixada e Z4 em ebulição
+          Modelo Estocástico Calibrado (UFMG / CNN Brasil) · 42 jogos restantes · Chapecoense matematicamente rebaixada e Z4 em ebulição
         </p>
       </div>
       <div class="header-actions">
@@ -1075,9 +1403,38 @@
 
       <!-- Placares Encerrados da 34ª Rodada -->
       <div class="section-title">
-        <span>Placares Encerrados — 34ª Rodada (Até Hoje, 05/11/2026)</span>
-        <span style="font-size:0.75rem; text-transform:none; color:var(--success);">8 jogos finalizados</span>
+        <span>Placares Encerrados — 34ª Rodada</span>
+        <span style="font-size:0.75rem; text-transform:none; color:#10b981;" id="completedCount">9 de 10 jogos concluídos</span>
       </div>
+
+      <!-- Barra de Filtros Segmentada (HUD Tabs) -->
+      <nav class="scoreboard-filter-bar" aria-label="Filtro dos jogos encerrados da 34ª rodada">
+        <div class="filter-group" role="tablist">
+          <button class="filter-chip active" role="tab" aria-selected="true" data-filter="all">
+            <span class="chip-label">Todos</span>
+            <span class="chip-badge">9</span>
+          </button>
+          <button class="filter-chip" role="tab" aria-selected="false" data-filter="z4">
+            <span class="chip-dot dot-danger"></span>
+            <span class="chip-label">Luta no Z4</span>
+            <span class="chip-badge">7</span>
+          </button>
+          <button class="filter-chip" role="tab" aria-selected="false" data-filter="g4">
+            <span class="chip-dot dot-gold"></span>
+            <span class="chip-label">G4 / Título</span>
+            <span class="chip-badge">4</span>
+          </button>
+          <button class="filter-chip" role="tab" aria-selected="false" data-filter="epic">
+            <span class="chip-label">⚡ Goleadas & Viradas</span>
+            <span class="chip-badge">2</span>
+          </button>
+        </div>
+        <div class="filter-summary">
+          <span class="status-indicator-live"></span>
+          <span>9 jogos encerrados</span>
+        </div>
+      </nav>
+
       <div class="completed-matches-grid" id="completedGrid"></div>
 
       <!-- Presets de Cenários -->
@@ -1092,8 +1449,8 @@
 
       <!-- Grade de Jogos por Rodada -->
       <div class="section-title">
-        <span>Confrontos Restantes (43 Jogos — R34 Pendentes, R21 Atrasado e R35 a R38)</span>
-        <span style="font-size:0.75rem; text-transform:none; color:var(--accent);" id="matchesCount">43 jogos</span>
+        <span>Confrontos Restantes (42 Jogos — 1 Pendente da R34, R21 Atrasado e R35 a R38)</span>
+        <span style="font-size:0.75rem; text-transform:none; color:var(--accent);" id="matchesCount">42 jogos</span>
       </div>
 
       <div id="roundsList"></div>
@@ -1106,7 +1463,7 @@
             <details class="faq-item" open>
               <summary class="faq-summary">Qual a pontuação de corte projetada para escapar do Z4?</summary>
               <div class="faq-answer">
-                Após o encerramento de 8 partidas da 34ª rodada, a linha de corte estatística para escapar do rebaixamento está projetada entre <strong>42 e 43 pontos</strong>. Historicamente na era dos pontos corridos com 20 clubes, atingir 43 pontos costuma garantir mais de 85% de probabilidade de permanência na Série A.
+                Após o encerramento de 9 partidas da 34ª rodada, a linha de corte estatística para escapar do rebaixamento está projetada entre <strong>42 e 43 pontos</strong>. Historicamente na era dos pontos corridos com 20 clubes, atingir 43 pontos costuma garantir mais de 85% de probabilidade de permanência na Série A.
               </div>
             </details>
 
@@ -1207,10 +1564,10 @@
     const RAW_TEAMS = [
       { name: "Flamengo", short: "FLA", color: "#cc0000", pts: 76, g: 34, w: 23, d: 7, l: 4, gf: 71, gc: 29, ufmg: 0.0, att: 0.315, def: 0.295 },
       { name: "Palmeiras", short: "PAL", color: "#006437", pts: 73, g: 34, w: 21, d: 10, l: 3, gf: 61, gc: 23, ufmg: 0.0, att: 0.210, def: 0.405 },
-      { name: "Cruzeiro", short: "CRU", color: "#003b8e", pts: 57, g: 33, w: 17, d: 6, l: 10, gf: 52, gc: 46, ufmg: 0.0, att: 0.158, def: -0.065 },
+      { name: "Cruzeiro", short: "CRU", color: "#003b8e", pts: 58, g: 34, w: 17, d: 7, l: 10, gf: 52, gc: 46, ufmg: 0.0, att: 0.158, def: -0.065 },
       { name: "Fluminense", short: "FLU", color: "#831d1d", pts: 54, g: 33, w: 15, d: 9, l: 9, gf: 52, gc: 42, ufmg: 0.0, att: 0.144, def: 0.012 },
       { name: "Athletico-PR", short: "CAP", color: "#c8102e", pts: 54, g: 34, w: 15, d: 9, l: 10, gf: 51, gc: 43, ufmg: 0.0, att: 0.105, def: 0.040 },
-      { name: "Bahia", short: "BAH", color: "#0072ce", pts: 53, g: 33, w: 14, d: 11, l: 8, gf: 48, gc: 42, ufmg: 0.0, att: 0.082, def: 0.007 },
+      { name: "Bahia", short: "BAH", color: "#0072ce", pts: 54, g: 34, w: 14, d: 12, l: 8, gf: 48, gc: 42, ufmg: 0.0, att: 0.082, def: 0.007 },
       { name: "Atlético-MG", short: "CAM", color: "#222222", pts: 50, g: 34, w: 14, d: 8, l: 12, gf: 44, gc: 40, ufmg: 0.0, att: 0.015, def: 0.060 },
       { name: "Bragantino", short: "BGT", color: "#d91f26", pts: 47, g: 34, w: 13, d: 8, l: 13, gf: 44, gc: 39, ufmg: 0.0, att: -0.025, def: 0.075 },
       { name: "Santos", short: "SAN", color: "#444444", pts: 47, g: 34, w: 12, d: 11, l: 11, gf: 50, gc: 49, ufmg: 0.5, att: 0.075, def: -0.090 },
@@ -1227,21 +1584,181 @@
       { name: "Chapecoense", short: "CHA", color: "#16a34a", pts: 21, g: 33, w: 4, d: 9, l: 20, gf: 33, gc: 68, ufmg: 100.0, att: -0.320, def: -0.460 }
     ];
 
-    // Placares Encerrados até hoje (05/11/2026)
-    const COMPLETED_MATCHES = [
-      { round: "34ª Rodada", home: "Bragantino", away: "Santos", scoreHome: 2, scoreAway: 1, date: "02/11", status: "Encerrado" },
-      { round: "34ª Rodada", home: "Chapecoense", away: "Mirassol", scoreHome: 1, scoreAway: 2, date: "03/11", status: "Encerrado", note: "Chapecoense rebaixada" },
-      { round: "34ª Rodada", home: "Internacional", away: "Coritiba", scoreHome: 1, scoreAway: 0, date: "03/11", status: "Encerrado" },
-      { round: "34ª Rodada", home: "Athletico-PR", away: "Vasco", scoreHome: 1, scoreAway: 3, date: "04/11", status: "Encerrado" },
-      { round: "34ª Rodada", home: "Flamengo", away: "Grêmio", scoreHome: 3, scoreAway: 1, date: "04/11", status: "Encerrado" },
-      { round: "34ª Rodada", home: "Botafogo", away: "Atlético-MG", scoreHome: 1, scoreAway: 0, date: "04/11", status: "Encerrado" },
-      { round: "34ª Rodada", home: "São Paulo", away: "Corinthians", scoreHome: 0, scoreAway: 0, date: "04/11", status: "Encerrado" },
-      { round: "34ª Rodada", home: "Palmeiras", away: "Remo", scoreHome: 5, scoreAway: 1, date: "05/11", status: "Encerrado" }
+    // Placares Encerrados da 34ª Rodada (Dados Oficiais Enriquecidos)
+    const COMPLETED_MATCHES_34R = [
+      {
+        id: "M34_1",
+        round: "34ª Rodada",
+        date: "05/11",
+        stadium: "Allianz Parque · São Paulo (SP)",
+        home: "Palmeiras",
+        away: "Remo",
+        scoreHome: 5,
+        scoreAway: 1,
+        category: "epic z4 g4",
+        impactClass: "impact-top",
+        impactBadge: { type: "triumph", icon: "🔥", text: "Goleada 5x1 · Pressão no Remo" },
+        scorersHome: [
+          { name: "Arias", time: "14'" },
+          { name: "Arias", time: "38'" },
+          { name: "Maurício", time: "52'" },
+          { name: "Flaco López", time: "71'" },
+          { name: "Marcelinho (c)", time: "84'" }
+        ],
+        scorersAway: [
+          { name: "José Welison", time: "63'" }
+        ]
+      },
+      {
+        id: "M34_2",
+        round: "34ª Rodada",
+        date: "05/11",
+        stadium: "Mineirão · Belo Horizonte (MG)",
+        home: "Cruzeiro",
+        away: "Bahia",
+        scoreHome: 0,
+        scoreAway: 0,
+        category: "all g4",
+        impactClass: "",
+        impactBadge: { type: "climax", icon: "🛡️", text: "Ponto Disputado no Mineirão" },
+        scorersHome: [],
+        scorersAway: []
+      },
+      {
+        id: "M34_3",
+        round: "34ª Rodada",
+        date: "04/11",
+        stadium: "Ligga Arena · Curitiba (PR)",
+        home: "Athletico-PR",
+        away: "Vasco",
+        scoreHome: 1,
+        scoreAway: 3,
+        category: "epic z4",
+        impactClass: "",
+        impactBadge: { type: "triumph", icon: "⚡", text: "Virada Cruzmaltina em 6 min" },
+        scorersHome: [
+          { name: "Mendoza", time: "22'" }
+        ],
+        scorersAway: [
+          { name: "Aguirre", time: "61'" },
+          { name: "Bruno Duarte", time: "63'" },
+          { name: "G. Pereira", time: "67'" }
+        ]
+      },
+      {
+        id: "M34_4",
+        round: "34ª Rodada",
+        date: "04/11",
+        stadium: "Maracanã · Rio de Janeiro (RJ)",
+        home: "Flamengo",
+        away: "Grêmio",
+        scoreHome: 3,
+        scoreAway: 1,
+        category: "z4 g4",
+        impactClass: "impact-relegation",
+        impactBadge: { type: "z4-threat", icon: "⚠️", text: "Grêmio Afunda no Z4 (60.4%)" },
+        scorersHome: [
+          { name: "Samuel Lino", time: "20'" },
+          { name: "Pedro", time: "27'" },
+          { name: "Pedro", time: "45+2'" }
+        ],
+        scorersAway: [
+          { name: "Amuzu", time: "69'" }
+        ]
+      },
+      {
+        id: "M34_5",
+        round: "34ª Rodada",
+        date: "04/11",
+        stadium: "MorumBIS · São Paulo (SP)",
+        home: "São Paulo",
+        away: "Corinthians",
+        scoreHome: 0,
+        scoreAway: 0,
+        category: "z4",
+        impactClass: "impact-relegation",
+        impactBadge: { type: "z4-threat", icon: "⚖️", text: "Majestoso Tenso · Timão no Z4 (55%)" },
+        scorersHome: [],
+        scorersAway: []
+      },
+      {
+        id: "M34_6",
+        round: "34ª Rodada",
+        date: "04/11",
+        stadium: "Nilton Santos · Rio de Janeiro (RJ)",
+        home: "Botafogo",
+        away: "Atlético-MG",
+        scoreHome: 1,
+        scoreAway: 0,
+        category: "g4",
+        impactClass: "impact-top",
+        impactBadge: { type: "climax", icon: "🏆", text: "Alívio Glorioso · Risco 1.5%" },
+        scorersHome: [
+          { name: "Edenílson", time: "18'" }
+        ],
+        scorersAway: []
+      },
+      {
+        id: "M34_7",
+        round: "34ª Rodada",
+        date: "03/11",
+        stadium: "Arena Condá · Chapecó (SC)",
+        home: "Chapecoense",
+        away: "Mirassol",
+        scoreHome: 1,
+        scoreAway: 2,
+        category: "z4",
+        impactClass: "impact-relegation",
+        impactBadge: { type: "relegated", icon: "🛑", text: "Queda Matemática Confirmada (100%)" },
+        scorersHome: [
+          { name: "Kauan Farias", time: "11'" }
+        ],
+        scorersAway: [
+          { name: "Reinaldo (p)", time: "45+3'" },
+          { name: "Anderson (c)", time: "56'" }
+        ]
+      },
+      {
+        id: "M34_8",
+        round: "34ª Rodada",
+        date: "03/11",
+        stadium: "Beira-Rio · Porto Alegre (RS)",
+        home: "Internacional",
+        away: "Coritiba",
+        scoreHome: 1,
+        scoreAway: 0,
+        category: "z4",
+        impactClass: "",
+        impactBadge: { type: "triumph", icon: "🎯", text: "Pênalti aos 94' · Inter Fora do Z4" },
+        scorersHome: [
+          { name: "Alerrandro (p)", time: "90+4'" }
+        ],
+        scorersAway: []
+      },
+      {
+        id: "M34_9",
+        round: "34ª Rodada",
+        date: "02/11",
+        stadium: "Nabi Abi Chedid · Bragança Paulista (SP)",
+        home: "Bragantino",
+        away: "Santos",
+        scoreHome: 2,
+        scoreAway: 1,
+        category: "z4",
+        impactClass: "",
+        impactBadge: { type: "climax", icon: "⏱️", text: "Massa Bruta Segura Peixe no Z4" },
+        scorersHome: [
+          { name: "Rodinei (c)", time: "4'" },
+          { name: "Wallace Yan", time: "41'" }
+        ],
+        scorersAway: [
+          { name: "Coutinho", time: "37'" }
+        ]
+      }
     ];
 
     const FIXTURES_LIST = [
       // 34ª Rodada (Jogos a Realizar / Pendentes)
-      { id: "R34_4", round: "34ª Rodada (Pendente)", home: "Cruzeiro", away: "Bahia", date: "05/11 - 21h30", direct: false, label: "Hoje 21h30" },
       { id: "R34_10", round: "34ª Rodada (Pendente)", home: "Vitória", away: "Fluminense", date: "06/11 - 20h00", direct: false, label: "Sexta 20h" },
       // Atrasado R21
       { id: "R21_1", round: "21ª Rodada (Atrasado)", home: "Chapecoense", away: "Vasco", date: "14/11", direct: false },
@@ -1505,40 +2022,95 @@
       });
     }
 
-    // --- 3.5. Renderização dos Placares Encerrados ---
-    function renderCompletedMatches() {
+    // --- 3.5. Renderização dos Placares Encerrados (Broadcast Stadium HUD) ---
+    let activeScoreboardFilter = 'all';
+
+    function renderCompletedMatches(filter = 'all') {
       const grid = document.getElementById("completedGrid");
       if (!grid) return;
       grid.innerHTML = "";
-      COMPLETED_MATCHES.forEach(m => {
-        const card = document.createElement("div");
-        card.className = "completed-match-card";
-        const homeTeam = teamsMap[m.home];
-        const awayTeam = teamsMap[m.away];
 
-        let noteHtml = m.note ? `<span class="badge-tag tag-direct" style="font-size:0.62rem;">${m.note}</span>` : "";
+      const filtered = COMPLETED_MATCHES_34R.filter(m => {
+        if (filter === 'all') return true;
+        return m.category.includes(filter);
+      });
 
+      filtered.forEach(m => {
+        const homeTeam = teamsMap[m.home] || { color: '#64748b' };
+        const awayTeam = teamsMap[m.away] || { color: '#64748b' };
+
+        const homeScorersHtml = m.scorersHome.length > 0 
+          ? m.scorersHome.map(s => `<div class="scorer-item"><span class="goal-icon" aria-hidden="true">⚽</span><span>${s.name}</span><span class="goal-time">${s.time}</span></div>`).join("")
+          : `<span class="scorer-empty">—</span>`;
+
+        const awayScorersHtml = m.scorersAway.length > 0
+          ? m.scorersAway.map(s => `<div class="scorer-item"><span class="goal-time">${s.time}</span><span>${s.name}</span><span class="goal-icon" aria-hidden="true">⚽</span></div>`).join("")
+          : `<span class="scorer-empty">—</span>`;
+
+        const badgeClass = m.impactBadge.type === 'relegated' ? 'badge-relegated'
+          : m.impactBadge.type === 'z4-threat' ? 'badge-z4-threat'
+          : m.impactBadge.type === 'triumph' ? 'badge-triumph' : 'badge-climax';
+
+        const card = document.createElement("article");
+        card.className = `match-hud-card ${m.impactClass || ''}`;
         card.innerHTML = `
-          <div class="completed-match-header">
-            <span>${m.round} · ${m.date}</span>
-            <div style="display:flex; align-items:center; gap:6px;">
-              ${noteHtml}
-              <span class="completed-badge-done">${m.status}</span>
+          <header class="hud-card-header">
+            <div class="hud-venue" title="${m.stadium}">
+              <svg viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/>
+                <circle cx="12" cy="9" r="2.5"/>
+              </svg>
+              <span>${m.stadium}</span>
+            </div>
+            <span class="hud-status-badge">ENCERRADO</span>
+          </header>
+
+          <div class="hud-scoreboard">
+            <div class="hud-team home">
+              <span class="team-badge-shield" style="--team-color: ${homeTeam.color};" aria-hidden="true"></span>
+              <span class="team-name" title="${m.home}">${m.home}</span>
+            </div>
+            <div class="hud-score-display" aria-label="${m.home} ${m.scoreHome} a ${m.scoreAway} ${m.away}">
+              <span class="hud-score-digit">${m.scoreHome}</span>
+              <span class="hud-score-divider" aria-hidden="true">:</span>
+              <span class="hud-score-digit">${m.scoreAway}</span>
+            </div>
+            <div class="hud-team away">
+              <span class="team-name" title="${m.away}">${m.away}</span>
+              <span class="team-badge-shield" style="--team-color: ${awayTeam.color};" aria-hidden="true"></span>
             </div>
           </div>
-          <div class="completed-match-teams">
-            <div class="team-item home" style="font-size:0.82rem;">
-              <span class="team-dot" style="background:${homeTeam ? homeTeam.color : '#666'};"></span>
-              <span>${m.home}</span>
-            </div>
-            <div class="completed-score">${m.scoreHome} - ${m.scoreAway}</div>
-            <div class="team-item away" style="font-size:0.82rem;">
-              <span>${m.away}</span>
-              <span class="team-dot" style="background:${awayTeam ? awayTeam.color : '#666'};"></span>
-            </div>
+
+          <div class="hud-scorers-timeline" aria-label="Gols da partida">
+            <div class="scorers-col home">${homeScorersHtml}</div>
+            <div class="scorers-col away">${awayScorersHtml}</div>
           </div>
+
+          <footer class="hud-card-footer">
+            <span class="impact-badge ${badgeClass}">
+              <span aria-hidden="true">${m.impactBadge.icon}</span>
+              <span>${m.impactBadge.text}</span>
+            </span>
+            <span class="match-date-tag">${m.date}</span>
+          </footer>
         `;
         grid.appendChild(card);
+      });
+    }
+
+    function initScoreboardFilters() {
+      const chips = document.querySelectorAll(".scoreboard-filter-bar .filter-chip");
+      chips.forEach(chip => {
+        chip.addEventListener("click", () => {
+          chips.forEach(c => {
+            c.classList.remove("active");
+            c.setAttribute("aria-selected", "false");
+          });
+          chip.classList.add("active");
+          chip.setAttribute("aria-selected", "true");
+          activeScoreboardFilter = chip.getAttribute("data-filter");
+          renderCompletedMatches(activeScoreboardFilter);
+        });
       });
     }
 
@@ -1649,7 +2221,7 @@
     function refreshUI() {
       renderStandings();
       renderRiskCards();
-      renderCompletedMatches();
+      renderCompletedMatches(activeScoreboardFilter);
       renderFixtures();
     }
 
@@ -1832,7 +2404,8 @@
       refreshUI();
     });
 
-    // Inicia UI
+    // Inicia UI e Filtros do HUD
+    initScoreboardFilters();
     refreshUI();
   </script>
 </body>
