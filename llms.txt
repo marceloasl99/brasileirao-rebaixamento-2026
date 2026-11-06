@@ -1,0 +1,28 @@
+# Simulador de Rebaixamento Brasileirão 2026
+
+> Aplicação web interativa estocástica para simulação de probabilidades da reta final e luta contra o rebaixamento (Z4) no Campeonato Brasileiro Série A de 2026.
+
+## Dados e Referência
+- **URL ao vivo**: https://marceloasl99.github.io/brasileirao-rebaixamento-2026/
+- **Data de referência dos dados**: 05/11/2026 (Pós-jogos da 34ª rodada)
+- **Confrontos restantes**: 43 partidas (2 pendentes da 34ª rodada, 1 atrasado da 21ª rodada e 40 jogos das rodadas 35 a 38)
+- **Linha de corte projetada para o Z4**: 42 a 43 pontos
+- **Modelo Estatístico**: Modelo Estocástico de Gols por Distribuição de Poisson calibrado com 20.000 iterações Monte Carlo e referências UFMG / CNN Brasil
+
+## Situação Atual da Zona de Rebaixamento (Z4)
+- **Chapecoense (20º - 21 pts)**: Matematicamente rebaixada à Série B 2027 na 34ª rodada após derrota para o Mirassol. Probabilidade: 100%.
+- **Remo (19º - 29 pts)**: Probabilidade de rebaixamento de 99,56% após derrota de 5x1 para o Palmeiras.
+- **Grêmio (18º - 37 pts)**: Ocupa a 18ª posição no Z4 com 60,4% de probabilidade de queda.
+- **Corinthians (17º - 37 pts)**: Ocupa a 17ª posição no Z4 com 55,0% de probabilidade de queda (saldo de gols superior ao Grêmio: -6 vs -9).
+- **Internacional (16º - 38 pts)**: Primeira equipe fora do Z4 com 40,8% de probabilidade de queda após vencer o Coritiba por 1x0.
+- **Vitória (15º - 38 pts)**: 21,4% de probabilidade de queda com 1 jogo a menos na 34ª rodada.
+- **Mirassol (14º - 40 pts)**: 16,1% de probabilidade de queda após vitória em Chapecó.
+- **Coritiba (12º - 42 pts)**: 4,8% de probabilidade de queda.
+- **Vasco da Gama (13º - 41 pts)**: 1,8% de probabilidade de queda com 1 jogo a menos (atrasado da 21ª rodada contra a Chapecoense).
+- **Botafogo (11º - 42 pts)**: 1,5% de probabilidade de queda após vencer o Atlético-MG.
+
+## Recursos
+- Simulação Monte Carlo em tempo real com 20.000 cenários no navegador.
+- Palpites interativos (1, X, 2) nos 43 jogos restantes com recalculo instantâneo da tabela e das probabilidades.
+- Critérios de desempate oficiais da CBF: Pontos > Vitórias > Saldo de Gols > Gols Pró.
+- Presets rápidos para cenários do Corinthians, Internacional, Grêmio e lógica de mandantes.

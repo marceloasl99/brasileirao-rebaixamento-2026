@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://marceloasl99.github.io/brasileirao-rebaixamento-2026/sitemap.xml

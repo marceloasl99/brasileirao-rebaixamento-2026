@@ -127,6 +127,19 @@ Com base nisso, os botões de aposta (**1**, **X**, **2**) exibem as chances rea
 
 ---
 
+## 🔍 Otimização para Mecanismos de Busca (SEO, AEO e GEO)
+
+A aplicação foi integralmente estruturada seguindo as diretrizes avançadas de SEO técnico do kit **`claude-seo`** e do Google Search Essentials:
+
+* 🏷️ **Metadados Completos**: `<title>` atrativo sob 60 caracteres, `<meta description>` focada em intenção de busca, canonical tag e tags de indexação (`max-snippet`, `max-image-preview:large`).
+* 📱 **Social Sharing (OpenGraph & Twitter)**: Cartões visuais completos (`og:image`, `twitter:card`) com banner dedicado em vetor (`og-image.svg`) para pré-visualizações ricas no WhatsApp, Twitter, LinkedIn e Discord.
+* 🤖 **Schema.org Estruturado (JSON-LD + Microdata)**: Entidades completas com `@graph` cobrindo `WebApplication`, `SportsEvent`, `FAQPage` (para rich snippets no Google) e `BreadcrumbList`.
+* 🗺️ **Rastreamento e Indexação**: Arquivos [`sitemap.xml`](file:///C:/44/4/sitemap.xml) e [`robots.txt`](file:///C:/44/4/robots.txt) para indexação rápida no Google Search Console e Bing.
+* 🧠 **GEO / AEO (Agentic Search)**: Arquivo [`llms.txt`](file:///C:/44/4/llms.txt) padronizado para descoberta orgânica por mecanismos de IA generativa (ChatGPT Search, Perplexity, Claude e Gemini).
+* ❓ **Conteúdo Indexável On-Page**: Seção de FAQ (Perguntas Frequentes) e Metodologia Científica com HTML semântico (`<details>`, `<summary>`) renderizada nativamente para indexação de palavras-chave de cauda longa (*long-tail keywords*).
+
+---
+
 ## 🚀 Como Executar Localmente
 
 Como a aplicação é 100% autocontida em um único arquivo HTML, executá-la é simples e instantâneo:

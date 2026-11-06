@@ -1,9 +1,137 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" prefix="og: https://ogp.me/ns#">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Simulador de Rebaixamento — Brasileirão 2026 (Pós-33ª Rodada)</title>
+  <title>Simulador de Rebaixamento Brasileirão 2026 | Probabilidades Z4 e Monte Carlo</title>
+  
+  <!-- SEO Essencial -->
+  <meta name="description" content="Simulador interativo de rebaixamento do Brasileirão 2026 pós-34ª rodada. 20.000 simulações Monte Carlo, probabilidades UFMG, palpites nos 43 jogos restantes e tabela ao vivo.">
+  <meta name="keywords" content="simulador brasileirao 2026, rebaixamento brasileirao 2026, z4 brasileirao 2026, probabilidades rebaixamento ufmg, chances de rebaixamento, monte carlo brasileirao, corinthians rebaixamento, gremio rebaixamento, inter rebaixamento, serie a 2026">
+  <meta name="author" content="Marcelo Leite">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <link rel="canonical" href="https://marceloasl99.github.io/brasileirao-rebaixamento-2026/">
+  <meta name="theme-color" content="#0b0e14">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:url" content="https://marceloasl99.github.io/brasileirao-rebaixamento-2026/">
+  <meta property="og:site_name" content="Simulador Brasileirão 2026">
+  <meta property="og:title" content="Simulador de Rebaixamento Brasileirão 2026 | Probabilidades Z4">
+  <meta property="og:description" content="Simule a reta final do Brasileirão 2026 com 20.000 cenários estocásticos Monte Carlo. Acompanhe a luta contra o Z4, palpites nos 43 jogos restantes e tabela em tempo real.">
+  <meta property="og:image" content="https://marceloasl99.github.io/brasileirao-rebaixamento-2026/og-image.svg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Simulador de Rebaixamento Brasileirão 2026 - Tabela e Probabilidades">
+
+  <!-- Twitter Cards -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://marceloasl99.github.io/brasileirao-rebaixamento-2026/">
+  <meta name="twitter:title" content="Simulador de Rebaixamento Brasileirão 2026 | Probabilidades Z4">
+  <meta name="twitter:description" content="Simule a reta final do Brasileirão 2026 com 20.000 cenários estocásticos Monte Carlo. Tabela ao vivo e probabilidades da UFMG.">
+  <meta name="twitter:image" content="https://marceloasl99.github.io/brasileirao-rebaixamento-2026/og-image.svg">
+  <meta name="twitter:image:alt" content="Simulador de Rebaixamento Brasileirão 2026">
+
+  <!-- Schema.org JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "@id": "https://marceloasl99.github.io/brasileirao-rebaixamento-2026/#app",
+        "name": "Simulador de Rebaixamento Brasileirão 2026",
+        "url": "https://marceloasl99.github.io/brasileirao-rebaixamento-2026/",
+        "description": "Simulador interativo das probabilidades de rebaixamento (Z4) e classificação do Campeonato Brasileiro 2026 com motor Monte Carlo de 20.000 iterações.",
+        "applicationCategory": "SportsApplication",
+        "operatingSystem": "All",
+        "browserRequirements": "Requires JavaScript. Requires HTML5.",
+        "inLanguage": "pt-BR",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "BRL"
+        },
+        "author": {
+          "@type": "Person",
+          "name": "Marcelo Leite"
+        }
+      },
+      {
+        "@type": "SportsEvent",
+        "@id": "https://marceloasl99.github.io/brasileirao-rebaixamento-2026/#event",
+        "name": "Campeonato Brasileiro Série A 2026 — Reta Final",
+        "sport": "Futebol",
+        "description": "Disputa das rodadas finais e da luta contra o rebaixamento à Série B no Brasileirão 2026.",
+        "location": {
+          "@type": "Place",
+          "name": "Brasil"
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://marceloasl99.github.io/brasileirao-rebaixamento-2026/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Qual é a linha de corte para escapar do rebaixamento no Brasileirão 2026?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A linha de corte projetada para permanecer na Série A após a 34ª rodada está entre 42 e 43 pontos, com base em 20.000 simulações estatísticas do modelo estocástico de Poisson."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "A Chapecoense já está matematicamente rebaixada no Brasileirão 2026?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Sim. Com a derrota por 2 a 1 para o Mirassol na 34ª rodada, a Chapecoense permaneceu com 21 pontos e não tem mais chances matemáticas de alcançar o 16º colocado, confirmando seu rebaixamento à Série B de 2027."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Quais as chances de rebaixamento de Corinthians e Grêmio?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Após os jogos da 34ª rodada, o Grêmio tem 60,4% de probabilidade de queda (18º lugar com 37 pontos) e o Corinthians tem 55,0% de risco de rebaixamento (17º lugar com 37 pontos), segundo dados calibrados da UFMG e simulações Monte Carlo."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Como funciona o simulador Monte Carlo do Brasileirão?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "O simulador calcula as probabilidades de gols de cada equipe em cada confronto usando a Distribuição de Poisson com forças de ataque, defesa e mando de campo. Em seguida, executa 20.000 temporadas virtuais completas respeitando os palpites fixados pelo usuário e ordenando a tabela pelos critérios oficiais da CBF."
+            }
+          }
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://marceloasl99.github.io/brasileirao-rebaixamento-2026/#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Início",
+            "item": "https://marceloasl99.github.io/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Simulador Brasileirão 2026",
+            "item": "https://marceloasl99.github.io/brasileirao-rebaixamento-2026/"
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
   <style>
     :root {
       --bg: #0b0e14;
@@ -777,20 +905,138 @@
       max-height: 85vh;
       overflow-y: auto;
     }
+
+    /* FAQ e Metodologia SEO */
+    .seo-content-block {
+      margin-top: 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .info-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      padding: 20px;
+    }
+
+    .info-card h2 {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .faq-item {
+      background: #101520;
+      border: 1px solid var(--card-border);
+      border-radius: 8px;
+      overflow: hidden;
+      transition: border-color 0.2s ease;
+    }
+
+    .faq-item[open] {
+      border-color: var(--accent);
+    }
+
+    .faq-summary {
+      padding: 12px 16px;
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--text-main);
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      user-select: none;
+    }
+
+    .faq-summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .faq-summary::after {
+      content: "+";
+      font-size: 1.2rem;
+      color: var(--accent);
+      transition: transform 0.2s ease;
+    }
+
+    .faq-item[open] .faq-summary::after {
+      content: "−";
+    }
+
+    .faq-answer {
+      padding: 0 16px 14px;
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    .faq-answer strong {
+      color: #fff;
+    }
+
+    .methodology-text {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .methodology-text strong {
+      color: #fff;
+    }
+
+    .app-footer {
+      max-width: 1440px;
+      margin: 40px auto 0;
+      padding: 24px 20px 0;
+      border-top: 1px solid var(--card-border);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      font-size: 0.78rem;
+      color: var(--text-dim);
+    }
+
+    .app-footer a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .app-footer a:hover {
+      text-decoration: underline;
+    }
   </style>
 </head>
-<body>
+<body itemscope itemtype="https://schema.org/WebApplication">
   <!-- Skip navigation link -->
   <a class="skip-link" href="#main-content">Pular para o conteúdo principal</a>
 
   <header>
     <div class="header-content">
       <div class="title-area">
-        <h1>
+        <h1 itemprop="name">
           <span>Brasileirão 2026 — Simulador de Reta Final</span>
           <span class="badge-live">34ªR Parcial · 05/11/2026</span>
         </h1>
-        <p class="header-desc">
+        <p class="header-desc" itemprop="description">
           Modelo Estocástico Calibrado (UFMG / CNN Brasil) · 43 jogos restantes · Chapecoense matematicamente rebaixada e Z4 em ebulição
         </p>
       </div>
@@ -850,6 +1096,68 @@
       </div>
 
       <div id="roundsList"></div>
+
+      <!-- Seção SEO: Perguntas Frequentes e Metodologia -->
+      <section class="seo-content-block" aria-labelledby="faq-title">
+        <article class="info-card" id="faq">
+          <h2 id="faq-title">❓ Perguntas Frequentes sobre o Rebaixamento no Brasileirão 2026</h2>
+          <div class="faq-list">
+            <details class="faq-item" open>
+              <summary class="faq-summary">Qual a pontuação de corte projetada para escapar do Z4?</summary>
+              <div class="faq-answer">
+                Após o encerramento de 8 partidas da 34ª rodada, a linha de corte estatística para escapar do rebaixamento está projetada entre <strong>42 e 43 pontos</strong>. Historicamente na era dos pontos corridos com 20 clubes, atingir 43 pontos costuma garantir mais de 85% de probabilidade de permanência na Série A.
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary class="faq-summary">Por que Corinthians e Grêmio possuem mais de 50% de risco de rebaixamento?</summary>
+              <div class="faq-answer">
+                Ambas as equipes ocupam a 17ª e 18ª posições com <strong>37 pontos em 34 jogos</strong>. Com apenas 4 partidas restantes (12 pontos em disputa) e confrontos diretos na reta final (inclusive um confronto direto entre Corinthians e Grêmio na 37ª rodada), a probabilidade combinada de que ambos não consigam ultrapassar a linha de 42-43 pontos eleva o risco para <strong>55,0% (Corinthians)</strong> e <strong>60,4% (Grêmio)</strong>.
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary class="faq-summary">A Chapecoense já está matematicamente rebaixada?</summary>
+              <div class="faq-answer">
+                <strong>Sim.</strong> Ao ser derrotada pelo Mirassol por 2 a 1 na 34ª rodada, a Chapecoense permaneceu com 21 pontos. Mesmo que vença todos os jogos restantes (incluindo o duelo atrasado contra o Vasco), o clube alcançaria no máximo 36 pontos, pontuação insuficiente para superar o Internacional (16º colocado com 38 pontos). Portanto, o descenso à Série B de 2027 é matemático (100%).
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary class="faq-summary">Como o simulador Monte Carlo calcula os 20.000 cenários?</summary>
+              <div class="faq-answer">
+                O motor estocástico emprega a <strong>Distribuição de Poisson Bivariada</strong> para prever o número de gols de cada equipe com base na força ofensiva, eficiência defensiva e média histórica da liga com vantagem do mando de campo. Em seguida, executa 20.000 temporadas virtuais aleatórias preservando os palpites do usuário e aplicando estritamente os critérios oficiais de desempate da CBF.
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary class="faq-summary">Quais são os critérios de desempate oficiais da CBF?</summary>
+              <div class="faq-answer">
+                Caso dois ou mais clubes terminem empatados em pontos, a classificação segue a ordem oficial:
+                1º Maior número de vitórias;
+                2º Maior saldo de gols;
+                3º Maior número de gols pró;
+                4º Confronto direto;
+                5º Menor número de cartões vermelhos;
+                6º Menor número de cartões amarelos;
+                7º Sorteio.
+              </div>
+            </details>
+          </div>
+        </article>
+
+        <article class="info-card" id="metodologia">
+          <h2>📐 Metodologia Estatística e Modelo Científico</h2>
+          <div class="methodology-text">
+            <p>
+              O simulador utiliza um modelo matemático híbrido entre <strong>análise preditiva de Poisson</strong> e <strong>simulação estocástica de Monte Carlo</strong>. Os coeficientes de ataque e defesa dos clubes são calibrados com os parâmetros fornecidos pelos departamentos de matemática de referência (como o da UFMG e modelos de expectativa de gols xG).
+            </p>
+            <p>
+              Conforme o usuário seleciona palpites nos confrontos restantes, o simulador fixa essas partidas com probabilidade 100% e projeta os confrontos em aberto nas 20.000 iterações subsequentes. Isso permite analisar cenários condicionais, tais como: <em>"o que acontece se meu time vencer os dois próximos confrontos diretos em casa?"</em>.
+            </p>
+          </div>
+        </article>
+      </section>
     </div>
 
     <!-- Coluna Direita: Tabela de Classificação -->
@@ -883,6 +1191,15 @@
       </div>
     </div>
   </main>
+
+  <footer class="app-footer">
+    <div>
+      <strong>Simulador de Rebaixamento Brasileirão 2026</strong> · Modelo Estocástico de Probabilidades Monte Carlo
+    </div>
+    <div>
+      Atualizado em 05/11/2026 · Dados de referência: UFMG / CNN Brasil · <a href="https://github.com/marceloasl99/brasileirao-rebaixamento-2026" target="_blank" rel="noopener noreferrer">Repositório no GitHub</a>
+    </div>
+  </footer>
 
   <script>
     // --- 1. Dados Oficiais e Parâmetros Calibrados (Atualizado em 05/11/2026) ---
