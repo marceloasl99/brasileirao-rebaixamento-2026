@@ -6,7 +6,7 @@
   <title>Simulador de Rebaixamento Brasileirão 2026 | Probabilidades Z4 e Monte Carlo</title>
   
   <!-- SEO Essencial -->
-  <meta name="description" content="Simulador interativo de rebaixamento do Brasileirão 2026 pós-34ª rodada. 20.000 simulações Monte Carlo, probabilidades UFMG, palpites nos 42 jogos restantes e tabela ao vivo.">
+  <meta name="description" content="Simulador interativo de rebaixamento do Brasileirão 2026 pós-34ª rodada. 20.000 simulações Monte Carlo, probabilidades UFMG, palpites nos 41 jogos restantes e tabela ao vivo.">
   <meta name="keywords" content="simulador brasileirao 2026, rebaixamento brasileirao 2026, z4 brasileirao 2026, probabilidades rebaixamento ufmg, chances de rebaixamento, monte carlo brasileirao, corinthians rebaixamento, gremio rebaixamento, inter rebaixamento, serie a 2026">
   <meta name="author" content="Marcelo Leite">
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
@@ -23,7 +23,7 @@
   <meta property="og:url" content="https://marceloasl99.github.io/brasileirao-rebaixamento-2026/">
   <meta property="og:site_name" content="Simulador Brasileirão 2026">
   <meta property="og:title" content="Simulador de Rebaixamento Brasileirão 2026 | Probabilidades Z4">
-  <meta property="og:description" content="Simule a reta final do Brasileirão 2026 com 20.000 cenários estocásticos Monte Carlo. Acompanhe a luta contra o Z4, palpites nos 42 jogos restantes e tabela em tempo real.">
+  <meta property="og:description" content="Simule a reta final do Brasileirão 2026 com 20.000 cenários estocásticos Monte Carlo. Acompanhe a luta contra o Z4, palpites nos 41 jogos restantes e tabela em tempo real.">
   <meta property="og:image" content="https://marceloasl99.github.io/brasileirao-rebaixamento-2026/og-image.svg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -1363,14 +1363,14 @@
       <div class="title-area">
         <h1 itemprop="name">
           <span>Brasileirão 2026 — Simulador de Reta Final</span>
-          <span class="badge-live">34ªR Parcial · 06/11/2026</span>
+          <span class="badge-live">34ªR Encerrada · 08/11/2026</span>
         </h1>
         <p class="header-desc" itemprop="description">
-          Modelo Estocástico Calibrado (UFMG / CNN Brasil) · 42 jogos restantes · Chapecoense matematicamente rebaixada e Z4 em ebulição
+          Modelo Estocástico Calibrado (UFMG / CNN Brasil) · 41 jogos restantes · Chapecoense matematicamente rebaixada e Z4 em ebulição
         </p>
       </div>
       <div class="header-actions">
-        <button class="btn-secondary" id="btnResetAll" title="Restaurar classificação atual da 34ª rodada (06/11/2026)">
+        <button class="btn-secondary" id="btnResetAll" title="Restaurar classificação atual da 34ª rodada (08/11/2026)">
           ↺ Zerar Palpites
         </button>
         <button class="btn-primary" id="btnRunSim">
@@ -1404,7 +1404,7 @@
       <!-- Placares Encerrados da 34ª Rodada -->
       <div class="section-title">
         <span>Placares Encerrados — 34ª Rodada</span>
-        <span style="font-size:0.75rem; text-transform:none; color:#10b981;" id="completedCount">9 de 10 jogos concluídos</span>
+        <span style="font-size:0.75rem; text-transform:none; color:#10b981;" id="completedCount">10 de 10 jogos concluídos</span>
       </div>
 
       <!-- Barra de Filtros Segmentada (HUD Tabs) -->
@@ -1449,8 +1449,8 @@
 
       <!-- Grade de Jogos por Rodada -->
       <div class="section-title">
-        <span>Confrontos Restantes (42 Jogos — 1 Pendente da R34, R21 Atrasado e R35 a R38)</span>
-        <span style="font-size:0.75rem; text-transform:none; color:var(--accent);" id="matchesCount">42 jogos</span>
+        <span>Confrontos Restantes (41 Jogos — R21 Atrasado e R35 a R38)</span>
+        <span style="font-size:0.75rem; text-transform:none; color:var(--accent);" id="matchesCount">41 jogos</span>
       </div>
 
       <div id="roundsList"></div>
@@ -1523,9 +1523,9 @@
       <div class="standings-card">
         <div class="table-head">
           <h2>Tabela em Tempo Real</h2>
-          <div class="table-cutoff-badge" id="simModeBadge">Classificação 34ªR (06/11)</div>
+          <div class="table-cutoff-badge" id="simModeBadge">Classificação 34ªR (08/11)</div>
         </div>
-        <table class="league-table" aria-label="Tabela de classificação do Brasileirão 2026 - Pós jogos da 34ª rodada em 06/11/2026">
+        <table class="league-table" aria-label="Tabela de classificação do Brasileirão 2026 - Pós jogos da 34ª rodada em 08/11/2026">
           <thead>
             <tr>
               <th scope="row">#</th>
@@ -1560,7 +1560,7 @@
   </footer>
 
   <script>
-    // --- 1. Dados Oficiais e Parâmetros Calibrados (Atualizado em 06/11/2026) ---
+    // --- 1. Dados Oficiais e Parâmetros Calibrados (Atualizado em 08/11/2026) ---
     const RAW_TEAMS = [
       { name: "Flamengo", short: "FLA", color: "#cc0000", pts: 76, g: 34, w: 23, d: 7, l: 4, gf: 71, gc: 29, ufmg: 0.0, att: 0.315, def: 0.295 },
       { name: "Palmeiras", short: "PAL", color: "#006437", pts: 73, g: 34, w: 21, d: 10, l: 3, gf: 61, gc: 23, ufmg: 0.0, att: 0.210, def: 0.405 },
@@ -1999,7 +1999,7 @@
       const totalPicks = Object.values(userPicks).filter(Boolean).length;
       const badge = document.getElementById("simModeBadge");
       if (totalPicks === 0) {
-        badge.textContent = "Classificação 34ªR (06/11)";
+        badge.textContent = "Classificação 34ªR (08/11)";
         badge.style.color = "var(--accent)";
       } else {
         badge.textContent = `${totalPicks} palpite(s) fixado(s)`;

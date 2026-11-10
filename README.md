@@ -1,7 +1,7 @@
 # ⚽ Simulador de Rebaixamento — Brasileirão 2026
 
 ![Brasileirão 2026](https://img.shields.io/badge/Brasileir%C3%A3o-2026-green?style=for-the-badge)
-![34ª Rodada](https://img.shields.io/badge/34ª%20Rodada-05%2F11%2F2026-blue?style=for-the-badge)
+![34ª Rodada](https://img.shields.io/badge/34ª%20Rodada-08%2F11%2F2026-blue?style=for-the-badge)
 ![Monte Carlo](https://img.shields.io/badge/Monte%20Carlo-20.000x-orange?style=for-the-badge)
 ![Modelo UFMG](https://img.shields.io/badge/Estat%C3%ADstica-UFMG%20%2F%20Poisson-purple?style=for-the-badge)
 ![GitHub Pages](https://img.shields.io/badge/Deploy-GitHub%20Pages-brightgreen?style=for-the-badge&logo=github)
@@ -20,12 +20,13 @@ O simulador combina um **modelo estocástico de gols via Distribuição de Poiss
 
 ---
 
-## 🚨 Panorama Atual do Campeonato (Atualizado em 06/11/2026)
+## 🚨 Panorama Atual do Campeonato (Atualizado em 08/11/2026)
 
-Com a realização de **9 das 10 partidas da 34ª rodada**, a disputa contra o rebaixamento atingiu seu momento mais dramático:
+Com a realização de **todas as 10 partidas da 34ª rodada**, a disputa contra o rebaixamento atingiu seu momento mais dramático:
 
 * 🟥 **Chapecoense matematicamente rebaixada**: Ao perder em casa por 2 a 1 para o Mirassol na Arena Condá, a Chapecoense permaneceu com 21 pontos e confirmou seu descenso à **Série B de 2027**, tornando-se o primeiro rebaixado confirmado da temporada.
 * 🟥 **Remo à beira do abismo (99,56% de risco)**: A goleada sofrida por 6 a 1 diante do Palmeiras no Nubank Parque deixou a equipe paraense estacionada nos 29 pontos, necessitando de uma combinação estatística quase impossível para escapar.
+* ⚠️ **Vitória perde em casa para o Fluminense**: O Leão foi derrotado por 3 a 0 no Barradão e encerrou a rodada com 38 pontos; o Fluminense chegou a 57 pontos e consolidou-se no G4.
 * 🔥 **Z4 em chamas com gigantes**:
   * **Grêmio (60,4% de risco)**: A derrota por 3 a 1 para o líder Flamengo no Maracanã empurrou o Tricolor gaúcho para a 18ª posição com 37 pontos.
   * **Corinthians (55,0% de risco)**: O empate em 0 a 0 no clássico Majestoso contra o São Paulo manteve o Timão na 17ª posição com 37 pontos (à frente do Grêmio no saldo de gols: -6 vs -9).
@@ -36,7 +37,7 @@ Com a realização de **9 das 10 partidas da 34ª rodada**, a disputa contra o r
 
 ---
 
-## 📅 Placares da 34ª Rodada (9 Jogos Realizados até Hoje — 06/11/2026)
+## 📅 Placares da 34ª Rodada (10 Jogos Realizados — 08/11/2026)
 
 | Data | Mandante | Placar | Visitante | Local | Impacto Principal |
 | :---: | :--- | :---: | :--- | :--- | :--- |
@@ -49,14 +50,14 @@ Com a realização de **9 das 10 partidas da 34ª rodada**, a disputa contra o r
 | **04/11** | São Paulo | **0 x 0** | Corinthians | MorumBIS | Timão soma 1 pt no Majestoso e segue no Z4 com 55% de risco |
 | **05/11** | **Palmeiras** | **6 x 1** | Remo | Nubank Parque | Maior goleada do torneio; Verdão vai a 73 pts; Remo com 99,56% de risco |
 | **05/11** | **Cruzeiro** | **3 x 2** | Bahia | Mineirão | Raposa vira aos 86' com dois de Kaio Jorge e vai a 60 pts (3º); Bahia segue no G6 (53 pts) |
+| **06/11** | Vitória | **0 x 3** | **Fluminense** | Barradão | Flu chega a 57 pts e Vitória permanece com 38 pts |
 
-### ⏳ Jogo Restante da 34ª Rodada e Pendência:
-* **Vitória x Fluminense** — Sexta-feira, 06/11, às 20h00 (Barradão — Hoje à noite!)
+### ⏳ Próximo jogo atrasado:
 * **Chapecoense x Vasco** — Sábado, 14/11 (Jogo atrasado da 21ª Rodada)
 
 ---
 
-## 🏆 Tabela Oficial de Classificação (Referência 06/11/2026)
+## 🏆 Tabela Oficial de Classificação (Referência 08/11/2026)
 
 <small>📊 Dados estatísticos calibrados com o modelo UFMG / CNN Brasil · 20.000 simulações Monte Carlo</small>
 
@@ -65,7 +66,7 @@ Com a realização de **9 das 10 partidas da 34ª rodada**, a disputa contra o r
 | **1** | 🏆 **Flamengo** | **76** | 34 | 23 | 7 | 4 | 71 | 29 | +42 | 0.0% | 🟢 G4 (Libertadores) |
 | **2** | 🥈 **Palmeiras** | **73** | 34 | 21 | 10 | 3 | 61 | 23 | +38 | 0.0% | 🟢 G4 (Libertadores) |
 | **3** | 🥉 **Cruzeiro** | **60** | 34 | 18 | 6 | 10 | 55 | 48 | +7 | 0.0% | 🟢 G4 (Libertadores) |
-| **4** | 🅿️ **Fluminense** | **54** | 33 | 15 | 9 | 9 | 52 | 42 | +10 | 0.0% | 🟢 G4 (Libertadores — Joga hoje) |
+| **4** | 🅿️ **Fluminense** | **57** | 34 | 16 | 9 | 9 | 55 | 42 | +13 | 0.0% | 🟢 G4 (Libertadores) |
 | **5** | ⭐ **Athletico-PR** | **54** | 34 | 15 | 9 | 10 | 51 | 43 | +8 | 0.0% | 🔵 Pré-Libertadores |
 | **6** | 🅱️ **Bahia** | **53** | 34 | 14 | 11 | 9 | 50 | 45 | +5 | 0.0% | 🔵 Pré-Libertadores |
 | **7** | ⚪ **Atlético-MG** | **50** | 34 | 14 | 8 | 12 | 44 | 40 | +4 | 0.0% | 🟡 Sul-Americana |
@@ -76,7 +77,7 @@ Com a realização de **9 das 10 partidas da 34ª rodada**, a disputa contra o r
 | **12** | 🟢 **Coritiba** | **42** | 34 | 11 | 9 | 14 | 40 | 51 | -11 | 4.8% | 🟡 Sul-Americana |
 | **13** | 💢 **Vasco da Gama** | **41** | 33 | 11 | 8 | 14 | 43 | 50 | -7 | 1.8% | ⚪ Permanência (1 jogo a menos) |
 | **14** | 🟡 **Mirassol** | **40** | 34 | 10 | 10 | 14 | 39 | 48 | -9 | 16.1% | 🟠 Risco Moderado |
-| **15** | 🔴 **Vitória** | **38** | 33 | 10 | 8 | 15 | 35 | 48 | -13 | 21.4% | 🟠 Risco Elevado (Joga hoje) |
+| **15** | 🔴 **Vitória** | **38** | 34 | 10 | 8 | 16 | 35 | 51 | -16 | 21.4% | 🟠 Risco Elevado |
 | **16** | 🇦🇹 **Internacional** | **38** | 34 | 9 | 11 | 14 | 38 | 42 | -4 | 40.8% | 🟠 Limite do Z4 |
 | **17** | 🦅 **Corinthians** | **37** | 34 | 9 | 10 | 15 | 36 | 42 | -6 | **55.0%** | 🟥 **Zona de Rebaixamento (Z4)** |
 | **18** | 🇪🇪 **Grêmio** | **37** | 34 | 9 | 10 | 15 | 38 | 47 | -9 | **60.4%** | 🟥 **Zona de Rebaixamento (Z4)** |
@@ -112,7 +113,7 @@ Com base nisso, os botões de aposta (**1**, **X**, **2**) exibem as chances rea
 
 ## 🎮 Funcionalidades da Aplicação
 
-* 🕹️ **Palpites Interativos nos 42 Jogos Restantes**: Selecione Mandante (1), Empate (X) ou Visitante (2) para projetar os cenários que salvam ou rebaixam seu time.
+* 🕹️ **Palpites Interativos nos 41 Jogos Restantes**: Selecione Mandante (1), Empate (X) ou Visitante (2) para projetar os cenários que salvam ou rebaixam seu time.
 * ⚡ **Presets de Cenários Rápidos**:
   * *Corinthians vence Botafogo e Grêmio*
   * *Inter vence Vitória e Bragantino*
@@ -120,8 +121,8 @@ Com base nisso, os botões de aposta (**1**, **X**, **2**) exibem as chances rea
   * *Lógica do Mandante (todos os donos da casa vencem)*
   * *Gerar 1 Cenário Estatístico (sorteio aleatório ponderado pelas odds)*
 * 📊 **Cards de Risco no Z4**: Acompanhamento visual dos 10 times mais ameaçados com barras de progresso dinâmicas coloridas (seguro, atenção, perigo).
-* 🏟️ **Broadcast Stadium HUD (Placares Encerrados)**: Visualização de alta fidelidade televisiva dos 9 jogos encerrados da 34ª rodada, com:
-  * **Barra de Filtros Segmentada**: Abas para isolar jogos por *Todos (9)*, *Luta no Z4 (7)*, *G4 / Título (4)* e *⚡ Goleadas & Viradas (2)*.
+* 🏟️ **Broadcast Stadium HUD (Placares Encerrados)**: Visualização de alta fidelidade televisiva dos 10 jogos encerrados da 34ª rodada, com:
+  * **Barra de Filtros Segmentada**: Abas para isolar jogos por *Todos (10)*, *Luta no Z4 (8)*, *G4 / Título (5)* e *⚡ Goleadas & Viradas (3)*.
   * **Linha do Tempo dos Gols**: Autores e minutagem exata de cada gol com badges visuais.
   * **Badges de Impacto Narrativo**: Destaques contextuais imediatos (*Queda Matemática Confirmada*, *Grêmio Afunda no Z4*, *Goleada 5x1*).
   * **Tipografia Numérica Atlética**: Dígitos em visor digital escuro com numerais tabulares alinhados.

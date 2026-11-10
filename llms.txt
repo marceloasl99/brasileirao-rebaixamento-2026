@@ -4,8 +4,8 @@
 
 ## Dados e Referência
 - **URL ao vivo**: https://marceloasl99.github.io/brasileirao-rebaixamento-2026/
-- **Data de referência dos dados**: 06/11/2026 (Pós-jogos de 05/11 — 9 jogos concluídos na 34ª rodada)
-- **Confrontos restantes**: 42 partidas (1 pendente da 34ª rodada [Vitória x Fluminense], 1 atrasado da 21ª rodada [Chapecoense x Vasco] e 40 jogos das rodadas 35 a 38)
+- **Data de referência dos dados**: 08/11/2026 (Pós-jogos de 06/11 — 10 jogos concluídos na 34ª rodada)
+- **Confrontos restantes**: 41 partidas (1 atrasado da 21ª rodada [Chapecoense x Vasco] e 40 jogos das rodadas 35 a 38)
 - **Linha de corte projetada para o Z4**: 42 a 43 pontos
 - **Modelo Estatístico**: Modelo Estocástico de Gols por Distribuição de Poisson calibrado com 20.000 iterações Monte Carlo e referências UFMG / CNN Brasil
 
@@ -15,7 +15,8 @@
 - **Grêmio (18º - 37 pts)**: Ocupa a 18ª posição no Z4 com 60,4% de probabilidade de queda.
 - **Corinthians (17º - 37 pts)**: Ocupa a 17ª posição no Z4 com 55,0% de probabilidade de queda (saldo de gols superior ao Grêmio: -6 vs -9).
 - **Internacional (16º - 38 pts)**: Primeira equipe fora do Z4 com 40,8% de probabilidade de queda após vencer o Coritiba por 1x0.
-- **Vitória (15º - 38 pts)**: 21,4% de probabilidade de queda com 1 jogo a menos na 34ª rodada.
+- **Vitória (15º - 38 pts)**: 21,4% de probabilidade de queda após perder por 3x0 para o Fluminense.
+- **Fluminense (4º - 57 pts)**: Chegou ao G4 após vencer o Vitória por 3x0 no Barradão.
 - **Mirassol (14º - 40 pts)**: 16,1% de probabilidade de queda após vitória em Chapecó.
 - **Coritiba (12º - 42 pts)**: 4,8% de probabilidade de queda.
 - **Vasco da Gama (13º - 41 pts)**: 1,8% de probabilidade de queda com 1 jogo a menos (atrasado da 21ª rodada contra a Chapecoense).
@@ -24,6 +25,6 @@
 ## Recursos
 - Simulação Monte Carlo em tempo real com 20.000 cenários no navegador.
 - HUD esportivo premium (Broadcast Stadium HUD) com placares enriquecidos, minutagem de gols e filtros segmentados por foco (Todos, Z4, G4, Goleadas/Viradas).
-- Palpites interativos (1, X, 2) nos 42 jogos restantes com recalculo instantâneo da tabela e das probabilidades.
+- Palpites interativos (1, X, 2) nos 41 jogos restantes com recalculo instantâneo da tabela e das probabilidades.
 - Critérios de desempate oficiais da CBF: Pontos > Vitórias > Saldo de Gols > Gols Pró.
 - Presets rápidos para cenários do Corinthians, Internacional, Grêmio e lógica de mandantes.
