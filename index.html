@@ -6,7 +6,7 @@
   <title>Simulador de Rebaixamento Brasileirão 2026 | Probabilidades Z4 e Monte Carlo</title>
   
   <!-- SEO Essencial -->
-  <meta name="description" content="Simulador interativo de rebaixamento do Brasileirão 2026 pós-34ª rodada. 20.000 simulações Monte Carlo, probabilidades UFMG, palpites nos 41 jogos restantes e tabela ao vivo.">
+  <meta name="description" content="Simulador interativo de rebaixamento do Brasileirão 2026 após os primeiros jogos da 35ª rodada. 20.000 simulações Monte Carlo, probabilidades UFMG e tabela atualizada.">
   <meta name="keywords" content="simulador brasileirao 2026, rebaixamento brasileirao 2026, z4 brasileirao 2026, probabilidades rebaixamento ufmg, chances de rebaixamento, monte carlo brasileirao, corinthians rebaixamento, gremio rebaixamento, inter rebaixamento, serie a 2026">
   <meta name="author" content="Marcelo Leite">
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
@@ -23,7 +23,7 @@
   <meta property="og:url" content="https://marceloasl99.github.io/brasileirao-rebaixamento-2026/">
   <meta property="og:site_name" content="Simulador Brasileirão 2026">
   <meta property="og:title" content="Simulador de Rebaixamento Brasileirão 2026 | Probabilidades Z4">
-  <meta property="og:description" content="Simule a reta final do Brasileirão 2026 com 20.000 cenários estocásticos Monte Carlo. Acompanhe a luta contra o Z4, palpites nos 41 jogos restantes e tabela em tempo real.">
+  <meta property="og:description" content="Simule a reta final do Brasileirão 2026 com 20.000 cenários estocásticos Monte Carlo. Acompanhe a luta contra o Z4, palpites nos 33 jogos restantes e tabela atualizada.">
   <meta property="og:image" content="https://marceloasl99.github.io/brasileirao-rebaixamento-2026/og-image.svg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -82,7 +82,7 @@
             "name": "Qual é a linha de corte para escapar do rebaixamento no Brasileirão 2026?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "A linha de corte projetada para permanecer na Série A após a 34ª rodada está entre 42 e 43 pontos, com base em 20.000 simulações estatísticas do modelo estocástico de Poisson."
+              "text": "A linha de corte projetada para permanecer na Série A após a 34ª rodada e o jogo atrasado da 21ª está entre 42 e 43 pontos, com base em 20.000 simulações estatísticas do modelo estocástico de Poisson."
             }
           },
           {
@@ -90,7 +90,7 @@
             "name": "A Chapecoense já está matematicamente rebaixada no Brasileirão 2026?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Sim. Com a derrota por 2 a 1 para o Mirassol na 34ª rodada, a Chapecoense permaneceu com 21 pontos e não tem mais chances matemáticas de alcançar o 16º colocado, confirmando seu rebaixamento à Série B de 2027."
+              "text": "Sim. A Chapecoense confirmou o rebaixamento após a derrota por 2 a 1 para o Mirassol e encerrou a campanha com 21 pontos depois de perder por 2 a 0 para o Vasco no jogo atrasado da 21ª rodada."
             }
           },
           {
@@ -98,7 +98,7 @@
             "name": "Quais as chances de rebaixamento de Corinthians e Grêmio?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Após os jogos da 34ª rodada, o Grêmio tem 60,4% de probabilidade de queda (18º lugar com 37 pontos) e o Corinthians tem 55,0% de risco de rebaixamento (17º lugar com 37 pontos), segundo dados calibrados da UFMG e simulações Monte Carlo."
+              "text": "Após o jogo atrasado da 21ª rodada, o Grêmio tem 60,4% de probabilidade de queda (18º lugar com 37 pontos) e o Corinthians tem 55,0% de risco de rebaixamento (17º lugar com 37 pontos), segundo dados calibrados da UFMG e simulações Monte Carlo."
             }
           },
           {
@@ -776,7 +776,7 @@
     }
 
     /* ==========================================================================
-       Placares Encerrados - Broadcast Stadium HUD (34ª Rodada Brasileirão 2026)
+       Placares Encerrados - Broadcast Stadium HUD (35ª Rodada Brasileirão 2026)
        ========================================================================== */
 
     /* 1. Barra de Filtros Segmentada */
@@ -1363,14 +1363,14 @@
       <div class="title-area">
         <h1 itemprop="name">
           <span>Brasileirão 2026 — Simulador de Reta Final</span>
-          <span class="badge-live">34ªR Encerrada · 08/11/2026</span>
+          <span class="badge-live">Atualizado · 19/11/2026</span>
         </h1>
         <p class="header-desc" itemprop="description">
-          Modelo Estocástico Calibrado (UFMG / CNN Brasil) · 41 jogos restantes · Chapecoense matematicamente rebaixada e Z4 em ebulição
+          Modelo Estocástico Calibrado (UFMG / CNN Brasil) · 33 jogos restantes · Chapecoense matematicamente rebaixada e Z4 em ebulição
         </p>
       </div>
       <div class="header-actions">
-        <button class="btn-secondary" id="btnResetAll" title="Restaurar classificação atual da 34ª rodada (08/11/2026)">
+        <button class="btn-secondary" id="btnResetAll" title="Restaurar classificação atual após 19/11/2026">
           ↺ Zerar Palpites
         </button>
         <button class="btn-primary" id="btnRunSim">
@@ -1401,37 +1401,37 @@
 
       <div class="risk-grid" id="riskGrid"></div>
 
-      <!-- Placares Encerrados da 34ª Rodada -->
+      <!-- Placares Encerrados -->
       <div class="section-title">
-        <span>Placares Encerrados — 34ª Rodada</span>
-        <span style="font-size:0.75rem; text-transform:none; color:#10b981;" id="completedCount">10 de 10 jogos concluídos</span>
+        <span>Placares Encerrados — até 19/11</span>
+        <span style="font-size:0.75rem; text-transform:none; color:#10b981;" id="completedCount">18 jogos concluídos</span>
       </div>
 
       <!-- Barra de Filtros Segmentada (HUD Tabs) -->
-      <nav class="scoreboard-filter-bar" aria-label="Filtro dos jogos encerrados da 34ª rodada">
+      <nav class="scoreboard-filter-bar" aria-label="Filtro dos jogos encerrados">
         <div class="filter-group" role="tablist">
           <button class="filter-chip active" role="tab" aria-selected="true" data-filter="all">
             <span class="chip-label">Todos</span>
-            <span class="chip-badge">10</span>
+            <span class="chip-badge">18</span>
           </button>
           <button class="filter-chip" role="tab" aria-selected="false" data-filter="z4">
             <span class="chip-dot dot-danger"></span>
             <span class="chip-label">Luta no Z4</span>
-            <span class="chip-badge">8</span>
+            <span class="chip-badge">14</span>
           </button>
           <button class="filter-chip" role="tab" aria-selected="false" data-filter="g4">
             <span class="chip-dot dot-gold"></span>
             <span class="chip-label">G4 / Título</span>
-            <span class="chip-badge">5</span>
+            <span class="chip-badge">10</span>
           </button>
           <button class="filter-chip" role="tab" aria-selected="false" data-filter="epic">
             <span class="chip-label">⚡ Goleadas & Viradas</span>
-            <span class="chip-badge">3</span>
+            <span class="chip-badge">5</span>
           </button>
         </div>
         <div class="filter-summary">
           <span class="status-indicator-live"></span>
-          <span>10 jogos encerrados</span>
+          <span>18 jogos encerrados</span>
         </div>
       </nav>
 
@@ -1449,8 +1449,8 @@
 
       <!-- Grade de Jogos por Rodada -->
       <div class="section-title">
-        <span>Confrontos Restantes (41 Jogos — R21 Atrasado e R35 a R38)</span>
-        <span style="font-size:0.75rem; text-transform:none; color:var(--accent);" id="matchesCount">41 jogos</span>
+        <span>Confrontos Restantes (33 Jogos — R35 a R38)</span>
+        <span style="font-size:0.75rem; text-transform:none; color:var(--accent);" id="matchesCount">33 jogos</span>
       </div>
 
       <div id="roundsList"></div>
@@ -1463,7 +1463,7 @@
             <details class="faq-item" open>
               <summary class="faq-summary">Qual a pontuação de corte projetada para escapar do Z4?</summary>
               <div class="faq-answer">
-                Após o encerramento de 10 partidas da 34ª rodada, a linha de corte estatística para escapar do rebaixamento está projetada entre <strong>42 e 43 pontos</strong>. Historicamente na era dos pontos corridos com 20 clubes, atingir 43 pontos costuma garantir mais de 85% de probabilidade de permanência na Série A.
+                Após o encerramento da 34ª rodada e do jogo atrasado da 21ª, a linha de corte estatística para escapar do rebaixamento está projetada entre <strong>42 e 43 pontos</strong>. Historicamente na era dos pontos corridos com 20 clubes, atingir 43 pontos costuma garantir mais de 85% de probabilidade de permanência na Série A.
               </div>
             </details>
 
@@ -1477,7 +1477,7 @@
             <details class="faq-item">
               <summary class="faq-summary">A Chapecoense já está matematicamente rebaixada?</summary>
               <div class="faq-answer">
-                <strong>Sim.</strong> Ao ser derrotada pelo Mirassol por 2 a 1 na 34ª rodada, a Chapecoense permaneceu com 21 pontos. Mesmo que vença todos os jogos restantes (incluindo o duelo atrasado contra o Vasco), o clube alcançaria no máximo 36 pontos, pontuação insuficiente para superar o Internacional (16º colocado com 38 pontos). Portanto, o descenso à Série B de 2027 é matemático (100%).
+                <strong>Sim.</strong> Ao ser derrotada pelo Mirassol por 2 a 1 na 34ª rodada, a Chapecoense já havia confirmado matematicamente o descenso. No jogo atrasado da 21ª rodada, perdeu por 2 a 0 para o Vasco e encerrou sua campanha com 21 pontos. Portanto, o descenso à Série B de 2027 permanece confirmado (100%).
               </div>
             </details>
 
@@ -1523,9 +1523,9 @@
       <div class="standings-card">
         <div class="table-head">
           <h2>Tabela em Tempo Real</h2>
-          <div class="table-cutoff-badge" id="simModeBadge">Classificação 34ªR (08/11)</div>
+          <div class="table-cutoff-badge" id="simModeBadge">Classificação (14/11)</div>
         </div>
-        <table class="league-table" aria-label="Tabela de classificação do Brasileirão 2026 - Pós jogos da 34ª rodada em 08/11/2026">
+        <table class="league-table" aria-label="Tabela de classificação do Brasileirão 2026 - Atualizada em 19/11/2026">
           <thead>
             <tr>
               <th scope="row">#</th>
@@ -1555,37 +1555,111 @@
       <strong>Simulador de Rebaixamento Brasileirão 2026</strong> · Modelo Estocástico de Probabilidades Monte Carlo
     </div>
     <div>
-      Atualizado em 08/11/2026 · Dados de referência: UFMG / CNN Brasil · <a href="https://github.com/marceloasl99/brasileirao-rebaixamento-2026" target="_blank" rel="noopener noreferrer">Repositório no GitHub</a>
+      Atualizado em 19/11/2026 · Dados de referência: CBF / UFMG / CNN Brasil · <a href="https://github.com/marceloasl99/brasileirao-rebaixamento-2026" target="_blank" rel="noopener noreferrer">Repositório no GitHub</a>
     </div>
   </footer>
 
   <script>
-    // --- 1. Dados Oficiais e Parâmetros Calibrados (Atualizado em 08/11/2026) ---
+    // --- 1. Dados Oficiais e Parâmetros Calibrados (Atualizado em 19/11/2026) ---
     const RAW_TEAMS = [
-      { name: "Flamengo", short: "FLA", color: "#cc0000", pts: 76, g: 34, w: 23, d: 7, l: 4, gf: 71, gc: 29, ufmg: 0.0, att: 0.315, def: 0.295 },
-      { name: "Palmeiras", short: "PAL", color: "#006437", pts: 73, g: 34, w: 21, d: 10, l: 3, gf: 61, gc: 23, ufmg: 0.0, att: 0.210, def: 0.405 },
-      { name: "Cruzeiro", short: "CRU", color: "#003b8e", pts: 60, g: 34, w: 18, d: 6, l: 10, gf: 55, gc: 48, ufmg: 0.0, att: 0.158, def: -0.065 },
+      { name: "Flamengo", short: "FLA", color: "#cc0000", pts: 79, g: 35, w: 24, d: 7, l: 4, gf: 73, gc: 30, ufmg: 0.0, att: 0.315, def: 0.295 },
+      { name: "Palmeiras", short: "PAL", color: "#006437", pts: 73, g: 35, w: 21, d: 10, l: 4, gf: 63, gc: 25, ufmg: 0.0, att: 0.210, def: 0.405 },
+      { name: "Cruzeiro", short: "CRU", color: "#003b8e", pts: 63, g: 35, w: 19, d: 6, l: 10, gf: 57, gc: 49, ufmg: 0.0, att: 0.158, def: -0.065 },
       { name: "Fluminense", short: "FLU", color: "#831d1d", pts: 57, g: 34, w: 16, d: 9, l: 9, gf: 55, gc: 42, ufmg: 0.0, att: 0.144, def: 0.012 },
-      { name: "Athletico-PR", short: "CAP", color: "#c8102e", pts: 54, g: 34, w: 15, d: 9, l: 10, gf: 51, gc: 43, ufmg: 0.0, att: 0.105, def: 0.040 },
-      { name: "Bahia", short: "BAH", color: "#0072ce", pts: 53, g: 34, w: 14, d: 11, l: 9, gf: 50, gc: 45, ufmg: 0.0, att: 0.082, def: 0.007 },
-      { name: "Atlético-MG", short: "CAM", color: "#222222", pts: 50, g: 34, w: 14, d: 8, l: 12, gf: 44, gc: 40, ufmg: 0.0, att: 0.015, def: 0.060 },
+      { name: "Athletico-PR", short: "CAP", color: "#c8102e", pts: 54, g: 35, w: 15, d: 9, l: 11, gf: 52, gc: 45, ufmg: 0.0, att: 0.105, def: 0.040 },
+      { name: "Bahia", short: "BAH", color: "#0072ce", pts: 54, g: 35, w: 14, d: 12, l: 9, gf: 50, gc: 45, ufmg: 0.0, att: 0.082, def: 0.007 },
+      { name: "Atlético-MG", short: "CAM", color: "#222222", pts: 51, g: 35, w: 14, d: 9, l: 12, gf: 44, gc: 40, ufmg: 0.0, att: 0.015, def: 0.060 },
       { name: "Bragantino", short: "BGT", color: "#d91f26", pts: 47, g: 34, w: 13, d: 8, l: 13, gf: 44, gc: 39, ufmg: 0.0, att: -0.025, def: 0.075 },
-      { name: "Santos", short: "SAN", color: "#444444", pts: 47, g: 34, w: 12, d: 11, l: 11, gf: 50, gc: 49, ufmg: 0.5, att: 0.075, def: -0.090 },
+      { name: "Santos", short: "SAN", color: "#444444", pts: 50, g: 35, w: 13, d: 11, l: 11, gf: 51, gc: 49, ufmg: 0.5, att: 0.075, def: -0.090 },
       { name: "São Paulo", short: "SAO", color: "#b91c1c", pts: 44, g: 34, w: 12, d: 8, l: 14, gf: 39, gc: 39, ufmg: 0.01, att: -0.085, def: 0.055 },
-      { name: "Botafogo", short: "BOT", color: "#111111", pts: 42, g: 34, w: 11, d: 9, l: 14, gf: 46, gc: 53, ufmg: 1.5, att: -0.010, def: -0.210 },
-      { name: "Coritiba", short: "CFC", color: "#00552b", pts: 42, g: 34, w: 11, d: 9, l: 14, gf: 40, gc: 51, ufmg: 4.8, att: -0.080, def: -0.160 },
-      { name: "Vasco", short: "VAS", color: "#1f1f1f", pts: 41, g: 33, w: 11, d: 8, l: 14, gf: 43, gc: 50, ufmg: 1.8, att: -0.065, def: -0.140 },
-      { name: "Mirassol", short: "MIR", color: "#eab308", pts: 40, g: 34, w: 10, d: 10, l: 14, gf: 39, gc: 48, ufmg: 16.1, att: -0.125, def: -0.100 },
+      { name: "Botafogo", short: "BOT", color: "#111111", pts: 42, g: 35, w: 11, d: 9, l: 15, gf: 46, gc: 57, ufmg: 1.5, att: -0.010, def: -0.210 },
+      { name: "Coritiba", short: "CFC", color: "#00552b", pts: 42, g: 35, w: 11, d: 9, l: 15, gf: 40, gc: 52, ufmg: 4.8, att: -0.080, def: -0.160 },
+      { name: "Vasco", short: "VAS", color: "#1f1f1f", pts: 44, g: 34, w: 12, d: 8, l: 14, gf: 45, gc: 50, ufmg: 1.8, att: -0.065, def: -0.140 },
+      { name: "Mirassol", short: "MIR", color: "#eab308", pts: 41, g: 35, w: 10, d: 11, l: 14, gf: 39, gc: 48, ufmg: 16.1, att: -0.125, def: -0.100 },
       { name: "Vitória", short: "VIT", color: "#dc2626", pts: 38, g: 34, w: 10, d: 8, l: 16, gf: 35, gc: 51, ufmg: 21.4, att: -0.158, def: -0.123 },
       { name: "Internacional", short: "INT", color: "#ef4444", pts: 38, g: 34, w: 9, d: 11, l: 14, gf: 38, gc: 42, ufmg: 40.8, att: -0.145, def: -0.010 },
-      { name: "Corinthians", short: "COR", color: "#ffffff", pts: 37, g: 34, w: 9, d: 10, l: 15, gf: 36, gc: 42, ufmg: 55.0, att: -0.160, def: -0.010 },
-      { name: "Grêmio", short: "GRE", color: "#0d80bf", pts: 37, g: 34, w: 9, d: 10, l: 15, gf: 38, gc: 47, ufmg: 60.4, att: -0.130, def: -0.050 },
-      { name: "Remo", short: "REM", color: "#1e3a8a", pts: 29, g: 34, w: 6, d: 11, l: 17, gf: 37, gc: 57, ufmg: 99.56, att: -0.220, def: -0.210 },
-      { name: "Chapecoense", short: "CHA", color: "#16a34a", pts: 21, g: 33, w: 4, d: 9, l: 20, gf: 33, gc: 68, ufmg: 100.0, att: -0.320, def: -0.460 }
+      { name: "Corinthians", short: "COR", color: "#ffffff", pts: 40, g: 35, w: 10, d: 10, l: 15, gf: 40, gc: 42, ufmg: 55.0, att: -0.160, def: -0.010 },
+      { name: "Grêmio", short: "GRE", color: "#0d80bf", pts: 38, g: 35, w: 9, d: 11, l: 15, gf: 38, gc: 47, ufmg: 60.4, att: -0.130, def: -0.050 },
+      { name: "Remo", short: "REM", color: "#1e3a8a", pts: 32, g: 35, w: 7, d: 11, l: 17, gf: 39, gc: 57, ufmg: 99.56, att: -0.220, def: -0.210 },
+      { name: "Chapecoense", short: "CHA", color: "#16a34a", pts: 21, g: 35, w: 4, d: 9, l: 22, gf: 33, gc: 72, ufmg: 100.0, att: -0.320, def: -0.460 }
     ];
 
-    // Placares Encerrados da 34ª Rodada (Dados Oficiais Enriquecidos)
+    // Placares Encerrados (Dados Oficiais Enriquecidos)
     const COMPLETED_MATCHES_34R = [
+      {
+        id: "M35_7", round: "35ª Rodada", date: "18/11",
+        stadium: "Neo Química Arena · São Paulo (SP)",
+        home: "Corinthians", away: "Botafogo", scoreHome: 4, scoreAway: 0,
+        category: "z4", impactClass: "impact-relegation",
+        impactBadge: { type: "z4-threat", icon: "🦅", text: "Timão goleia e sobe para 40 pts" },
+        scorersHome: [], scorersAway: []
+      },
+      {
+        id: "M35_6", round: "35ª Rodada", date: "18/11",
+        stadium: "Mineirão · Belo Horizonte (MG)",
+        home: "Cruzeiro", away: "Palmeiras", scoreHome: 2, scoreAway: 1,
+        category: "g4 epic", impactClass: "impact-top",
+        impactBadge: { type: "triumph", icon: "⚡", text: "Raposa vence o vice-líder e chega a 63 pts" },
+        scorersHome: [], scorersAway: []
+      },
+      {
+        id: "M35_5", round: "35ª Rodada", date: "18/11",
+        stadium: "Maracanã · Rio de Janeiro (RJ)",
+        home: "Flamengo", away: "Athletico-PR", scoreHome: 2, scoreAway: 1,
+        category: "g4", impactClass: "impact-top",
+        impactBadge: { type: "triumph", icon: "🏆", text: "Líder chega a 79 pts" },
+        scorersHome: [], scorersAway: []
+      },
+      {
+        id: "M35_4", round: "35ª Rodada", date: "18/11",
+        stadium: "Grêmio Arena · Porto Alegre (RS)",
+        home: "Grêmio", away: "Bahia", scoreHome: 0, scoreAway: 0,
+        category: "z4", impactClass: "impact-relegation",
+        impactBadge: { type: "z4-threat", icon: "⚖️", text: "Grêmio soma 1 ponto e chega a 38 pts" },
+        scorersHome: [], scorersAway: []
+      },
+      {
+        id: "M35_3", round: "35ª Rodada", date: "18/11",
+        stadium: "Mangueirão · Belém (PA)",
+        home: "Remo", away: "Chapecoense", scoreHome: 2, scoreAway: 0,
+        category: "z4", impactClass: "impact-relegation",
+        impactBadge: { type: "relegated", icon: "🛑", text: "Remo respira com 32 pts; Chapecoense fecha em 21" },
+        scorersHome: [], scorersAway: []
+      },
+      {
+        id: "M35_2", round: "35ª Rodada", date: "18/11",
+        stadium: "Couto Pereira · Curitiba (PR)",
+        home: "Coritiba", away: "Santos", scoreHome: 0, scoreAway: 1,
+        category: "z4", impactClass: "",
+        impactBadge: { type: "climax", icon: "⚓", text: "Santos vence fora e chega a 50 pts" },
+        scorersHome: [], scorersAway: []
+      },
+      {
+        id: "M35_1", round: "35ª Rodada", date: "14/11",
+        stadium: "Maião · Mirassol (SP)",
+        home: "Mirassol", away: "Atlético-MG", scoreHome: 0, scoreAway: 0,
+        category: "z4", impactClass: "",
+        impactBadge: { type: "climax", icon: "⚖️", text: "Mirassol chega a 41 pts; Atlético-MG a 51" },
+        scorersHome: [], scorersAway: []
+      },
+      {
+        id: "M21_1",
+        round: "21ª Rodada (Atrasado)",
+        date: "14/11",
+        stadium: "Arena Condá · Chapecó (SC)",
+        home: "Chapecoense",
+        away: "Vasco",
+        scoreHome: 0,
+        scoreAway: 2,
+        category: "z4",
+        impactClass: "impact-relegation",
+        impactBadge: { type: "z4-threat", icon: "🛑", text: "Vasco sobe para 44 pts · Chapecoense encerrada" },
+        scorersHome: [],
+        scorersAway: [
+          { name: "Bruno Duarte", time: "1ºT" },
+          { name: "Bruno Duarte", time: "2ºT" }
+        ]
+      },
       {
         id: "M34_10",
         round: "34ª Rodada",
@@ -1785,16 +1859,7 @@
     ];
 
     const FIXTURES_LIST = [
-      // Atrasado R21
-      { id: "R21_1", round: "21ª Rodada (Atrasado)", home: "Chapecoense", away: "Vasco", date: "14/11", direct: false },
       // R35
-      { id: "R35_1", round: "35ª Rodada", home: "Corinthians", away: "Botafogo", date: "18/11", direct: true, label: "Decisivo" },
-      { id: "R35_2", round: "35ª Rodada", home: "Coritiba", away: "Santos", date: "18/11", direct: false },
-      { id: "R35_3", round: "35ª Rodada", home: "Cruzeiro", away: "Palmeiras", date: "18/11", direct: false },
-      { id: "R35_4", round: "35ª Rodada", home: "Flamengo", away: "Athletico-PR", date: "18/11", direct: false },
-      { id: "R35_5", round: "35ª Rodada", home: "Grêmio", away: "Bahia", date: "18/11", direct: false },
-      { id: "R35_6", round: "35ª Rodada", home: "Mirassol", away: "Atlético-MG", date: "18/11", direct: false },
-      { id: "R35_7", round: "35ª Rodada", home: "Remo", away: "Chapecoense", date: "18/11", direct: false },
       { id: "R35_8", round: "35ª Rodada", home: "São Paulo", away: "Fluminense", date: "18/11", direct: false },
       { id: "R35_9", round: "35ª Rodada", home: "Vasco", away: "Internacional", date: "18/11", direct: true, label: "Confronto Direto" },
       { id: "R35_10", round: "35ª Rodada", home: "Vitória", away: "Bragantino", date: "18/11", direct: false },
@@ -1999,7 +2064,7 @@
       const totalPicks = Object.values(userPicks).filter(Boolean).length;
       const badge = document.getElementById("simModeBadge");
       if (totalPicks === 0) {
-        badge.textContent = "Classificação 34ªR (08/11)";
+        badge.textContent = "Classificação (14/11)";
         badge.style.color = "var(--accent)";
       } else {
         badge.textContent = `${totalPicks} palpite(s) fixado(s)`;
