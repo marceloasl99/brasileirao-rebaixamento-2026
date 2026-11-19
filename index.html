@@ -1,8 +1,14 @@
 <!DOCTYPE html>
-<html lang="pt-BR" prefix="og: https://ogp.me/ns#">
+<html lang="pt-BR" prefix="og: https://ogp.me/ns#" data-theme="light">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    (() => {
+      const savedTheme = localStorage.getItem("brasileirao-theme");
+      document.documentElement.dataset.theme = savedTheme === "dark" ? "dark" : "light";
+    })();
+  </script>
   <title>Simulador de Rebaixamento Brasileirão 2026 | Probabilidades Z4 e Monte Carlo</title>
   
   <!-- SEO Essencial -->
@@ -135,13 +141,15 @@
 
   <style>
     :root {
-      --bg: #0b0e14;
-      --card-bg: #131823;
-      --card-border: #20283a;
-      --card-hover: #192131;
-      --text-main: #f1f5f9;
-      --text-muted: #94a3b8;
-      --text-dim: #64748b;
+      --bg: #f4f7fb;
+      --card-bg: #ffffff;
+      --card-border: #dfe7f1;
+      --card-hover: #eef4fb;
+      --surface-raised: #f8fafc;
+      --surface-strong: #edf2f8;
+      --text-main: #172033;
+      --text-muted: #526176;
+      --text-dim: #75849a;
       --accent: #38bdf8;
       --accent-glow: rgba(56, 189, 248, 0.15);
       --danger: #ef4444;
@@ -159,6 +167,18 @@
       --font-body: "SF Pro Text", "Segoe UI", system-ui, -apple-system, sans-serif;
     }
 
+    html[data-theme="dark"] {
+      --bg: #0b0e14;
+      --card-bg: #131823;
+      --card-border: #20283a;
+      --card-hover: #192131;
+      --surface-raised: #171d2b;
+      --surface-strong: #0f1523;
+      --text-main: #f1f5f9;
+      --text-muted: #94a3b8;
+      --text-dim: #64748b;
+    }
+
     * {
       box-sizing: border-box;
       margin: 0;
@@ -172,6 +192,7 @@
       color: var(--text-main);
       line-height: 1.5;
       padding-bottom: 40px;
+      transition: background-color 0.2s ease, color 0.2s ease;
     }
 
     /* Avoid overused system fonts - use display font for headers */
@@ -183,13 +204,13 @@
     }
 
     header {
-      background: linear-gradient(180deg, #161e2e 0%, var(--bg) 100%);
+      background: linear-gradient(180deg, var(--card-bg) 0%, var(--bg) 100%);
       border-bottom: 1px solid var(--card-border);
       padding: 24px 20px 20px;
       position: sticky;
       top: 0;
       z-index: 50;
-      backdrop-filter: blur(8px);
+      box-shadow: 0 8px 24px -18px rgba(15, 23, 42, 0.35);
     }
 
     .header-content {
@@ -302,6 +323,16 @@
     button.btn-secondary:hover {
       background: var(--card-hover);
       border-color: var(--accent);
+    }
+
+    button.theme-toggle {
+      width: 40px;
+      height: 40px;
+      display: inline-grid;
+      place-items: center;
+      padding: 0;
+      font-size: 1.05rem;
+      border-radius: 999px;
     }
 
     .container {
@@ -417,7 +448,7 @@
 
     .progress-bar-bg {
       height: 5px;
-      background: #1e2638;
+      background: var(--surface-strong);
       border-radius: 99px;
       overflow: hidden;
       margin-top: 8px;
@@ -451,9 +482,9 @@
     }
 
     .chip-btn {
-      background: #182030;
-      border: 1px solid #27344e;
-      color: #cbd5e1;
+      background: var(--surface-raised);
+      border: 1px solid var(--card-border);
+      color: var(--text-main);
       padding: 6px 12px;
       border-radius: 20px;
       font-size: 0.75rem;
@@ -468,8 +499,8 @@
     }
 
     .chip-btn:hover {
-      background: #222f47;
-      color: #fff;
+      background: var(--card-hover);
+      color: var(--text-main);
       border-color: var(--accent);
     }
 
@@ -483,7 +514,7 @@
     }
 
     .round-header {
-      background: #171d2b;
+      background: var(--surface-raised);
       padding: 10px 16px;
       font-size: 0.85rem;
       font-weight: 700;
@@ -505,7 +536,7 @@
       justify-content: space-between;
       padding: 10px 16px;
       gap: 12px;
-      border-bottom: 1px solid #1a2233;
+      border-bottom: 1px solid var(--card-border);
       transition: background 0.15s;
     }
 
@@ -668,7 +699,7 @@
     }
 
     .table-head {
-      background: #171d2b;
+      background: var(--surface-raised);
       padding: 12px 16px;
       border-bottom: 1px solid var(--card-border);
       display: flex;
@@ -691,7 +722,7 @@
 
     .table-cutoff-badge {
       font-size: 0.75rem;
-      background: #1f2739;
+      background: var(--surface-strong);
       padding: 4px 10px;
       border-radius: 6px;
       color: var(--accent);
@@ -722,7 +753,7 @@
 
     table.league-table td {
       padding: 7px 10px;
-      border-bottom: 1px solid #1a2233;
+      border-bottom: 1px solid var(--card-border);
       font-variant-numeric: tabular-nums;
     }
 
@@ -731,7 +762,7 @@
     }
 
     table.league-table tr:hover td {
-      background: rgba(255, 255, 255, 0.02);
+      background: var(--card-hover);
     }
 
     /* Faixas da tabela */
@@ -750,7 +781,7 @@
 
     .pts-col {
       font-weight: 800;
-      color: #fff;
+      color: var(--text-main);
     }
 
     .prob-badge-mini {
@@ -786,12 +817,12 @@
       align-items: center;
       justify-content: space-between;
       gap: 12px;
-      background: #0f1523;
-      border: 1px solid #1e2842;
+      background: var(--surface-strong);
+      border: 1px solid var(--card-border);
       border-radius: 10px;
       padding: 8px 14px;
       margin-bottom: 16px;
-      box-shadow: 0 4px 14px -3px rgba(0, 0, 0, 0.4);
+      box-shadow: 0 4px 14px -3px rgba(15, 23, 42, 0.12);
     }
 
     .filter-group {
@@ -804,9 +835,9 @@
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      background: rgba(255, 255, 255, 0.04);
+      background: var(--card-bg);
       color: var(--text-muted);
-      border: 1px solid #1e2842;
+      border: 1px solid var(--card-border);
       border-radius: 6px;
       padding: 6px 12px;
       font-size: 0.78rem;
@@ -817,9 +848,9 @@
     }
 
     .filter-chip:hover {
-      background: rgba(255, 255, 255, 0.08);
-      color: #fff;
-      border-color: rgba(255, 255, 255, 0.15);
+      background: var(--card-hover);
+      color: var(--text-main);
+      border-color: var(--accent);
     }
 
     .filter-chip.active {
@@ -879,8 +910,8 @@
 
     /* 3. Card do Placar Esportivo */
     .match-hud-card {
-      background: #0f1523;
-      border: 1px solid #1e2842;
+      background: var(--surface-strong);
+      border: 1px solid var(--card-border);
       border-radius: 10px;
       padding: 12px 14px;
       display: flex;
@@ -888,7 +919,7 @@
       gap: 10px;
       position: relative;
       overflow: hidden;
-      box-shadow: 0 4px 16px -2px rgba(0, 0, 0, 0.35);
+      box-shadow: 0 4px 16px -2px rgba(15, 23, 42, 0.12);
       transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1),
                   border-color 0.2s ease,
                   box-shadow 0.2s ease;
@@ -907,9 +938,9 @@
 
     .match-hud-card:hover {
       transform: translateY(-2px);
-      background: #141c30;
-      border-color: rgba(255, 255, 255, 0.16);
-      box-shadow: 0 8px 24px -4px rgba(0, 0, 0, 0.55);
+      background: var(--card-hover);
+      border-color: var(--accent);
+      box-shadow: 0 8px 24px -4px rgba(15, 23, 42, 0.16);
     }
 
     .match-hud-card.impact-relegation::before {
@@ -927,7 +958,7 @@
       align-items: center;
       font-size: 0.72rem;
       color: var(--text-dim);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+      border-bottom: 1px solid var(--card-border);
       padding-bottom: 6px;
     }
 
@@ -967,7 +998,7 @@
       gap: 8px;
       font-size: 0.88rem;
       font-weight: 700;
-      color: #f1f5f9;
+      color: var(--text-main);
     }
 
     .hud-team.home {
@@ -999,8 +1030,8 @@
       align-items: center;
       justify-content: center;
       gap: 4px;
-      background: #090d16;
-      border: 1px solid #1e2842;
+      background: var(--bg);
+      border: 1px solid var(--card-border);
       padding: 4px 12px;
       border-radius: 6px;
       box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.6);
@@ -1370,6 +1401,9 @@
         </p>
       </div>
       <div class="header-actions">
+        <button class="btn-secondary theme-toggle" id="themeToggle" type="button" aria-label="Alternar tema" title="Alternar tema claro/escuro">
+          <span id="themeIcon" aria-hidden="true">☾</span>
+        </button>
         <button class="btn-secondary" id="btnResetAll" title="Restaurar classificação atual após 19/11/2026">
           ↺ Zerar Palpites
         </button>
@@ -2498,9 +2532,34 @@
     initScoreboardFilters();
     refreshUI();
 
+    const themeToggle = document.getElementById("themeToggle");
+    const themeIcon = document.getElementById("themeIcon");
+
+    function updateThemeControl() {
+      const isDark = document.documentElement.dataset.theme === "dark";
+      themeIcon.textContent = isDark ? "☀" : "☾";
+      themeToggle.setAttribute("aria-label", isDark ? "Ativar tema claro" : "Ativar tema escuro");
+      themeToggle.setAttribute("title", isDark ? "Ativar tema claro" : "Ativar tema escuro");
+    }
+
+    themeToggle.addEventListener("click", () => {
+      const nextTheme = document.documentElement.dataset.theme === "dark" ? "light" : "dark";
+      document.documentElement.dataset.theme = nextTheme;
+      localStorage.setItem("brasileirao-theme", nextTheme);
+      updateThemeControl();
+    });
+    updateThemeControl();
+
     // Executa a simulação automaticamente ao abrir a página.
-    window.addEventListener("load", () => {
+    const startAutomaticSimulation = () => {
       document.getElementById("btnRunSim").click();
+    };
+    window.addEventListener("load", () => {
+      if ("requestIdleCallback" in window) {
+        requestIdleCallback(startAutomaticSimulation, { timeout: 800 });
+      } else {
+        setTimeout(startAutomaticSimulation, 100);
+      }
     }, { once: true });
   </script>
 </body>
