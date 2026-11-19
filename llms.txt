@@ -7,7 +7,7 @@
 - **Data de referência dos dados**: 19/11/2026 (Após os primeiros jogos da 35ª rodada)
 - **Confrontos restantes**: 40 partidas (jogos das rodadas 35 a 38)
 - **Linha de corte projetada para o Z4**: 42 a 43 pontos
-- **Modelo Estatístico**: Modelo Estocástico de Gols por Distribuição de Poisson calibrado com 20.000 iterações Monte Carlo e referências UFMG / CNN Brasil
+- **Modelo Estatístico**: Modelo Estocástico de Gols por Distribuição de Poisson com 20.000 iterações Monte Carlo
 
 ## Situação Atual da Zona de Rebaixamento (Z4)
 - **Chapecoense (20º - 21 pts)**: Matematicamente rebaixada à Série B 2027 e encerrou a campanha com derrota por 2x0 para o Vasco. Probabilidade: 100%.

@@ -39,7 +39,7 @@
     Probabilidades do Z4 e Calculadora de Reta Final
   </text>
   <text x="60" y="270" font-family="system-ui, -apple-system, sans-serif" font-size="20" fill="#94a3b8">
-    Modelo Estocástico de Gols (Poisson) · Parâmetros UFMG / CNN Brasil · 43 Jogos Restantes
+    Modelo Estocástico de Gols (Poisson) · 33 Jogos Restantes
   </text>
 
   <!-- Cards Graphic (Z4 Teams) -->
@@ -49,7 +49,7 @@
     <text x="20" y="40" font-family="system-ui, sans-serif" font-size="20" font-weight="800" fill="#f1f5f9">Grêmio</text>
     <text x="230" y="40" font-family="system-ui, sans-serif" font-size="16" font-weight="700" fill="#94a3b8" text-anchor="end">37 pts</text>
     <text x="20" y="100" font-family="system-ui, sans-serif" font-size="44" font-weight="900" fill="#ef4444">60.4%</text>
-    <text x="20" y="130" font-family="system-ui, sans-serif" font-size="13" font-weight="600" fill="#94a3b8">Risco de Z4 (UFMG)</text>
+    <text x="20" y="130" font-family="system-ui, sans-serif" font-size="13" font-weight="600" fill="#94a3b8">Risco de Z4</text>
     <rect x="20" y="145" width="210" height="8" rx="4" fill="#0b0e14"/>
     <rect x="20" y="145" width="126" height="8" rx="4" fill="#ef4444"/>
 
@@ -58,7 +58,7 @@
     <text x="290" y="40" font-family="system-ui, sans-serif" font-size="20" font-weight="800" fill="#f1f5f9">Corinthians</text>
     <text x="500" y="40" font-family="system-ui, sans-serif" font-size="16" font-weight="700" fill="#94a3b8" text-anchor="end">37 pts</text>
     <text x="290" y="100" font-family="system-ui, sans-serif" font-size="44" font-weight="900" fill="#ef4444">55.0%</text>
-    <text x="290" y="130" font-family="system-ui, sans-serif" font-size="13" font-weight="600" fill="#94a3b8">Risco de Z4 (UFMG)</text>
+    <text x="290" y="130" font-family="system-ui, sans-serif" font-size="13" font-weight="600" fill="#94a3b8">Risco de Z4</text>
     <rect x="290" y="145" width="210" height="8" rx="4" fill="#0b0e14"/>
     <rect x="290" y="145" width="115" height="8" rx="4" fill="#ef4444"/>
 
@@ -67,7 +67,7 @@
     <text x="560" y="40" font-family="system-ui, sans-serif" font-size="20" font-weight="800" fill="#f1f5f9">Internacional</text>
     <text x="770" y="40" font-family="system-ui, sans-serif" font-size="16" font-weight="700" fill="#94a3b8" text-anchor="end">38 pts</text>
     <text x="560" y="100" font-family="system-ui, sans-serif" font-size="44" font-weight="900" fill="#f59e0b">40.8%</text>
-    <text x="560" y="130" font-family="system-ui, sans-serif" font-size="13" font-weight="600" fill="#94a3b8">Risco de Z4 (UFMG)</text>
+    <text x="560" y="130" font-family="system-ui, sans-serif" font-size="13" font-weight="600" fill="#94a3b8">Risco de Z4</text>
     <rect x="560" y="145" width="210" height="8" rx="4" fill="#0b0e14"/>
     <rect x="560" y="145" width="85" height="8" rx="4" fill="#f59e0b"/>
 

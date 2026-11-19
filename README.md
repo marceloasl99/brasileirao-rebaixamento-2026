@@ -3,7 +3,7 @@
 ![Brasileirão 2026](https://img.shields.io/badge/Brasileir%C3%A3o-2026-green?style=for-the-badge)
 ![Atualizado](https://img.shields.io/badge/Atualizado-19%2F11%2F2026-blue?style=for-the-badge)
 ![Monte Carlo](https://img.shields.io/badge/Monte%20Carlo-20.000x-orange?style=for-the-badge)
-![Modelo UFMG](https://img.shields.io/badge/Estat%C3%ADstica-UFMG%20%2F%20Poisson-purple?style=for-the-badge)
+![Modelo Poisson](https://img.shields.io/badge/Estat%C3%ADstica-Poisson-purple?style=for-the-badge)
 ![GitHub Pages](https://img.shields.io/badge/Deploy-GitHub%20Pages-brightgreen?style=for-the-badge&logo=github)
 ![Licença MIT](https://img.shields.io/badge/Licen%C3%A7a-MIT-yellow?style=for-the-badge)
 
@@ -16,7 +16,7 @@
 
 Uma aplicação web interativa em página única (*Single-Page Application*), desenvolvida em **HTML5, CSS3 e Vanilla JavaScript puro** (sem dependências ou frameworks externos), que simula todas as probabilidades e cenários da reta final do **Campeonato Brasileiro de 2026**.
 
-O simulador combina um **modelo estocástico de gols via Distribuição de Poisson** calibrado com dados oficiais da **UFMG / CNN Brasil** e um motor de **20.000 simulações de Monte Carlo** executadas diretamente no navegador em alta performance com *TypedArrays*.
+O simulador combina um **modelo estocástico de gols via Distribuição de Poisson** com um motor de **20.000 simulações de Monte Carlo** executadas diretamente no navegador em alta performance com *TypedArrays*.
 
 ---
 
@@ -50,7 +50,7 @@ Após os primeiros jogos da 35ª rodada, a disputa contra o rebaixamento segue a
 
 ## 🏆 Tabela Oficial de Classificação (Referência 19/11/2026)
 
-<small>📊 Dados estatísticos calibrados com o modelo UFMG / CNN Brasil · 20.000 simulações Monte Carlo</small>
+<small>📊 Dados estatísticos do modelo Poisson · 20.000 simulações Monte Carlo</small>
 
 | # | Time | Pts | J | V | E | D | GP | GC | SG | 📉 Risco Z4 | 🏷️ Zona / Situação |
 | :-: | :--- | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :---: | :--- |

@@ -6,8 +6,8 @@
   <title>Simulador de Rebaixamento Brasileirão 2026 | Probabilidades Z4 e Monte Carlo</title>
   
   <!-- SEO Essencial -->
-  <meta name="description" content="Simulador interativo de rebaixamento do Brasileirão 2026 após os primeiros jogos da 35ª rodada. 20.000 simulações Monte Carlo, probabilidades UFMG e tabela atualizada.">
-  <meta name="keywords" content="simulador brasileirao 2026, rebaixamento brasileirao 2026, z4 brasileirao 2026, probabilidades rebaixamento ufmg, chances de rebaixamento, monte carlo brasileirao, corinthians rebaixamento, gremio rebaixamento, inter rebaixamento, serie a 2026">
+  <meta name="description" content="Simulador interativo de rebaixamento do Brasileirão 2026 após os primeiros jogos da 35ª rodada. 20.000 simulações Monte Carlo e tabela atualizada.">
+  <meta name="keywords" content="simulador brasileirao 2026, rebaixamento brasileirao 2026, z4 brasileirao 2026, chances de rebaixamento, monte carlo brasileirao, corinthians rebaixamento, gremio rebaixamento, inter rebaixamento, serie a 2026">
   <meta name="author" content="Marcelo Leite">
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
   <link rel="canonical" href="https://marceloasl99.github.io/brasileirao-rebaixamento-2026/">
@@ -33,7 +33,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:url" content="https://marceloasl99.github.io/brasileirao-rebaixamento-2026/">
   <meta name="twitter:title" content="Simulador de Rebaixamento Brasileirão 2026 | Probabilidades Z4">
-  <meta name="twitter:description" content="Simule a reta final do Brasileirão 2026 com 20.000 cenários estocásticos Monte Carlo. Tabela ao vivo e probabilidades da UFMG.">
+  <meta name="twitter:description" content="Simule a reta final do Brasileirão 2026 com 20.000 cenários estocásticos Monte Carlo e tabela ao vivo.">
   <meta name="twitter:image" content="https://marceloasl99.github.io/brasileirao-rebaixamento-2026/og-image.svg">
   <meta name="twitter:image:alt" content="Simulador de Rebaixamento Brasileirão 2026">
 
@@ -98,7 +98,7 @@
             "name": "Quais as chances de rebaixamento de Corinthians e Grêmio?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Após o jogo atrasado da 21ª rodada, o Grêmio tem 60,4% de probabilidade de queda (18º lugar com 37 pontos) e o Corinthians tem 55,0% de risco de rebaixamento (17º lugar com 37 pontos), segundo dados calibrados da UFMG e simulações Monte Carlo."
+              "text": "Após o jogo atrasado da 21ª rodada, o Grêmio tem 60,4% de probabilidade de queda (18º lugar com 37 pontos) e o Corinthians tem 55,0% de risco de rebaixamento (17º lugar com 37 pontos), segundo as simulações Monte Carlo."
             }
           },
           {
@@ -1366,7 +1366,7 @@
           <span class="badge-live">Atualizado · 19/11/2026</span>
         </h1>
         <p class="header-desc" itemprop="description">
-          Modelo Estocástico Calibrado (UFMG / CNN Brasil) · 33 jogos restantes · Chapecoense matematicamente rebaixada e Z4 em ebulição
+          Modelo Estocástico Monte Carlo · 33 jogos restantes · Chapecoense matematicamente rebaixada e Z4 em ebulição
         </p>
       </div>
       <div class="header-actions">
@@ -1508,7 +1508,7 @@
           <h2>📐 Metodologia Estatística e Modelo Científico</h2>
           <div class="methodology-text">
             <p>
-              O simulador utiliza um modelo matemático híbrido entre <strong>análise preditiva de Poisson</strong> e <strong>simulação estocástica de Monte Carlo</strong>. Os coeficientes de ataque e defesa dos clubes são calibrados com os parâmetros fornecidos pelos departamentos de matemática de referência (como o da UFMG e modelos de expectativa de gols xG).
+              O simulador utiliza um modelo matemático híbrido entre <strong>análise preditiva de Poisson</strong> e <strong>simulação estocástica de Monte Carlo</strong>. Os coeficientes de ataque e defesa dos clubes são calibrados com dados de temporada e modelos internos de expectativa de gols.
             </p>
             <p>
               Conforme o usuário seleciona palpites nos confrontos restantes, o simulador fixa essas partidas com probabilidade 100% e projeta os confrontos em aberto nas 20.000 iterações subsequentes. Isso permite analisar cenários condicionais, tais como: <em>"o que acontece se meu time vencer os dois próximos confrontos diretos em casa?"</em>.
@@ -1555,33 +1555,33 @@
       <strong>Simulador de Rebaixamento Brasileirão 2026</strong> · Modelo Estocástico de Probabilidades Monte Carlo
     </div>
     <div>
-      Atualizado em 19/11/2026 · Dados de referência: CBF / UFMG / CNN Brasil · <a href="https://github.com/marceloasl99/brasileirao-rebaixamento-2026" target="_blank" rel="noopener noreferrer">Repositório no GitHub</a>
+      Atualizado em 19/11/2026 · Dados de referência: CBF · <a href="https://github.com/marceloasl99/brasileirao-rebaixamento-2026" target="_blank" rel="noopener noreferrer">Repositório no GitHub</a>
     </div>
   </footer>
 
   <script>
     // --- 1. Dados Oficiais e Parâmetros Calibrados (Atualizado em 19/11/2026) ---
     const RAW_TEAMS = [
-      { name: "Flamengo", short: "FLA", color: "#cc0000", pts: 79, g: 35, w: 24, d: 7, l: 4, gf: 73, gc: 30, ufmg: 0.0, att: 0.315, def: 0.295 },
-      { name: "Palmeiras", short: "PAL", color: "#006437", pts: 73, g: 35, w: 21, d: 10, l: 4, gf: 63, gc: 25, ufmg: 0.0, att: 0.210, def: 0.405 },
-      { name: "Cruzeiro", short: "CRU", color: "#003b8e", pts: 63, g: 35, w: 19, d: 6, l: 10, gf: 57, gc: 49, ufmg: 0.0, att: 0.158, def: -0.065 },
-      { name: "Fluminense", short: "FLU", color: "#831d1d", pts: 57, g: 34, w: 16, d: 9, l: 9, gf: 55, gc: 42, ufmg: 0.0, att: 0.144, def: 0.012 },
-      { name: "Athletico-PR", short: "CAP", color: "#c8102e", pts: 54, g: 35, w: 15, d: 9, l: 11, gf: 52, gc: 45, ufmg: 0.0, att: 0.105, def: 0.040 },
-      { name: "Bahia", short: "BAH", color: "#0072ce", pts: 54, g: 35, w: 14, d: 12, l: 9, gf: 50, gc: 45, ufmg: 0.0, att: 0.082, def: 0.007 },
-      { name: "Atlético-MG", short: "CAM", color: "#222222", pts: 51, g: 35, w: 14, d: 9, l: 12, gf: 44, gc: 40, ufmg: 0.0, att: 0.015, def: 0.060 },
-      { name: "Bragantino", short: "BGT", color: "#d91f26", pts: 47, g: 34, w: 13, d: 8, l: 13, gf: 44, gc: 39, ufmg: 0.0, att: -0.025, def: 0.075 },
-      { name: "Santos", short: "SAN", color: "#444444", pts: 50, g: 35, w: 13, d: 11, l: 11, gf: 51, gc: 49, ufmg: 0.5, att: 0.075, def: -0.090 },
-      { name: "São Paulo", short: "SAO", color: "#b91c1c", pts: 44, g: 34, w: 12, d: 8, l: 14, gf: 39, gc: 39, ufmg: 0.01, att: -0.085, def: 0.055 },
-      { name: "Botafogo", short: "BOT", color: "#111111", pts: 42, g: 35, w: 11, d: 9, l: 15, gf: 46, gc: 57, ufmg: 1.5, att: -0.010, def: -0.210 },
-      { name: "Coritiba", short: "CFC", color: "#00552b", pts: 42, g: 35, w: 11, d: 9, l: 15, gf: 40, gc: 52, ufmg: 4.8, att: -0.080, def: -0.160 },
-      { name: "Vasco", short: "VAS", color: "#1f1f1f", pts: 44, g: 34, w: 12, d: 8, l: 14, gf: 45, gc: 50, ufmg: 1.8, att: -0.065, def: -0.140 },
-      { name: "Mirassol", short: "MIR", color: "#eab308", pts: 41, g: 35, w: 10, d: 11, l: 14, gf: 39, gc: 48, ufmg: 16.1, att: -0.125, def: -0.100 },
-      { name: "Vitória", short: "VIT", color: "#dc2626", pts: 38, g: 34, w: 10, d: 8, l: 16, gf: 35, gc: 51, ufmg: 21.4, att: -0.158, def: -0.123 },
-      { name: "Internacional", short: "INT", color: "#ef4444", pts: 38, g: 34, w: 9, d: 11, l: 14, gf: 38, gc: 42, ufmg: 40.8, att: -0.145, def: -0.010 },
-      { name: "Corinthians", short: "COR", color: "#ffffff", pts: 40, g: 35, w: 10, d: 10, l: 15, gf: 40, gc: 42, ufmg: 55.0, att: -0.160, def: -0.010 },
-      { name: "Grêmio", short: "GRE", color: "#0d80bf", pts: 38, g: 35, w: 9, d: 11, l: 15, gf: 38, gc: 47, ufmg: 60.4, att: -0.130, def: -0.050 },
-      { name: "Remo", short: "REM", color: "#1e3a8a", pts: 32, g: 35, w: 7, d: 11, l: 17, gf: 39, gc: 57, ufmg: 99.56, att: -0.220, def: -0.210 },
-      { name: "Chapecoense", short: "CHA", color: "#16a34a", pts: 21, g: 35, w: 4, d: 9, l: 22, gf: 33, gc: 72, ufmg: 100.0, att: -0.320, def: -0.460 }
+      { name: "Flamengo", short: "FLA", color: "#cc0000", pts: 79, g: 35, w: 24, d: 7, l: 4, gf: 73, gc: 30, baselineRisk: 0.0, att: 0.315, def: 0.295 },
+      { name: "Palmeiras", short: "PAL", color: "#006437", pts: 73, g: 35, w: 21, d: 10, l: 4, gf: 63, gc: 25, baselineRisk: 0.0, att: 0.210, def: 0.405 },
+      { name: "Cruzeiro", short: "CRU", color: "#003b8e", pts: 63, g: 35, w: 19, d: 6, l: 10, gf: 57, gc: 49, baselineRisk: 0.0, att: 0.158, def: -0.065 },
+      { name: "Fluminense", short: "FLU", color: "#831d1d", pts: 57, g: 34, w: 16, d: 9, l: 9, gf: 55, gc: 42, baselineRisk: 0.0, att: 0.144, def: 0.012 },
+      { name: "Athletico-PR", short: "CAP", color: "#c8102e", pts: 54, g: 35, w: 15, d: 9, l: 11, gf: 52, gc: 45, baselineRisk: 0.0, att: 0.105, def: 0.040 },
+      { name: "Bahia", short: "BAH", color: "#0072ce", pts: 54, g: 35, w: 14, d: 12, l: 9, gf: 50, gc: 45, baselineRisk: 0.0, att: 0.082, def: 0.007 },
+      { name: "Atlético-MG", short: "CAM", color: "#222222", pts: 51, g: 35, w: 14, d: 9, l: 12, gf: 44, gc: 40, baselineRisk: 0.0, att: 0.015, def: 0.060 },
+      { name: "Bragantino", short: "BGT", color: "#d91f26", pts: 47, g: 34, w: 13, d: 8, l: 13, gf: 44, gc: 39, baselineRisk: 0.0, att: -0.025, def: 0.075 },
+      { name: "Santos", short: "SAN", color: "#444444", pts: 50, g: 35, w: 13, d: 11, l: 11, gf: 51, gc: 49, baselineRisk: 0.5, att: 0.075, def: -0.090 },
+      { name: "São Paulo", short: "SAO", color: "#b91c1c", pts: 44, g: 34, w: 12, d: 8, l: 14, gf: 39, gc: 39, baselineRisk: 0.01, att: -0.085, def: 0.055 },
+      { name: "Botafogo", short: "BOT", color: "#111111", pts: 42, g: 35, w: 11, d: 9, l: 15, gf: 46, gc: 57, baselineRisk: 1.5, att: -0.010, def: -0.210 },
+      { name: "Coritiba", short: "CFC", color: "#00552b", pts: 42, g: 35, w: 11, d: 9, l: 15, gf: 40, gc: 52, baselineRisk: 4.8, att: -0.080, def: -0.160 },
+      { name: "Vasco", short: "VAS", color: "#1f1f1f", pts: 44, g: 34, w: 12, d: 8, l: 14, gf: 45, gc: 50, baselineRisk: 1.8, att: -0.065, def: -0.140 },
+      { name: "Mirassol", short: "MIR", color: "#eab308", pts: 41, g: 35, w: 10, d: 11, l: 14, gf: 39, gc: 48, baselineRisk: 16.1, att: -0.125, def: -0.100 },
+      { name: "Vitória", short: "VIT", color: "#dc2626", pts: 38, g: 34, w: 10, d: 8, l: 16, gf: 35, gc: 51, baselineRisk: 21.4, att: -0.158, def: -0.123 },
+      { name: "Internacional", short: "INT", color: "#ef4444", pts: 38, g: 34, w: 9, d: 11, l: 14, gf: 38, gc: 42, baselineRisk: 40.8, att: -0.145, def: -0.010 },
+      { name: "Corinthians", short: "COR", color: "#ffffff", pts: 40, g: 35, w: 10, d: 10, l: 15, gf: 40, gc: 42, baselineRisk: 55.0, att: -0.160, def: -0.010 },
+      { name: "Grêmio", short: "GRE", color: "#0d80bf", pts: 38, g: 35, w: 9, d: 11, l: 15, gf: 38, gc: 47, baselineRisk: 60.4, att: -0.130, def: -0.050 },
+      { name: "Remo", short: "REM", color: "#1e3a8a", pts: 32, g: 35, w: 7, d: 11, l: 17, gf: 39, gc: 57, baselineRisk: 99.56, att: -0.220, def: -0.210 },
+      { name: "Chapecoense", short: "CHA", color: "#16a34a", pts: 21, g: 35, w: 4, d: 9, l: 22, gf: 33, gc: 72, baselineRisk: 100.0, att: -0.320, def: -0.460 }
     ];
 
     // Placares Encerrados (Dados Oficiais Enriquecidos)
@@ -1908,7 +1908,7 @@
     // Estado da simulação Monte Carlo por time
     const simulatedProbs = {};
     RAW_TEAMS.forEach(t => {
-      simulatedProbs[t.name] = t.ufmg; // Inicia com o valor de referência oficial
+      simulatedProbs[t.name] = t.baselineRisk; // Inicia com o valor de referência oficial
     });
 
     const LEAGUE_AVG = 1.33;
@@ -2082,7 +2082,7 @@
 
       riskTeams.forEach(name => {
         const t = teamsMap[name];
-        let prob = simulatedProbs[name] ?? t.ufmg;
+        let prob = simulatedProbs[name] ?? t.baselineRisk;
         if (name === "Chapecoense") prob = 100.0;
 
         let riskLevel = "safe";
@@ -2102,7 +2102,7 @@
           <div class="prob-val ${riskLevel}">${prob.toFixed(1)}%</div>
           <div class="prob-sub">
             <span>${name === 'Chapecoense' ? 'Queda Confirmada' : 'Risco Rebaixamento'}</span>
-            <span>UFMG: ${t.ufmg.toFixed(1)}%</span>
+            <span>Base: ${t.baselineRisk.toFixed(1)}%</span>
           </div>
           <div class="progress-bar-bg">
             <div class="progress-bar-fill" style="width: ${Math.min(100, Math.max(0, prob))}%; background: ${riskLevel === 'danger' ? 'var(--danger)' : riskLevel === 'warning' ? 'var(--warning)' : 'var(--success)'};"></div>
@@ -2443,7 +2443,7 @@
     // --- 6. Presets e Ações Rápidas ---
     document.getElementById("btnResetAll").addEventListener("click", () => {
       for (const k in userPicks) delete userPicks[k];
-      RAW_TEAMS.forEach(t => { simulatedProbs[t.name] = t.ufmg; });
+      RAW_TEAMS.forEach(t => { simulatedProbs[t.name] = t.baselineRisk; });
       refreshUI();
     });
 
