@@ -2497,6 +2497,11 @@
     // Inicia UI e Filtros do HUD
     initScoreboardFilters();
     refreshUI();
+
+    // Executa a simulação automaticamente ao abrir a página.
+    window.addEventListener("load", () => {
+      document.getElementById("btnRunSim").click();
+    }, { once: true });
   </script>
 </body>
 </html>
