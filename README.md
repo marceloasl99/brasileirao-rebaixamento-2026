@@ -98,7 +98,7 @@ Com base nisso, os botões de aposta (**1**, **X**, **2**) exibem as chances rea
   2. Número de vitórias
   3. Saldo de gols
   4. Gols pró
-* As posições 17 a 20 (Z4) são computadas e as porcentagens de rebaixamento são atualizadas instantaneamente.
+* As posições 17 a 20 (Z4), 1 a 6 (Libertadores) e 7 a 12 (Sul-Americana) são computadas e as probabilidades de cada zona são atualizadas instantaneamente.
 
 ---
 
@@ -115,13 +115,13 @@ Com base nisso, os botões de aposta (**1**, **X**, **2**) exibem as chances rea
   * *Gerar 1 Cenário Estatístico (sorteio aleatório ponderado pelas odds)*
 * 📊 **Cards de Risco no Z4**: Acompanhamento visual dos 10 times mais ameaçados com barras de progresso dinâmicas coloridas (seguro, atenção, perigo).
 * 🏟️ **Broadcast Stadium HUD (Placares Encerrados)**: Visualização de alta fidelidade televisiva dos 18 jogos encerrados até 19/11, com:
-  * **Barra de Filtros Segmentada**: Abas para isolar jogos por *Todos (11)*, *Luta no Z4 (9)*, *G4 / Título (5)* e *⚡ Goleadas & Viradas (3)*.
+  * **Barra de Filtros Segmentada**: Abas para isolar jogos por *Todos*, *Luta no Z4*, *G4 / Título* e *⚡ Goleadas & Viradas*.
   * **Linha do Tempo dos Gols**: Autores e minutagem exata de cada gol com badges visuais.
   * **Badges de Impacto Narrativo**: Destaques contextuais imediatos (*Queda Matemática Confirmada*, *Grêmio Afunda no Z4*, *Goleada 5x1*).
-  * **Tipografia Numérica Atlética**: Dígitos em visor digital escuro com numerais tabulares alinhados.
+  * **Tipografia Numérica Atlética**: Dígitos em visor esportivo com numerais tabulares alinhados.
 * ♿ **Acessibilidade e Design Responsivo**:
   * Total conformidade com WCAG 2.1 (skip link, `:focus-visible`, labels ARIA dinâmicos).
-  * Design otimizado com tema dark moderno e legibilidade garantida em qualquer celular, tablet ou desktop.
+  * Design otimizado com temas claro e escuro e legibilidade garantida em qualquer celular, tablet ou desktop.
   * Zero dependências externas (sem frameworks pesados ou CDNs lentos).
 
 ---
