@@ -105,6 +105,7 @@ Com base nisso, os botões de aposta (**1**, **X**, **2**) exibem as chances rea
 ## 🎮 Funcionalidades da Aplicação
 
 * 🌓 **Tema Claro e Escuro**: Interface inicia no modo claro, com alternância disponível no cabeçalho e preferência salva no navegador.
+* 🏆 **Abas de Probabilidades**: Consulte Z4/rebaixamento, classificação à Libertadores e vagas da Sul-Americana nas mesmas 20.000 simulações.
 * 🕹️ **Palpites Interativos nos 33 Jogos Restantes**: Selecione Mandante (1), Empate (X) ou Visitante (2) para projetar os cenários que salvam ou rebaixam seu time.
 * ⚡ **Presets de Cenários Rápidos**:
   * *Corinthians vence Botafogo e Grêmio*
