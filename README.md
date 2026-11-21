@@ -1,7 +1,7 @@
 # ⚽ Simulador de Rebaixamento — Brasileirão 2026
 
 ![Brasileirão 2026](https://img.shields.io/badge/Brasileir%C3%A3o-2026-green?style=for-the-badge)
-![Atualizado](https://img.shields.io/badge/Atualizado-20%2F11%2F2026-blue?style=for-the-badge)
+![Atualizado](https://img.shields.io/badge/Atualizado-21%2F11%2F2026-blue?style=for-the-badge)
 ![Monte Carlo](https://img.shields.io/badge/Monte%20Carlo-20.000x-orange?style=for-the-badge)
 ![Modelo Poisson](https://img.shields.io/badge/Estat%C3%ADstica-Poisson-purple?style=for-the-badge)
 ![GitHub Pages](https://img.shields.io/badge/Deploy-GitHub%20Pages-brightgreen?style=for-the-badge&logo=github)
@@ -20,7 +20,7 @@ O simulador combina um **modelo estocástico de gols via Distribuição de Poiss
 
 ---
 
-## 🚨 Panorama Atual do Campeonato (Atualizado em 20/11/2026)
+## 🚨 Panorama Atual do Campeonato (Atualizado em 21/11/2026)
 
 Após a conclusão da 35ª rodada, a disputa contra o rebaixamento segue aberta:
 
@@ -39,6 +39,8 @@ Após a conclusão da 35ª rodada, a disputa contra o rebaixamento segue aberta:
 | Data | Mandante | Placar | Visitante | Impacto Principal |
 | :---: | :--- | :---: | :--- | :--- |
 | **14/11** | Mirassol | **0 x 0** | Atlético-MG | Empate mantém Mirassol com 41 pts |
+| **21/11** | Palmeiras | **1 x 1** | **Flamengo** | Empate garante o título antecipado ao Flamengo |
+| **21/11** | Bahia | **0 x 1** | **Coritiba** | Coxa sobe para 45 pts |
 | **19/11** | São Paulo | **0 x 1** | **Fluminense** | Flu chega a 60 pts |
 | **19/11** | **Vasco** | **2 x 1** | Internacional | Vasco chega a 47 pts |
 | **19/11** | **Vitória** | **2 x 1** | Bragantino | Vitória ganha respiro no Z4 |
@@ -51,25 +53,25 @@ Após a conclusão da 35ª rodada, a disputa contra o rebaixamento segue aberta:
 
 ---
 
-## 🏆 Tabela Oficial de Classificação (Referência 20/11/2026)
+## 🏆 Tabela Oficial de Classificação (Referência 21/11/2026)
 
 <small>📊 Dados estatísticos do modelo Poisson · 20.000 simulações Monte Carlo</small>
 
 | # | Time | Pts | J | V | E | D | GP | GC | SG | 📉 Risco Z4 | 🏷️ Zona / Situação |
 | :-: | :--- | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :---: | :--- |
-| **1** | 🏆 **Flamengo** | **79** | 35 | 24 | 7 | 4 | 73 | 30 | +43 | 0.0% | 🟢 G4 (Libertadores) |
-| **2** | 🥈 **Palmeiras** | **73** | 35 | 21 | 10 | 4 | 63 | 25 | +38 | 0.0% | 🟢 G4 (Libertadores) |
+| **1** | 🏆 **Flamengo** | **80** | 36 | 24 | 8 | 4 | 74 | 31 | +43 | 0.0% | 🟢 G4 (Libertadores) |
+| **2** | 🥈 **Palmeiras** | **74** | 36 | 21 | 11 | 4 | 64 | 26 | +38 | 0.0% | 🟢 G4 (Libertadores) |
 | **3** | 🥉 **Cruzeiro** | **63** | 35 | 19 | 6 | 10 | 57 | 49 | +8 | 0.0% | 🟢 G4 (Libertadores) |
 | **4** | 🅿️ **Fluminense** | **60** | 35 | 17 | 9 | 9 | 56 | 42 | +14 | 0.0% | 🟢 G4 (Libertadores) |
 | **5** | ⭐ **Athletico-PR** | **54** | 35 | 15 | 9 | 11 | 52 | 45 | +7 | 0.0% | 🔵 Pré-Libertadores |
-| **6** | 🅱️ **Bahia** | **54** | 35 | 14 | 12 | 9 | 50 | 45 | +5 | 0.0% | 🔵 Pré-Libertadores |
+| **6** | 🅱️ **Bahia** | **54** | 36 | 14 | 12 | 10 | 50 | 46 | +4 | 0.0% | 🔵 Pré-Libertadores |
 | **7** | ⚪ **Atlético-MG** | **51** | 35 | 14 | 9 | 12 | 44 | 40 | +4 | 0.0% | 🟡 Sul-Americana |
 | **8** | 🅾️ **Santos** | **50** | 35 | 13 | 11 | 11 | 51 | 49 | +2 | 0.5% | 🟡 Sul-Americana |
 | **9** | 🅿️ **Red Bull Bragantino** | **47** | 35 | 13 | 8 | 14 | 44 | 41 | +3 | 0.0% | 🟡 Sul-Americana |
 | **10** | 💢 **Vasco da Gama** | **47** | 35 | 13 | 8 | 14 | 47 | 51 | -4 | 1.8% | ⚪ Permanência |
 | **11** | 🆚 **São Paulo** | **44** | 35 | 12 | 8 | 15 | 39 | 40 | -1 | 0.01% | 🟡 Sul-Americana |
 | **12** | ⭐ **Botafogo** | **42** | 35 | 11 | 9 | 15 | 46 | 57 | -11 | 1.5% | 🟡 Sul-Americana |
-| **13** | 🟢 **Coritiba** | **42** | 35 | 11 | 9 | 15 | 40 | 52 | -12 | 4.8% | 🟡 Sul-Americana |
+| **13** | 🟢 **Coritiba** | **45** | 36 | 12 | 9 | 15 | 41 | 52 | -11 | 4.8% | 🟡 Sul-Americana |
 | **14** | 🟡 **Mirassol** | **41** | 35 | 10 | 11 | 14 | 39 | 48 | -9 | 16.1% | 🟠 Risco Moderado |
 | **15** | 🔴 **Vitória** | **41** | 35 | 11 | 8 | 16 | 37 | 52 | -15 | 21.4% | 🟠 Risco Elevado |
 | **16** | 🦅 **Corinthians** | **40** | 35 | 10 | 10 | 15 | 40 | 42 | -2 | **55.0%** | 🟠 Permanência |
@@ -117,7 +119,7 @@ Com base nisso, os botões de aposta (**1**, **X**, **2**) exibem as chances rea
   * *Lógica do Mandante (todos os donos da casa vencem)*
   * *Gerar 1 Cenário Estatístico (sorteio aleatório ponderado pelas odds)*
 * 📊 **Cards de Risco no Z4**: Acompanhamento visual dos 10 times mais ameaçados com barras de progresso dinâmicas coloridas (seguro, atenção, perigo).
-* 🏟️ **Broadcast Stadium HUD (Placares Encerrados)**: Visualização de alta fidelidade televisiva dos 21 jogos encerrados até 20/11, com:
+* 🏟️ **Broadcast Stadium HUD (Placares Encerrados)**: Visualização de alta fidelidade televisiva dos 23 jogos encerrados até 21/11, com:
   * **Barra de Filtros Segmentada**: Abas para isolar jogos por *Todos*, *Luta no Z4*, *G4 / Título* e *⚡ Goleadas & Viradas*.
   * **Linha do Tempo dos Gols**: Autores e minutagem exata de cada gol com badges visuais.
   * **Badges de Impacto Narrativo**: Destaques contextuais imediatos (*Queda Matemática Confirmada*, *Grêmio Afunda no Z4*, *Goleada 5x1*).
