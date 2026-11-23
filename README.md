@@ -115,7 +115,7 @@ Com base nisso, os botões de aposta (**1**, **X**, **2**) exibem as chances rea
 
 * 🌓 **Tema Claro e Escuro**: Interface inicia no modo claro, com alternância disponível no cabeçalho e preferência salva no navegador.
 * 🏆 **Abas de Probabilidades**: Consulte Z4/rebaixamento, classificação à Libertadores e vagas da Sul-Americana nas mesmas 20.000 simulações.
-* 🕹️ **Palpites Interativos nos 24 Jogos Restantes**: Selecione Mandante (1), Empate (X) ou Visitante (2) para projetar os cenários que salvam ou rebaixam seu time.
+* 🕹️ **Palpites Interativos nos 24 Jogos Restantes**: Inclui os quatro jogos pendentes da 36ª rodada e os dez jogos das rodadas 37 e 38. Selecione Mandante (1), Empate (X) ou Visitante (2) para projetar os cenários.
 * ⚡ **Presets de Cenários Rápidos**:
   * *Corinthians vence Botafogo e Grêmio*
   * *Inter vence Vitória e Bragantino*
