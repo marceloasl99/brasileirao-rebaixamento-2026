@@ -1,7 +1,7 @@
 # ⚽ Simulador de Rebaixamento — Brasileirão 2026
 
 ![Brasileirão 2026](https://img.shields.io/badge/Brasileir%C3%A3o-2026-green?style=for-the-badge)
-![Atualizado](https://img.shields.io/badge/Atualizado-21%2F11%2F2026-blue?style=for-the-badge)
+![Atualizado](https://img.shields.io/badge/Atualizado-22%2F11%2F2026-blue?style=for-the-badge)
 ![Monte Carlo](https://img.shields.io/badge/Monte%20Carlo-20.000x-orange?style=for-the-badge)
 ![Modelo Poisson](https://img.shields.io/badge/Estat%C3%ADstica-Poisson-purple?style=for-the-badge)
 ![GitHub Pages](https://img.shields.io/badge/Deploy-GitHub%20Pages-brightgreen?style=for-the-badge&logo=github)
@@ -20,27 +20,30 @@ O simulador combina um **modelo estocástico de gols via Distribuição de Poiss
 
 ---
 
-## 🚨 Panorama Atual do Campeonato (Atualizado em 21/11/2026)
+## 🚨 Panorama Atual do Campeonato (Atualizado em 22/11/2026)
 
-Após a conclusão da 35ª rodada, a disputa contra o rebaixamento segue aberta:
+Após a conclusão dos cinco jogos da 36ª rodada disputados até 22/11, restam 20 jogos das rodadas 37 e 38:
 
-* 🟥 **Chapecoense confirmada na Série B**: A equipe chegou a 21 pontos em 35 jogos e encerrou sua participação desta rodada sem chance de permanência.
+* 🟥 **Chapecoense confirmada na Série B**: A equipe chegou a 21 pontos em 36 jogos e encerrou sua participação sem chance de permanência.
 * 🦅 **Corinthians reage**: A goleada por 4 a 0 sobre o Botafogo levou o Timão a 40 pontos e para a 16ª posição.
 * 🟦 **Remo respira, mas segue ameaçado**: A vitória por 2 a 0 sobre a Chapecoense colocou o Leão Azul em 32 pontos.
 * 🇪🇪 **Grêmio permanece pressionado**: O empate com o Bahia levou o Tricolor gaúcho a 38 pontos e manteve-o na zona de rebaixamento.
-* 🏆 **Flamengo lidera**: A vitória por 2 a 1 sobre o Athletico-PR levou o Rubro-Negro a 79 pontos em 35 jogos.
-* ⚡ **Cruzeiro vence o Palmeiras**: A Raposa chegou a 63 pontos e se consolida na 3ª colocação.
+* 🏆 **Flamengo lidera**: O empate com o Palmeiras manteve o Rubro-Negro com 80 pontos em 36 jogos.
+* ⚡ **Cruzeiro vence a Chapecoense**: A Raposa chegou a 66 pontos e se consolida na 3ª colocação.
 * 🎯 **Linha de Corte Projetada**: Os dados oficiais apontam para uma margem próxima de 42 a 43 pontos.
 
 ---
 
-## 📅 Placares Atualizados da 35ª Rodada
+## 📅 Placares Atualizados da 36ª Rodada
 
 | Data | Mandante | Placar | Visitante | Impacto Principal |
 | :---: | :--- | :---: | :--- | :--- |
+| **22/11** | **Athletico-PR** | **4 x 2** | Remo | Athletico chega a 57 pts |
+| **22/11** | **Fluminense** | **1 x 0** | Mirassol | Flu chega a 63 pts |
+| **21/11** | Chapecoense | **1 x 2** | **Cruzeiro** | Raposa chega a 66 pts |
+| **21/11** | Bahia | **0 x 1** | **Coritiba** | Coxa permanece com 45 pts |
+| **21/11** | Palmeiras | **1 x 1** | Flamengo | Líder segue com 80 pts |
 | **14/11** | Mirassol | **0 x 0** | Atlético-MG | Empate mantém Mirassol com 41 pts |
-| **21/11** | Palmeiras | **1 x 1** | **Flamengo** | Empate garante o título antecipado ao Flamengo |
-| **21/11** | Bahia | **0 x 1** | **Coritiba** | Coxa sobe para 45 pts |
 | **19/11** | São Paulo | **0 x 1** | **Fluminense** | Flu chega a 60 pts |
 | **19/11** | **Vasco** | **2 x 1** | Internacional | Vasco chega a 47 pts |
 | **19/11** | **Vitória** | **2 x 1** | Bragantino | Vitória ganha respiro no Z4 |
@@ -53,7 +56,7 @@ Após a conclusão da 35ª rodada, a disputa contra o rebaixamento segue aberta:
 
 ---
 
-## 🏆 Tabela Oficial de Classificação (Referência 21/11/2026)
+## 🏆 Tabela Oficial de Classificação (Referência 22/11/2026)
 
 <small>📊 Dados estatísticos do modelo Poisson · 20.000 simulações Monte Carlo</small>
 
@@ -61,24 +64,24 @@ Após a conclusão da 35ª rodada, a disputa contra o rebaixamento segue aberta:
 | :-: | :--- | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :---: | :--- |
 | **1** | 🏆 **Flamengo** | **80** | 36 | 24 | 8 | 4 | 74 | 31 | +43 | 0.0% | 🟢 G4 (Libertadores) |
 | **2** | 🥈 **Palmeiras** | **74** | 36 | 21 | 11 | 4 | 64 | 26 | +38 | 0.0% | 🟢 G4 (Libertadores) |
-| **3** | 🥉 **Cruzeiro** | **63** | 35 | 19 | 6 | 10 | 57 | 49 | +8 | 0.0% | 🟢 G4 (Libertadores) |
-| **4** | 🅿️ **Fluminense** | **60** | 35 | 17 | 9 | 9 | 56 | 42 | +14 | 0.0% | 🟢 G4 (Libertadores) |
-| **5** | ⭐ **Athletico-PR** | **54** | 35 | 15 | 9 | 11 | 52 | 45 | +7 | 0.0% | 🔵 Pré-Libertadores |
+| **3** | 🥉 **Cruzeiro** | **66** | 36 | 20 | 6 | 10 | 59 | 50 | +9 | 0.0% | 🟢 G4 (Libertadores) |
+| **4** | 🅿️ **Fluminense** | **63** | 36 | 18 | 9 | 9 | 57 | 42 | +15 | 0.0% | 🟢 G4 (Libertadores) |
+| **5** | ⭐ **Athletico-PR** | **57** | 36 | 16 | 9 | 11 | 56 | 47 | +9 | 0.0% | 🔵 Pré-Libertadores |
 | **6** | 🅱️ **Bahia** | **54** | 36 | 14 | 12 | 10 | 50 | 46 | +4 | 0.0% | 🔵 Pré-Libertadores |
 | **7** | ⚪ **Atlético-MG** | **51** | 35 | 14 | 9 | 12 | 44 | 40 | +4 | 0.0% | 🟡 Sul-Americana |
 | **8** | 🅾️ **Santos** | **50** | 35 | 13 | 11 | 11 | 51 | 49 | +2 | 0.5% | 🟡 Sul-Americana |
-| **9** | 🅿️ **Red Bull Bragantino** | **47** | 35 | 13 | 8 | 14 | 44 | 41 | +3 | 0.0% | 🟡 Sul-Americana |
+| **9** | 🅿️ **Red Bull Bragantino** | **47** | 35 | 13 | 8 | 14 | 45 | 41 | +4 | 0.0% | 🟡 Sul-Americana |
 | **10** | 💢 **Vasco da Gama** | **47** | 35 | 13 | 8 | 14 | 47 | 51 | -4 | 1.8% | ⚪ Permanência |
 | **11** | 🆚 **São Paulo** | **44** | 35 | 12 | 8 | 15 | 39 | 40 | -1 | 0.01% | 🟡 Sul-Americana |
 | **12** | ⭐ **Botafogo** | **42** | 35 | 11 | 9 | 15 | 46 | 57 | -11 | 1.5% | 🟡 Sul-Americana |
 | **13** | 🟢 **Coritiba** | **45** | 36 | 12 | 9 | 15 | 41 | 52 | -11 | 4.8% | 🟡 Sul-Americana |
-| **14** | 🟡 **Mirassol** | **41** | 35 | 10 | 11 | 14 | 39 | 48 | -9 | 16.1% | 🟠 Risco Moderado |
+| **14** | 🟡 **Mirassol** | **41** | 36 | 10 | 11 | 15 | 39 | 49 | -10 | 16.1% | 🟠 Risco Moderado |
 | **15** | 🔴 **Vitória** | **41** | 35 | 11 | 8 | 16 | 37 | 52 | -15 | 21.4% | 🟠 Risco Elevado |
 | **16** | 🦅 **Corinthians** | **40** | 35 | 10 | 10 | 15 | 40 | 42 | -2 | **55.0%** | 🟠 Permanência |
 | **17** | 🇦🇹 **Internacional** | **38** | 35 | 9 | 11 | 15 | 39 | 44 | -5 | 40.8% | 🟠 Limite do Z4 |
 | **18** | 🇪🇪 **Grêmio** | **38** | 35 | 9 | 11 | 15 | 38 | 47 | -9 | **60.4%** | 🟠 Limite do Z4 |
-| **19** | 🦁 **Remo** | **32** | 35 | 7 | 11 | 17 | 39 | 57 | -18 | **99.56%** | 🟥 **Zona de Rebaixamento (Z4)** |
-| **20** | 🏹 **Chapecoense** | **21** | 35 | 4 | 9 | 22 | 33 | 72 | -39 | **100.0%** | 🪦 **REBAIXADA À SÉRIE B 2027** |
+| **19** | 🦁 **Remo** | **32** | 36 | 7 | 11 | 18 | 41 | 61 | -20 | **99.56%** | 🟥 **Zona de Rebaixamento (Z4)** |
+| **20** | 🏹 **Chapecoense** | **21** | 36 | 4 | 9 | 23 | 34 | 74 | -40 | **100.0%** | 🪦 **REBAIXADA À SÉRIE B 2027** |
 
 ---
 
@@ -119,7 +122,7 @@ Com base nisso, os botões de aposta (**1**, **X**, **2**) exibem as chances rea
   * *Lógica do Mandante (todos os donos da casa vencem)*
   * *Gerar 1 Cenário Estatístico (sorteio aleatório ponderado pelas odds)*
 * 📊 **Cards de Risco no Z4**: Acompanhamento visual dos 10 times mais ameaçados com barras de progresso dinâmicas coloridas (seguro, atenção, perigo).
-* 🏟️ **Broadcast Stadium HUD (Placares Encerrados)**: Visualização de alta fidelidade televisiva dos 23 jogos encerrados até 21/11, com:
+* 🏟️ **Broadcast Stadium HUD (Placares Encerrados)**: Visualização de alta fidelidade televisiva dos 28 jogos encerrados até 22/11, com:
   * **Barra de Filtros Segmentada**: Abas para isolar jogos por *Todos*, *Luta no Z4*, *G4 / Título* e *⚡ Goleadas & Viradas*.
   * **Linha do Tempo dos Gols**: Autores e minutagem exata de cada gol com badges visuais.
   * **Badges de Impacto Narrativo**: Destaques contextuais imediatos (*Queda Matemática Confirmada*, *Grêmio Afunda no Z4*, *Goleada 5x1*).
