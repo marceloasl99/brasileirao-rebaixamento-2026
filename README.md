@@ -22,7 +22,7 @@ O simulador combina um **modelo estocástico de gols via Distribuição de Poiss
 
 ## 🚨 Panorama Atual do Campeonato (Atualizado em 22/11/2026)
 
-Após a conclusão dos cinco jogos da 36ª rodada disputados até 22/11, restam 20 jogos das rodadas 37 e 38:
+Após a conclusão de seis jogos da 36ª rodada até 22/11, restam quatro jogos dessa rodada e 20 jogos das rodadas 37 e 38:
 
 * 🟥 **Chapecoense confirmada na Série B**: A equipe chegou a 21 pontos em 36 jogos e encerrou sua participação sem chance de permanência.
 * 🦅 **Corinthians reage**: A goleada por 4 a 0 sobre o Botafogo levou o Timão a 40 pontos e para a 16ª posição.
@@ -40,6 +40,7 @@ Após a conclusão dos cinco jogos da 36ª rodada disputados até 22/11, restam 
 | :---: | :--- | :---: | :--- | :--- |
 | **22/11** | **Athletico-PR** | **4 x 2** | Remo | Athletico chega a 57 pts |
 | **22/11** | **Fluminense** | **1 x 0** | Mirassol | Flu chega a 63 pts |
+| **22/11** | **Bragantino** | **1 x 0** | Vasco | Massa Bruta chega a 50 pts |
 | **21/11** | Chapecoense | **1 x 2** | **Cruzeiro** | Raposa chega a 66 pts |
 | **21/11** | Bahia | **0 x 1** | **Coritiba** | Coxa permanece com 45 pts |
 | **21/11** | Palmeiras | **1 x 1** | Flamengo | Líder segue com 80 pts |
@@ -69,9 +70,9 @@ Após a conclusão dos cinco jogos da 36ª rodada disputados até 22/11, restam 
 | **5** | ⭐ **Athletico-PR** | **57** | 36 | 16 | 9 | 11 | 56 | 47 | +9 | 0.0% | 🔵 Pré-Libertadores |
 | **6** | 🅱️ **Bahia** | **54** | 36 | 14 | 12 | 10 | 50 | 46 | +4 | 0.0% | 🔵 Pré-Libertadores |
 | **7** | ⚪ **Atlético-MG** | **51** | 35 | 14 | 9 | 12 | 44 | 40 | +4 | 0.0% | 🟡 Sul-Americana |
-| **8** | 🅾️ **Santos** | **50** | 35 | 13 | 11 | 11 | 51 | 49 | +2 | 0.5% | 🟡 Sul-Americana |
-| **9** | 🅿️ **Red Bull Bragantino** | **47** | 35 | 13 | 8 | 14 | 45 | 41 | +4 | 0.0% | 🟡 Sul-Americana |
-| **10** | 💢 **Vasco da Gama** | **47** | 35 | 13 | 8 | 14 | 47 | 51 | -4 | 1.8% | ⚪ Permanência |
+| **8** | 🅿️ **Red Bull Bragantino** | **50** | 36 | 14 | 8 | 14 | 46 | 41 | +5 | 0.0% | 🟡 Sul-Americana |
+| **9** | 🅾️ **Santos** | **50** | 35 | 13 | 11 | 11 | 51 | 49 | +2 | 0.5% | 🟡 Sul-Americana |
+| **10** | 💢 **Vasco da Gama** | **47** | 36 | 13 | 8 | 15 | 47 | 52 | -5 | 1.8% | ⚪ Permanência |
 | **11** | 🆚 **São Paulo** | **44** | 35 | 12 | 8 | 15 | 39 | 40 | -1 | 0.01% | 🟡 Sul-Americana |
 | **12** | ⭐ **Botafogo** | **42** | 35 | 11 | 9 | 15 | 46 | 57 | -11 | 1.5% | 🟡 Sul-Americana |
 | **13** | 🟢 **Coritiba** | **45** | 36 | 12 | 9 | 15 | 41 | 52 | -11 | 4.8% | 🟡 Sul-Americana |
@@ -114,7 +115,7 @@ Com base nisso, os botões de aposta (**1**, **X**, **2**) exibem as chances rea
 
 * 🌓 **Tema Claro e Escuro**: Interface inicia no modo claro, com alternância disponível no cabeçalho e preferência salva no navegador.
 * 🏆 **Abas de Probabilidades**: Consulte Z4/rebaixamento, classificação à Libertadores e vagas da Sul-Americana nas mesmas 20.000 simulações.
-* 🕹️ **Palpites Interativos nos 33 Jogos Restantes**: Selecione Mandante (1), Empate (X) ou Visitante (2) para projetar os cenários que salvam ou rebaixam seu time.
+* 🕹️ **Palpites Interativos nos 24 Jogos Restantes**: Selecione Mandante (1), Empate (X) ou Visitante (2) para projetar os cenários que salvam ou rebaixam seu time.
 * ⚡ **Presets de Cenários Rápidos**:
   * *Corinthians vence Botafogo e Grêmio*
   * *Inter vence Vitória e Bragantino*
@@ -122,7 +123,7 @@ Com base nisso, os botões de aposta (**1**, **X**, **2**) exibem as chances rea
   * *Lógica do Mandante (todos os donos da casa vencem)*
   * *Gerar 1 Cenário Estatístico (sorteio aleatório ponderado pelas odds)*
 * 📊 **Cards de Risco no Z4**: Acompanhamento visual dos 10 times mais ameaçados com barras de progresso dinâmicas coloridas (seguro, atenção, perigo).
-* 🏟️ **Broadcast Stadium HUD (Placares Encerrados)**: Visualização de alta fidelidade televisiva dos 28 jogos encerrados até 22/11, com:
+* 🏟️ **Broadcast Stadium HUD (Placares Encerrados)**: Visualização de alta fidelidade televisiva dos 27 jogos encerrados até 22/11, com:
   * **Barra de Filtros Segmentada**: Abas para isolar jogos por *Todos*, *Luta no Z4*, *G4 / Título* e *⚡ Goleadas & Viradas*.
   * **Linha do Tempo dos Gols**: Autores e minutagem exata de cada gol com badges visuais.
   * **Badges de Impacto Narrativo**: Destaques contextuais imediatos (*Queda Matemática Confirmada*, *Grêmio Afunda no Z4*, *Goleada 5x1*).
