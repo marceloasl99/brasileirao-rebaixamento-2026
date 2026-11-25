@@ -12,7 +12,7 @@
   <title>Simulador de Rebaixamento Brasileirão 2026 | Probabilidades Z4 e Monte Carlo</title>
   
   <!-- SEO Essencial -->
-  <meta name="description" content="Simulador interativo de rebaixamento do Brasileirão 2026 após a 36ª rodada. 20.000 simulações Monte Carlo e tabela atualizada.">
+  <meta name="description" content="Simulador interativo de rebaixamento do Brasileirão 2026, atualizado após jogos de 24/11. 20.000 simulações Monte Carlo e tabela atualizada.">
   <meta name="keywords" content="simulador brasileirao 2026, rebaixamento brasileirao 2026, z4 brasileirao 2026, chances de rebaixamento, monte carlo brasileirao, corinthians rebaixamento, gremio rebaixamento, inter rebaixamento, serie a 2026">
   <meta name="author" content="Marcelo Leite">
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
@@ -29,7 +29,7 @@
   <meta property="og:url" content="https://marceloasl99.github.io/brasileirao-rebaixamento-2026/">
   <meta property="og:site_name" content="Simulador Brasileirão 2026">
   <meta property="og:title" content="Simulador de Rebaixamento Brasileirão 2026 | Probabilidades Z4">
-  <meta property="og:description" content="Simule a reta final do Brasileirão 2026 com 20.000 cenários estocásticos Monte Carlo. Acompanhe a luta contra o Z4, palpites nos 24 jogos restantes e tabela atualizada.">
+  <meta property="og:description" content="Simule a reta final do Brasileirão 2026 com 20.000 cenários estocásticos Monte Carlo. Acompanhe a luta contra o Z4, palpites nos 20 jogos restantes e tabela atualizada.">
   <meta property="og:image" content="https://marceloasl99.github.io/brasileirao-rebaixamento-2026/og-image.svg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -1511,17 +1511,17 @@
       <div class="title-area">
         <h1 itemprop="name">
           <span>Brasileirão 2026 — Simulador de Reta Final</span>
-          <span class="badge-live">Atualizado · 22/11/2026</span>
+          <span class="badge-live">Atualizado · 24/11/2026</span>
         </h1>
         <p class="header-desc" itemprop="description">
-          Modelo Estocástico Monte Carlo · 24 jogos restantes · Chapecoense matematicamente rebaixada e Z4 em ebulição
+          Modelo Estocástico Monte Carlo · 20 jogos restantes · Chapecoense matematicamente rebaixada e Z4 em ebulição
         </p>
       </div>
       <div class="header-actions">
         <button class="btn-secondary theme-toggle" id="themeToggle" type="button" aria-label="Alternar tema" title="Alternar tema claro/escuro">
           <span id="themeIcon" aria-hidden="true">☾</span>
         </button>
-        <button class="btn-secondary" id="btnResetAll" title="Restaurar classificação atual após 22/11/2026">
+        <button class="btn-secondary" id="btnResetAll" title="Restaurar classificação atual após 24/11/2026">
           ↺ Zerar Palpites
         </button>
         <button class="btn-primary" id="btnRunSim">
@@ -1560,8 +1560,8 @@
 
       <!-- Placares Encerrados -->
       <div class="section-title">
-        <span>Placares Encerrados — até 22/11</span>
-        <span style="font-size:0.75rem; text-transform:none; color:#10b981;" id="completedCount">27 jogos concluídos</span>
+        <span>Placares Encerrados — até 24/11</span>
+        <span style="font-size:0.75rem; text-transform:none; color:#10b981;" id="completedCount">31 jogos concluídos</span>
       </div>
 
       <!-- Barra de Filtros Segmentada (HUD Tabs) -->
@@ -1569,26 +1569,26 @@
         <div class="filter-group" role="tablist">
           <button class="filter-chip active" role="tab" aria-selected="true" data-filter="all">
             <span class="chip-label">Todos</span>
-            <span class="chip-badge">27</span>
+            <span class="chip-badge">31</span>
           </button>
           <button class="filter-chip" role="tab" aria-selected="false" data-filter="z4">
             <span class="chip-dot dot-danger"></span>
             <span class="chip-label">Luta no Z4</span>
-            <span class="chip-badge">14</span>
+            <span class="chip-badge">18</span>
           </button>
           <button class="filter-chip" role="tab" aria-selected="false" data-filter="g4">
             <span class="chip-dot dot-gold"></span>
             <span class="chip-label">G4 / Título</span>
-            <span class="chip-badge">10</span>
+            <span class="chip-badge">11</span>
           </button>
           <button class="filter-chip" role="tab" aria-selected="false" data-filter="epic">
             <span class="chip-label">⚡ Goleadas & Viradas</span>
-            <span class="chip-badge">5</span>
+            <span class="chip-badge">6</span>
           </button>
         </div>
         <div class="filter-summary">
           <span class="status-indicator-live"></span>
-          <span>27 jogos encerrados</span>
+          <span>31 jogos encerrados</span>
         </div>
       </nav>
 
@@ -1606,8 +1606,8 @@
 
       <!-- Grade de Jogos por Rodada -->
       <div class="section-title">
-        <span>Confrontos Restantes (24 Jogos — R36 a R38)</span>
-        <span style="font-size:0.75rem; text-transform:none; color:var(--accent);" id="matchesCount">24 jogos</span>
+        <span>Confrontos Restantes (20 Jogos — R36 a R38)</span>
+        <span style="font-size:0.75rem; text-transform:none; color:var(--accent);" id="matchesCount">20 jogos</span>
       </div>
 
       <div id="roundsList"></div>
@@ -1682,7 +1682,7 @@
           <h2>Tabela em Tempo Real</h2>
           <div class="table-cutoff-badge" id="simModeBadge">Classificação (14/11)</div>
         </div>
-        <table class="league-table" aria-label="Tabela de classificação do Brasileirão 2026 - Atualizada em 22/11/2026">
+        <table class="league-table" aria-label="Tabela de classificação do Brasileirão 2026 - Atualizada em 24/11/2026">
           <thead>
             <tr>
               <th scope="row">#</th>
@@ -1712,37 +1712,78 @@
       <strong>Simulador de Rebaixamento Brasileirão 2026</strong> · Modelo Estocástico de Probabilidades Monte Carlo
     </div>
     <div>
-      Atualizado em 22/11/2026 · Dados de referência: CBF · <a href="https://github.com/marceloasl99/brasileirao-rebaixamento-2026" target="_blank" rel="noopener noreferrer">Repositório no GitHub</a>
+      Atualizado em 24/11/2026 · Dados de referência: CBF e UFMG · <a href="https://github.com/marceloasl99/brasileirao-rebaixamento-2026" target="_blank" rel="noopener noreferrer">Repositório no GitHub</a>
     </div>
   </footer>
 
   <script>
-    // --- 1. Dados Oficiais e Parâmetros Calibrados (Atualizado em 22/11/2026) ---
+    // --- 1. Dados Oficiais e Parâmetros Calibrados (Atualizado em 24/11/2026) ---
     const RAW_TEAMS = [
       { name: "Flamengo", short: "FLA", color: "#cc0000", pts: 80, g: 36, w: 24, d: 8, l: 4, gf: 74, gc: 31, baselineRisk: 0.0, att: 0.315, def: 0.295 },
-      { name: "Palmeiras", short: "PAL", color: "#006437", pts: 74, g: 36, w: 21, d: 11, l: 4, gf: 64, gc: 26, baselineRisk: 0.0, att: 0.210, def: 0.405 },
+      { name: "Palmeiras", short: "PAL", color: "#006437", pts: 74, g: 37, w: 21, d: 11, l: 5, gf: 64, gc: 29, baselineRisk: 0.0, att: 0.210, def: 0.405 },
       { name: "Cruzeiro", short: "CRU", color: "#003b8e", pts: 66, g: 36, w: 20, d: 6, l: 10, gf: 59, gc: 50, baselineRisk: 0.0, att: 0.158, def: -0.065 },
       { name: "Fluminense", short: "FLU", color: "#831d1d", pts: 63, g: 36, w: 18, d: 9, l: 9, gf: 57, gc: 42, baselineRisk: 0.0, att: 0.144, def: 0.012 },
       { name: "Athletico-PR", short: "CAP", color: "#c8102e", pts: 57, g: 36, w: 16, d: 9, l: 11, gf: 56, gc: 47, baselineRisk: 0.0, att: 0.105, def: 0.040 },
       { name: "Bahia", short: "BAH", color: "#0072ce", pts: 54, g: 36, w: 14, d: 12, l: 10, gf: 50, gc: 46, baselineRisk: 0.0, att: 0.082, def: 0.007 },
       { name: "Atlético-MG", short: "CAM", color: "#222222", pts: 51, g: 35, w: 14, d: 9, l: 12, gf: 44, gc: 40, baselineRisk: 0.0, att: 0.015, def: 0.060 },
       { name: "Bragantino", short: "BGT", color: "#d91f26", pts: 50, g: 36, w: 14, d: 8, l: 14, gf: 46, gc: 41, baselineRisk: 0.0, att: -0.025, def: 0.075 },
-      { name: "Santos", short: "SAN", color: "#444444", pts: 50, g: 35, w: 13, d: 11, l: 11, gf: 51, gc: 49, baselineRisk: 0.5, att: 0.075, def: -0.090 },
-      { name: "São Paulo", short: "SAO", color: "#b91c1c", pts: 44, g: 35, w: 12, d: 8, l: 15, gf: 39, gc: 40, baselineRisk: 0.013, att: -0.085, def: 0.055 },
-      { name: "Botafogo", short: "BOT", color: "#111111", pts: 42, g: 35, w: 11, d: 9, l: 15, gf: 46, gc: 57, baselineRisk: 1.7, att: -0.010, def: -0.210 },
+      { name: "Santos", short: "SAN", color: "#444444", pts: 50, g: 36, w: 13, d: 11, l: 12, gf: 51, gc: 51, baselineRisk: 0.5, att: 0.075, def: -0.090 },
+      { name: "São Paulo", short: "SAO", color: "#b91c1c", pts: 45, g: 36, w: 12, d: 9, l: 15, gf: 40, gc: 41, baselineRisk: 0.013, att: -0.085, def: 0.055 },
+      { name: "Botafogo", short: "BOT", color: "#111111", pts: 43, g: 36, w: 11, d: 10, l: 15, gf: 47, gc: 58, baselineRisk: 1.7, att: -0.010, def: -0.210 },
       { name: "Coritiba", short: "CFC", color: "#00552b", pts: 45, g: 36, w: 12, d: 9, l: 15, gf: 41, gc: 52, baselineRisk: 0.001, att: -0.080, def: -0.160 },
       { name: "Vasco", short: "VAS", color: "#1f1f1f", pts: 47, g: 36, w: 13, d: 8, l: 15, gf: 47, gc: 52, baselineRisk: 1.8, att: -0.065, def: -0.140 },
       { name: "Mirassol", short: "MIR", color: "#eab308", pts: 41, g: 36, w: 10, d: 11, l: 15, gf: 39, gc: 49, baselineRisk: 34.2, att: -0.125, def: -0.100 },
-      { name: "Vitória", short: "VIT", color: "#dc2626", pts: 41, g: 35, w: 11, d: 8, l: 16, gf: 37, gc: 52, baselineRisk: 13.5, att: -0.158, def: -0.123 },
-      { name: "Internacional", short: "INT", color: "#ef4444", pts: 38, g: 35, w: 9, d: 11, l: 15, gf: 39, gc: 44, baselineRisk: 58.5, att: -0.145, def: -0.010 },
+      { name: "Vitória", short: "VIT", color: "#dc2626", pts: 44, g: 36, w: 12, d: 8, l: 16, gf: 42, gc: 54, baselineRisk: 13.5, att: -0.158, def: -0.123 },
+      { name: "Internacional", short: "INT", color: "#ef4444", pts: 38, g: 36, w: 9, d: 11, l: 16, gf: 41, gc: 49, baselineRisk: 58.5, att: -0.145, def: -0.010 },
       { name: "Corinthians", short: "COR", color: "#ffffff", pts: 40, g: 35, w: 10, d: 10, l: 15, gf: 40, gc: 42, baselineRisk: 25.6, att: -0.160, def: -0.010 },
-      { name: "Grêmio", short: "GRE", color: "#0d80bf", pts: 38, g: 35, w: 9, d: 11, l: 15, gf: 38, gc: 47, baselineRisk: 66.5, att: -0.130, def: -0.050 },
+      { name: "Grêmio", short: "GRE", color: "#0d80bf", pts: 41, g: 36, w: 10, d: 11, l: 15, gf: 40, gc: 47, baselineRisk: 66.5, att: -0.130, def: -0.050 },
       { name: "Remo", short: "REM", color: "#1e3a8a", pts: 32, g: 36, w: 7, d: 11, l: 18, gf: 41, gc: 61, baselineRisk: 99.56, att: -0.220, def: -0.210 },
-      { name: "Chapecoense", short: "CHA", color: "#16a34a", pts: 21, g: 36, w: 4, d: 9, l: 23, gf: 34, gc: 74, baselineRisk: 100.0, att: -0.320, def: -0.460 }
+      { name: "Chapecoense", short: "CHA", color: "#16a34a", pts: 24, g: 37, w: 5, d: 9, l: 23, gf: 37, gc: 74, baselineRisk: 100.0, att: -0.320, def: -0.460 }
     ];
 
-    // Placares Encerrados (Dados Oficiais Enriquecidos)
+    // Placares encerrados até 24/11/2026 (dados CBF e resultados confirmados)
     const COMPLETED_MATCHES_34R = [
+      {
+        id: "M37_3", round: "37ª Rodada", date: "24/11",
+        stadium: "Arena Condá · Chapecó (SC)",
+        home: "Chapecoense", away: "Palmeiras", scoreHome: 3, scoreAway: 0,
+        category: "z4 g4 epic", impactClass: "impact-relegation",
+        impactBadge: { type: "triumph", icon: "🟢", text: "Chapecoense vence, mas já está matematicamente rebaixada" },
+        scorersHome: [
+          { name: "Camilo", time: "5'" },
+          { name: "Max", time: "32'" },
+          { name: "Miguel Carvalho", time: "90'" }
+        ],
+        scorersAway: []
+      },
+      {
+        id: "M36_11", round: "36ª Rodada", date: "23/11",
+        stadium: "Beira-Rio · Porto Alegre (RS)",
+        home: "Internacional", away: "Vitória", scoreHome: 2, scoreAway: 5,
+        category: "z4", impactClass: "impact-relegation",
+        impactBadge: { type: "z4-threat", icon: "🔴", text: "Inter perde por 5 a 2 e segue com 38 pontos" },
+        scorersHome: [], scorersAway: []
+      },
+      {
+        id: "M36_12", round: "36ª Rodada", date: "23/11",
+        stadium: "Estádio Nilton Santos · Rio de Janeiro (RJ)",
+        home: "Botafogo", away: "São Paulo", scoreHome: 1, scoreAway: 1,
+        category: "z4", impactClass: "",
+        impactBadge: { type: "climax", icon: "⚖️", text: "Botafogo chega a 43 pts; São Paulo a 45" },
+        scorersHome: [], scorersAway: []
+      },
+      {
+        id: "M36_13", round: "36ª Rodada", date: "23/11",
+        stadium: "Morumbis · São Paulo (SP)",
+        home: "Santos", away: "Grêmio", scoreHome: 0, scoreAway: 2,
+        category: "z4", impactClass: "impact-relegation",
+        impactBadge: { type: "z4-threat", icon: "📈", text: "Grêmio vence e sai do Z4 com 41 pts" },
+        scorersHome: [],
+        scorersAway: [
+          { name: "F. Amuzu", time: "14'" },
+          { name: "M. Braithwaite (p)", time: "77'" }
+        ]
+      },
       {
         id: "M36_6", round: "36ª Rodada", date: "22/11",
         stadium: "Estádio Cícero de Souza Marques · Bragança Paulista (SP)",
@@ -2116,14 +2157,10 @@
 
     const FIXTURES_LIST = [
       // R36 pendentes
-      { id: "R36_1", round: "36ª Rodada", home: "Internacional", away: "Vitória", date: "23/11", direct: true, label: "Confronto Direto" },
-      { id: "R36_2", round: "36ª Rodada", home: "Botafogo", away: "São Paulo", date: "23/11", direct: false },
-      { id: "R36_3", round: "36ª Rodada", home: "Santos", away: "Grêmio", date: "23/11", direct: true, label: "Confronto Direto" },
       { id: "R36_4", round: "36ª Rodada", home: "Atlético-MG", away: "Corinthians", date: "25/11", direct: true, label: "Confronto Direto" },
       // R37
       { id: "R37_1", round: "37ª Rodada", home: "Atlético-MG", away: "Vasco", date: "29/11", direct: false },
       { id: "R37_2", round: "37ª Rodada", home: "Botafogo", away: "Bahia", date: "29/11", direct: false },
-      { id: "R37_3", round: "37ª Rodada", home: "Chapecoense", away: "Palmeiras", date: "29/11", direct: false },
       { id: "R37_4", round: "37ª Rodada", home: "Corinthians", away: "Grêmio", date: "29/11", direct: true, label: "Super Decisão" },
       { id: "R37_5", round: "37ª Rodada", home: "Coritiba", away: "Flamengo", date: "29/11", direct: false },
       { id: "R37_6", round: "37ª Rodada", home: "Fluminense", away: "Cruzeiro", date: "29/11", direct: false },
@@ -2313,7 +2350,7 @@
       const totalPicks = Object.values(userPicks).filter(Boolean).length;
       const badge = document.getElementById("simModeBadge");
       if (totalPicks === 0) {
-        badge.textContent = "Classificação (22/11)";
+        badge.textContent = "Classificação (24/11)";
         badge.style.color = "var(--accent)";
       } else {
         badge.textContent = `${totalPicks} palpite(s) fixado(s)`;
